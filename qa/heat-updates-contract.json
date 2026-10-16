@@ -1,0 +1,1317 @@
+{
+  "dumping": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Ammunition dumping 01 - rate and clock phase",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a functional bin with <rounds> rounds of ammunition rated <per_ton> rounds per ton",
+            "parameters": [
+              "rounds",
+              "per_ton"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the event clock starts at <start_tick>",
+            "parameters": [
+              "start_tick"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests dump selector all"
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the bin contains <remaining> rounds and dumping is <pending>",
+            "parameters": [
+              "remaining",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "rounds",
+          "per_ton",
+          "start_tick",
+          "seconds",
+          "remaining",
+          "pending"
+        ]
+      },
+      {
+        "name": "Ammunition dumping 02 - selection",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "LT slot 1 holds weapon A ammo LT slot 2 holds weapon B ammo and RT slot 1 holds weapon A ammo"
+          },
+          {
+            "keyword": "And",
+            "text": "every bin contains 3 rounds rated 30 per ton and all bins are functional"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests dump selector <selector>",
+            "parameters": [
+              "selector"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances 1 second"
+          },
+          {
+            "keyword": "Then",
+            "text": "LT slot 1 contains <left_a> LT slot 2 contains <left_b> and RT slot 1 contains <right_a> rounds",
+            "parameters": [
+              "left_a",
+              "left_b",
+              "right_a"
+            ]
+          }
+        ],
+        "columns": [
+          "selector",
+          "left_a",
+          "left_b",
+          "right_a"
+        ]
+      },
+      {
+        "name": "Ammunition dumping 03 - lifecycle",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a functional bin with 4 rounds of ammunition rated 30 rounds per ton"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot performs dump workflow <workflow> before advancing 2 seconds",
+            "parameters": [
+              "workflow"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "accepted dump commands number <accepted> the bin contains <remaining> rounds and dumping is <pending>",
+            "parameters": [
+              "accepted",
+              "remaining",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "workflow",
+          "accepted",
+          "remaining",
+          "pending"
+        ]
+      },
+      {
+        "name": "Ammunition dumping 04 - command guards",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a ready mech with maximum speed 64.5 KPH and ammo condition <condition>",
+            "parameters": [
+              "condition"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "desired speed is <speed> KPH and jumping is <jumping>",
+            "parameters": [
+              "speed",
+              "jumping"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests dump selector all"
+          },
+          {
+            "keyword": "Then",
+            "text": "the dump command is <outcome> and dumping is <pending>",
+            "parameters": [
+              "outcome",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "condition",
+          "speed",
+          "jumping",
+          "outcome",
+          "pending"
+        ]
+      }
+    ]
+  },
+  "fire": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Vehicle fire 01 - advanced table",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "advanced vehicle fire is enabled for class <class> movement <movement>",
+            "parameters": [
+              "class",
+              "movement"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "external non-inferno heat reaches the vehicle with fire roll <roll> and section damage dice 3",
+            "parameters": [
+              "roll"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the fire response is <response>",
+            "parameters": [
+              "response"
+            ]
+          }
+        ],
+        "columns": [
+          "class",
+          "movement",
+          "roll",
+          "response"
+        ]
+      },
+      {
+        "name": "Vehicle fire 02 - continuing side burn",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a tracked ground vehicle with advanced vehicle fire enabled and exactly one live side having 100 front armor and 100 internal"
+          },
+          {
+            "keyword": "When",
+            "text": "inferno starts a side burn with initial die <initial> and the next burn die is <next>",
+            "parameters": [
+              "initial",
+              "next"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "that side has lost <damage> armor and pending side burns number <pending>",
+            "parameters": [
+              "damage",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "initial",
+          "next",
+          "seconds",
+          "damage",
+          "pending"
+        ]
+      },
+      {
+        "name": "Vehicle fire 03 - extinguish lifecycle",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a vehicle with one persistent side fire sufficient armor and started state <started>",
+            "parameters": [
+              "started"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests extinguish <requests> times and advances <seconds> seconds",
+            "parameters": [
+              "requests",
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "accepted extinguish commands number <accepted> burning is <burning> and extinguishing is <pending>",
+            "parameters": [
+              "accepted",
+              "burning",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "started",
+          "requests",
+          "seconds",
+          "accepted",
+          "burning",
+          "pending"
+        ]
+      },
+      {
+        "name": "Vehicle fire 04 - inferno water expiry",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a jellied mech with a live inferno expiry in 180 seconds"
+          },
+          {
+            "keyword": "When",
+            "text": "it enters terrain <terrain> with signed elevation <elevation> Z <z> and fallen state <fallen>",
+            "parameters": [
+              "terrain",
+              "elevation",
+              "z",
+              "fallen"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "jellied is <jellied> and a 120 second steam decoration is <steam>",
+            "parameters": [
+              "jellied",
+              "steam"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "a pending inferno expiry is <jellied>",
+            "parameters": [
+              "jellied"
+            ]
+          }
+        ],
+        "columns": [
+          "terrain",
+          "elevation",
+          "z",
+          "fallen",
+          "jellied",
+          "steam"
+        ]
+      }
+    ]
+  },
+  "heat": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Integrated heat 01 - retained weapon heat",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary mech with capacity 10 no disabled sinks old heat <old_heat> weapon heat 20 and started state <started>",
+            "parameters": [
+              "old_heat",
+              "started"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "previous plus heat is 20 with no engine or environment heat"
+          },
+          {
+            "keyword": "When",
+            "text": "the standard dispatcher advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "current heat is <heat> and retained weapon heat is <retained>",
+            "parameters": [
+              "heat",
+              "retained"
+            ]
+          }
+        ],
+        "columns": [
+          "old_heat",
+          "started",
+          "seconds",
+          "heat",
+          "retained"
+        ]
+      },
+      {
+        "name": "Integrated heat 02 - temperature order",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary mech with active capacity <capacity> weapon heat 20 jellied state <jellied> and special-map rules <special>",
+            "parameters": [
+              "capacity",
+              "jellied",
+              "special"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "map temperature is <temperature> Celsius with no water bonus",
+            "parameters": [
+              "temperature"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "one heat update occurs before the overheat check is due"
+          },
+          {
+            "keyword": "Then",
+            "text": "dissipation is <dissipation> and current heat is <heat>",
+            "parameters": [
+              "dissipation",
+              "heat"
+            ]
+          }
+        ],
+        "columns": [
+          "capacity",
+          "jellied",
+          "special",
+          "temperature",
+          "dissipation",
+          "heat"
+        ]
+      },
+      {
+        "name": "Integrated heat 03 - water sinks",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a mech with active capacity <capacity> functional submerged leg sink slots <leg_slots> and weapon heat 20",
+            "parameters": [
+              "capacity",
+              "leg_slots"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the mech is in water at Z <z> and fallen state <fallen>",
+            "parameters": [
+              "z",
+              "fallen"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "one heat update occurs before the overheat check is due"
+          },
+          {
+            "keyword": "Then",
+            "text": "dissipation is <dissipation> and current heat is <heat>",
+            "parameters": [
+              "dissipation",
+              "heat"
+            ]
+          }
+        ],
+        "columns": [
+          "capacity",
+          "leg_slots",
+          "z",
+          "fallen",
+          "dissipation",
+          "heat"
+        ]
+      },
+      {
+        "name": "Integrated heat 04 - low-band shutdown",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary started mech without ammo at current heat <heat> and last overheat check tick 0",
+            "parameters": [
+              "heat"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the due overheat evaluation runs at event tick <tick> with shutdown roll <roll>",
+            "parameters": [
+              "tick",
+              "roll"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the mech remains started <started> and last overheat check tick is <last_check>",
+            "parameters": [
+              "started",
+              "last_check"
+            ]
+          }
+        ],
+        "columns": [
+          "heat",
+          "tick",
+          "roll",
+          "started",
+          "last_check"
+        ]
+      },
+      {
+        "name": "Integrated heat 05 - injury delivery",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a mech with destroyed life support and no prior pilot injuries"
+          },
+          {
+            "keyword": "When",
+            "text": "a heat update produces heat <heat> at event tick <tick>",
+            "parameters": [
+              "heat",
+              "tick"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the pilot has <injuries> applied heat injuries",
+            "parameters": [
+              "injuries"
+            ]
+          }
+        ],
+        "columns": [
+          "heat",
+          "tick",
+          "injuries"
+        ]
+      }
+    ]
+  },
+  "heights": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Height maintenance 01 - submarine bottom",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a submarine in water with lower elevation <bottom> at Z <z> and FZ <fz> diving at 10.75 KPH",
+            "parameters": [
+              "bottom",
+              "z",
+              "fz"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the movement height-maintenance boundary is reached"
+          },
+          {
+            "keyword": "Then",
+            "text": "submarine Z is <final_z> FZ is <final_fz> and vertical speed is <vertical>",
+            "parameters": [
+              "final_z",
+              "final_fz",
+              "vertical"
+            ]
+          }
+        ],
+        "columns": [
+          "bottom",
+          "z",
+          "fz",
+          "final_z",
+          "final_fz",
+          "vertical"
+        ]
+      },
+      {
+        "name": "Height maintenance 02 - surface and grounding",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a naval unit on <terrain> with previous Z -1 current Z 0 FZ 1 vertical speed 10.75 speed 21.5 desired speed 32.25 and both facings 90",
+            "parameters": [
+              "terrain"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the movement height-maintenance boundary is reached"
+          },
+          {
+            "keyword": "Then",
+            "text": "vertical speed is zero"
+          },
+          {
+            "keyword": "And",
+            "text": "FZ is <fz> actual speed is <speed> desired speed is <desired> and both facings are <facing>",
+            "parameters": [
+              "fz",
+              "speed",
+              "desired",
+              "facing"
+            ]
+          }
+        ],
+        "columns": [
+          "terrain",
+          "fz",
+          "speed",
+          "desired",
+          "facing"
+        ]
+      },
+      {
+        "name": "Height maintenance 03 - VTOL water and orbit",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an airborne VTOL on <terrain> at Z <z> with FZ equal to Z times 64.5 and vertical speed <vertical>",
+            "parameters": [
+              "terrain",
+              "z",
+              "vertical"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the movement height-maintenance boundary is reached"
+          },
+          {
+            "keyword": "Then",
+            "text": "destroyed is <destroyed> final Z is <final_z> and final vertical speed is <final_vertical>",
+            "parameters": [
+              "destroyed",
+              "final_z",
+              "final_vertical"
+            ]
+          }
+        ],
+        "columns": [
+          "terrain",
+          "z",
+          "vertical",
+          "destroyed",
+          "final_z",
+          "final_vertical"
+        ]
+      },
+      {
+        "name": "Height maintenance 04 - VTOL terrain collision",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an airborne VTOL at Z <z> over <terrain> with signed elevation 3 vertical speed -21.5 desired speed 21.5 and a landing site that the real landing rules reject",
+            "parameters": [
+              "z",
+              "terrain"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the movement height-maintenance boundary is reached"
+          },
+          {
+            "keyword": "Then",
+            "text": "a crash occurred <crash> landed is <landed> and final Z is <final_z>",
+            "parameters": [
+              "crash",
+              "landed",
+              "final_z"
+            ]
+          }
+        ],
+        "columns": [
+          "z",
+          "terrain",
+          "crash",
+          "landed",
+          "final_z"
+        ]
+      }
+    ]
+  },
+  "ignition": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Dumping ammo ignition 01 - rear hit routing",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a mech dumping a bin of 3 rounds each causing 10 damage"
+          },
+          {
+            "keyword": "And",
+            "text": "all armor and internal values are sufficient to survive both hits"
+          },
+          {
+            "keyword": "When",
+            "text": "a 1 point hit strikes <location> from <arc> with cause <cause>",
+            "parameters": [
+              "location",
+              "arc",
+              "cause"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "extra rear armor damage is <damage> ammo remaining is <remaining> and dumping is <pending>",
+            "parameters": [
+              "damage",
+              "remaining",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "location",
+          "arc",
+          "cause",
+          "pending",
+          "remaining",
+          "damage"
+        ]
+      },
+      {
+        "name": "Dumping ammo ignition 02 - one-round damage",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "the only dumping bin has 3 rounds for weapon category <category> base damage <base> and maximum salvo <salvo>",
+            "parameters": [
+              "category",
+              "base",
+              "salvo"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "a weapon hit ignites that dumping stream at a surviving rear torso"
+          },
+          {
+            "keyword": "Then",
+            "text": "extra rear armor damage is <damage> ammo remaining is <remaining> and dumping is <pending>",
+            "parameters": [
+              "damage",
+              "remaining",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "category",
+          "base",
+          "salvo",
+          "damage",
+          "remaining",
+          "pending"
+        ]
+      },
+      {
+        "name": "Dumping ammo ignition 03 - selected stream",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "LT slot 1 has 3 rounds of A doing 10 damage and RT slot 1 has 4 rounds of B doing 5 damage"
+          },
+          {
+            "keyword": "When",
+            "text": "dump selector <selector> is requested and a rear torso weapon hit selects candidate <index>",
+            "parameters": [
+              "selector",
+              "index"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "A has <a> rounds B has <b> rounds and extra rear armor damage is <damage>",
+            "parameters": [
+              "a",
+              "b",
+              "damage"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "no dumping event remains"
+          }
+        ],
+        "columns": [
+          "selector",
+          "index",
+          "a",
+          "b",
+          "damage"
+        ]
+      }
+    ]
+  },
+  "sinks": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Heat sink control 01 - cutoff capacity",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary mech with sink technology <technology> capacity <capacity> disabled capacity <disabled> and weapon heat <weapon_heat>",
+            "parameters": [
+              "technology",
+              "capacity",
+              "disabled",
+              "weapon_heat"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "heat cutoff is engaged"
+          },
+          {
+            "keyword": "When",
+            "text": "one heat update occurs before the overheat check is due"
+          },
+          {
+            "keyword": "Then",
+            "text": "disabled capacity is <remaining_disabled> dissipation is <dissipation> and current heat is <heat>",
+            "parameters": [
+              "remaining_disabled",
+              "dissipation",
+              "heat"
+            ]
+          }
+        ],
+        "columns": [
+          "technology",
+          "capacity",
+          "disabled",
+          "weapon_heat",
+          "remaining_disabled",
+          "dissipation",
+          "heat"
+        ]
+      },
+      {
+        "name": "Heat sink control 02 - progressive recovery",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary mech with sink technology <technology> capacity <capacity> disabled capacity <disabled> and weapon heat 0",
+            "parameters": [
+              "technology",
+              "capacity",
+              "disabled"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "heat cutoff is disengaged"
+          },
+          {
+            "keyword": "When",
+            "text": "<updates> heat updates occur before the overheat check is due",
+            "parameters": [
+              "updates"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "disabled capacity is <remaining_disabled> and current heat is zero",
+            "parameters": [
+              "remaining_disabled"
+            ]
+          }
+        ],
+        "columns": [
+          "technology",
+          "capacity",
+          "disabled",
+          "updates",
+          "remaining_disabled"
+        ]
+      },
+      {
+        "name": "Heat sink control 03 - delayed command",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a mech with cutoff initially <initial>",
+            "parameters": [
+              "initial"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests heatcutoff <requests> times and advances <seconds> seconds",
+            "parameters": [
+              "requests",
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "exactly one cutoff request was accepted"
+          },
+          {
+            "keyword": "And",
+            "text": "cutoff is <active> and a cutoff transition is <pending>",
+            "parameters": [
+              "active",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "initial",
+          "requests",
+          "seconds",
+          "active",
+          "pending"
+        ]
+      },
+      {
+        "name": "Heat sink control 04 - submerged switching",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary single-sink mech with capacity 10 disabled capacity 8 four functional leg sink slots and weapon heat <weapon_heat>",
+            "parameters": [
+              "weapon_heat"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the upright mech is at depth one in water with heat cutoff engaged"
+          },
+          {
+            "keyword": "When",
+            "text": "one heat update occurs before the overheat check is due"
+          },
+          {
+            "keyword": "Then",
+            "text": "disabled capacity is <remaining_disabled> dissipation is <dissipation> and current heat is <heat>",
+            "parameters": [
+              "remaining_disabled",
+              "dissipation",
+              "heat"
+            ]
+          }
+        ],
+        "columns": [
+          "weapon_heat",
+          "remaining_disabled",
+          "dissipation",
+          "heat"
+        ]
+      }
+    ]
+  },
+  "stagger": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Stagger maintenance 01 - age boundaries",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "stagger history contains an uncounted hit of 12 and a counted hit of 9 both <age> wall seconds old",
+            "parameters": [
+              "age"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "current stagger totals are inspected then expiry maintenance runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "inspected uncounted damage is <uncounted> counted damage is <counted> and surviving nodes number <nodes>",
+            "parameters": [
+              "uncounted",
+              "counted",
+              "nodes"
+            ]
+          }
+        ],
+        "columns": [
+          "age",
+          "uncounted",
+          "counted",
+          "nodes"
+        ]
+      },
+      {
+        "name": "Stagger maintenance 02 - whole hits",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "chronological recent stagger hits are 12 uncounted 9 counted 15 uncounted and 8 uncounted"
+          },
+          {
+            "keyword": "When",
+            "text": "stagger maintenance action <action> uses level <level>",
+            "parameters": [
+              "action",
+              "level"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "uncounted damage is <uncounted> counted damage is <counted> and surviving nodes number <nodes>",
+            "parameters": [
+              "uncounted",
+              "counted",
+              "nodes"
+            ]
+          }
+        ],
+        "columns": [
+          "action",
+          "level",
+          "uncounted",
+          "counted",
+          "nodes"
+        ]
+      },
+      {
+        "name": "Stagger maintenance 03 - heartbeat consequences",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a started upright mech of <tons> tons receives one external hit of <damage> at wall time zero with new stagger mode <mode>",
+            "parameters": [
+              "tons",
+              "damage",
+              "mode"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the heartbeat reaches wall second <seconds> with piloting roll <roll>",
+            "parameters": [
+              "seconds",
+              "roll"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "stagger roll count is <checks> the mech is fallen <fallen> and remaining stagger nodes number <nodes>",
+            "parameters": [
+              "checks",
+              "fallen",
+              "nodes"
+            ]
+          }
+        ],
+        "columns": [
+          "tons",
+          "damage",
+          "mode",
+          "seconds",
+          "roll",
+          "checks",
+          "fallen",
+          "nodes"
+        ]
+      },
+      {
+        "name": "Stagger maintenance 04 - counted history",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a 50 ton mech in new stagger mode 1 has already passed a check for 20 counted damage"
+          },
+          {
+            "keyword": "When",
+            "text": "another <damage> damage arrives and the next five-second heartbeat check occurs",
+            "parameters": [
+              "damage"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "additional stagger roll count is <checks> and the stagger modifier is <modifier>",
+            "parameters": [
+              "checks",
+              "modifier"
+            ]
+          }
+        ],
+        "columns": [
+          "damage",
+          "checks",
+          "modifier"
+        ]
+      }
+    ]
+  },
+  "ticks": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh heat session with standard ready units and independent clocks"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Per-tick updates 01 - turn cadence",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a running mech with gyro damage and posture <posture>",
+            "parameters": [
+              "posture"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "pilot maintenance runs at event tick <tick> with a successful piloting roll",
+            "parameters": [
+              "tick"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "stability roll count is <checks>",
+            "parameters": [
+              "checks"
+            ]
+          }
+        ],
+        "columns": [
+          "posture",
+          "tick",
+          "checks"
+        ]
+      },
+      {
+        "name": "Per-tick updates 02 - gravity injury",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an upright mech in special gravity with movement <movement> actual speed <speed> and base maximum speed 64.5 KPH",
+            "parameters": [
+              "movement",
+              "speed"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the turn-boundary gravity piloting check fails"
+          },
+          {
+            "keyword": "Then",
+            "text": "each intact leg takes <damage> internal damage and injured limbs number <limbs>",
+            "parameters": [
+              "damage",
+              "limbs"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "no gravity-induced fall occurs"
+          }
+        ],
+        "columns": [
+          "movement",
+          "speed",
+          "damage",
+          "limbs"
+        ]
+      },
+      {
+        "name": "Per-tick updates 03 - stationary turret",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary vehicle with automatic turret flag enabled hull facing <hull> turret facing 17 and a target at absolute bearing <bearing>",
+            "parameters": [
+              "hull",
+              "bearing"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "its turret eligibility state is <state>",
+            "parameters": [
+              "state"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the standard dispatcher advances 2 seconds without a movement event"
+          },
+          {
+            "keyword": "Then",
+            "text": "relative turret facing is <turret> and turret tracking marks LOS <los>",
+            "parameters": [
+              "turret",
+              "los"
+            ]
+          }
+        ],
+        "columns": [
+          "hull",
+          "bearing",
+          "state",
+          "turret",
+          "los"
+        ]
+      },
+      {
+        "name": "Per-tick updates 04 - recycle completion",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a functional weapon with recycle 4 and temporary failure <failure>",
+            "parameters": [
+              "failure"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "event time advances <seconds> seconds and one heartbeat runs",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "weapon and first-slot recycle are <remaining> temporary failure is <after> and completion notice is <notice>",
+            "parameters": [
+              "remaining",
+              "after",
+              "notice"
+            ]
+          }
+        ],
+        "columns": [
+          "failure",
+          "seconds",
+          "remaining",
+          "after",
+          "notice"
+        ]
+      },
+      {
+        "name": "Per-tick updates 05 - fire terrain",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a live unit of class <class> movement <movement> enters cached FIRE terrain",
+            "parameters": [
+              "class",
+              "movement"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "movement reaches the fiery-death check"
+          },
+          {
+            "keyword": "Then",
+            "text": "the unit is destroyed <destroyed> with reason <reason>",
+            "parameters": [
+              "destroyed",
+              "reason"
+            ]
+          }
+        ],
+        "columns": [
+          "class",
+          "movement",
+          "destroyed",
+          "reason"
+        ]
+      },
+      {
+        "name": "Per-tick updates 06 - dropship notice throttle",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a dropship last announced at event tick <last>",
+            "parameters": [
+              "last"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "a throttled dropship descent notice is requested at event tick <now>",
+            "parameters": [
+              "now"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the notice is emitted <emitted> and last notice tick is <stored>",
+            "parameters": [
+              "emitted",
+              "stored"
+            ]
+          }
+        ],
+        "columns": [
+          "last",
+          "now",
+          "emitted",
+          "stored"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+c_file,c_line,function,status,python_matches
+btech/crit.c,42,correct_speed,ABSENT,
+btech/crit.c,61,explode_unit,PRESENT,systems/missile.py:716
+btech/crit.c,88,NormalizeArmActuatorCrits,ABSENT,
+btech/crit.c,104,NormalizeLegActuatorCrits,ABSENT,
+btech/crit.c,132,NormalizeLocActuatorCrits,ABSENT,
+btech/crit.c,206,NormalizeAllActuatorCrits,PRESENT,systems/criticals.py:1530; systems/damage.py:235
+btech/crit.c,338,handleWeaponCrit,PRESENT,systems/criticals.py:20; systems/criticals.py:1105
+btech/crit.c,486,JamMainWeapon,ABSENT,
+btech/crit.c,529,pickRandomWeapon,ABSENT,
+btech/crit.c,567,limitSpeedToCruise,ABSENT,
+btech/crit.c,582,DoVehicleStablizerCrit,PRESENT,systems/vehicle_combat.py:450
+btech/crit.c,608,DoTurretLockCrit,PRESENT,systems/vehicle_combat.py:500
+btech/crit.c,628,DoTurretJamCrit,PRESENT,systems/vehicle_combat.py:472
+btech/crit.c,652,DoWeaponJamCrit,ABSENT,
+btech/crit.c,711,DoWeaponDestroyedCrit,ABSENT,
+btech/crit.c,750,DoTurretBlownOffCrit,PRESENT,systems/vehicle_combat.py:520
+btech/crit.c,765,DoAmmunitionCrit,PRESENT,systems/vehicle_combat.py:598
+btech/crit.c,818,DoCargoInfantryCrit,ABSENT,
+btech/crit.c,831,DoVehicleEngineHit,PRESENT,systems/vehicle_combat.py:543
+btech/crit.c,881,DoVehicleFuelTankCrit,PRESENT,systems/vehicle_combat.py:575
+btech/crit.c,908,DoVehicleCrewStunnedCrit,PRESENT,systems/vehicle_combat.py:403
+btech/crit.c,922,DoVehicleDriverCrit,PRESENT,systems/vehicle_combat.py:367
+btech/crit.c,933,DoVehicleSensorCrit,PRESENT,systems/vehicle_combat.py:435
+btech/crit.c,943,DoVehicleCommanderHit,PRESENT,systems/vehicle_combat.py:383
+btech/crit.c,958,DoVehicleCrewKilledCrit,PRESENT,systems/vehicle_combat.py:418
+btech/crit.c,977,DoVTOLCoPilotCrit,PRESENT,systems/vehicle_combat.py:675
+btech/crit.c,988,DoVTOLPilotHit,PRESENT,systems/vehicle_combat.py:690
+btech/crit.c,1003,DoVTOLRotorDestroyedCrit,PRESENT,systems/vehicle_combat.py:721
+btech/crit.c,1024,DoVTOLRotorDamagedCrit,ABSENT,
+btech/crit.c,1047,DoVTOLTailRotorDamagedCrit,ABSENT,
+btech/crit.c,1066,StartVTOLCrash,ABSENT,
+btech/crit.c,1092,HandleAdvFasaVehicleCrit,ABSENT,
+btech/crit.c,1363,HandleVTOLCrit,ABSENT,
+btech/crit.c,1453,DestroyMainWeapon,ABSENT,
+btech/crit.c,1498,HandleFasaVehicleCrit,ABSENT,
+btech/crit.c,1551,HandleVehicleCrit,ABSENT,
+btech/crit.c,1670,HandleMechCrit,PRESENT,systems/criticals.py:19; systems/criticals.py:752; systems/criticals.py:1106; systems/criticals.py:1298; systems/criticals.py:1395; systems/criticals.py:1408; systems/criticals.py:1487; tests/test_criticals.py:402; tests/test_criticals.py:616; tests/test_m1_battle.py:166
+btech/crit.c,2346,HandleCritical,PRESENT,systems/combat.py:1367; systems/combat.py:1866; systems/combat.py:1991; systems/missile.py:352; tests/integration_test.py:959; tests/test_m4_battle.py:163
+btech/failures.c,29,GetBrandIndex,ABSENT,
+btech/failures.c,53,GetPartBrandName,ABSENT,
+btech/failures.c,68,FailureRadioStatic,ABSENT,
+btech/failures.c,78,mech_rrec_event,ABSENT,
+btech/failures.c,88,mech_srec_event,ABSENT,
+btech/failures.c,116,FailureRadioShort,ABSENT,
+btech/failures.c,125,FailureRadioRange,ABSENT,
+btech/failures.c,137,FailureComputerShutdown,ABSENT,
+btech/failures.c,145,FailureComputerScanner,ABSENT,
+btech/failures.c,189,FailureComputerTarget,ABSENT,
+btech/failures.c,196,FailureWeaponMissiles,ABSENT,
+btech/failures.c,207,FailureWeaponDud,ABSENT,
+btech/failures.c,224,FailureWeaponJammed,ABSENT,
+btech/failures.c,235,FailureWeaponRange,ABSENT,
+btech/failures.c,247,FailureWeaponDamage,ABSENT,
+btech/failures.c,258,FailureWeaponHeat,ABSENT,
+btech/failures.c,268,FailureWeaponSpike,ABSENT,
+btech/failures.c,283,CheckGenericFail,ABSENT,
+btech/failures.c,337,CheckWeaponFailed,ABSENT,
+btech/mech.damage.c,44,MySeriousColorStr,ABSENT,
+btech/mech.damage.c,49,MySeriousStr,ABSENT,
+btech/mech.damage.c,54,MySeriousnessCheck,ABSENT,
+btech/mech.damage.c,69,MySeriousnessCheckR,ABSENT,
+btech/mech.damage.c,249,cause_internaldamage,PRESENT,systems/combat.py:1274; systems/combat.py:2017; systems/criticals.py:687; systems/damage.py:564
+btech/mech.damage.c,809,DestroyWeapon,PRESENT,systems/criticals.py:21; systems/criticals.py:997; tests/test_criticals.py:799; tests/test_criticals.py:945
+btech/mech.damage.c,849,CountWeaponsInLoc,ABSENT,
+btech/mech.damage.c,864,FindWeaponTypeNumInLoc,ABSENT,
+btech/mech.damage.c,882,LoseWeapon,ABSENT,
+btech/mech.damage.c,906,DestroyHeatSink,ABSENT,
+btech/mech.damage.c,922,DestroySection,PRESENT,systems/damage.py:4; systems/damage.py:12; systems/damage.py:270; tests/test_damage.py:2
+btech/mech.damage.c,1116,setarmorstatus_func,ABSENT,
+btech/mech.damage.c,1144,dodamage_func,ABSENT,
+btech/mech.damage.c,1183,mech_damage,PRESENT,systems/physical.py:1640; systems/physical.py:1642; systems/physical.py:1643; systems/physical.py:1728; systems/physical.py:1731; systems/physical.py:1897; systems/physical.py:1903; systems/physical.py:1904; systems/physical.py:1906
+btech/mech.damage.c,1202,mech_damage_section,ABSENT,
+btech/mech.enhanced.criticals.c,20,getWeapData,PRESENT,systems/enhanced_crits.py:129
+btech/mech.enhanced.criticals.c,40,getCritAddedBTH,PRESENT,systems/enhanced_crits.py:174; systems/enhanced_crits.py:311
+btech/mech.enhanced.criticals.c,82,getCritAddedHeat,PRESENT,systems/combat.py:2403; systems/enhanced_crits.py:193
+btech/mech.enhanced.criticals.c,116,getCritSubDamage,PRESENT,systems/enhanced_crits.py:212
+btech/mech.enhanced.criticals.c,153,canWeapExplodeFromDamage,PRESENT,systems/enhanced_crits.py:235
+btech/mech.enhanced.criticals.c,190,canWeapJamFromDamage,PRESENT,systems/enhanced_crits.py:255
+btech/mech.enhanced.criticals.c,227,isWeapAmmoFeedLocked,PRESENT,systems/enhanced_crits.py:274; systems/weapon_modes.py:180
+btech/mech.enhanced.criticals.c,260,countDamagedSlotsFromCrit,ABSENT,
+btech/mech.enhanced.criticals.c,272,countDamagedSlots,PRESENT,systems/enhanced_crits.py:288
+btech/mech.enhanced.criticals.c,296,shouldDestroyWeapon,PRESENT,systems/enhanced_crits.py:300
+btech/mech.enhanced.criticals.c,321,scoreEnhancedWeaponCriticalHit,PRESENT,systems/criticals.py:1101; systems/criticals.py:1218; systems/criticals.py:1272; systems/enhanced_crits.py:327
+btech/mech.enhanced.criticals.c,432,mech_weaponstatus,PRESENT,systems/enhanced_crits.py:5
+btech/mech.enhanced.criticals.c,516,showWeaponDamageAndInfo,PRESENT,systems/enhanced_crits.py:5
+btech/mech.hitloc.c,22,FindPunchLocation,ABSENT,
+btech/mech.hitloc.c,157,FindKickLocation,ABSENT,
+btech/mech.hitloc.c,254,ModifyHeadHit,ABSENT,
+btech/mech.hitloc.c,289,get_bsuit_hitloc,ABSENT,
+btech/mech.hitloc.c,303,TransferTarget,ABSENT,
+btech/mech.hitloc.c,330,FindSwarmHitLocation,ABSENT,
+btech/mech.hitloc.c,372,crittable,ABSENT,
+btech/mech.hitloc.c,414,FindFasaHitLocation,PRESENT,systems/combat.py:931
+btech/mech.hitloc.c,1372,DoMotiveSystemHit,ABSENT,
+btech/mech.hitloc.c,1461,FindAdvFasaVehicleHitLocation,ABSENT,
+btech/mech.hitloc.c,1652,FindHitLocation_CritProof,ABSENT,
+btech/mech.hitloc.c,2154,FindHitLocation,PRESENT,physics/collision.py:294; systems/combat.py:1023; systems/physical.py:1444
+btech/mech.hitloc.c,2834,FindAreaHitGroup,PRESENT,systems/combat.py:838; systems/combat.py:892; systems/vehicle_combat.py:328; tests/test_combat.py:553; tests/test_m1_battle.py:24; tests/test_m1_battle.py:203; tests/test_vehicle.py:468
+btech/mech.hitloc.c,2926,FindTargetHitLoc,PRESENT,systems/combat.py:1763; systems/combat.py:1785; systems/missile.py:330; systems/missile.py:407; systems/physical.py:1214; tests/test_aim.py:342
+btech/mech.hitloc.c,2954,findNARCHitLoc,PRESENT,systems/missile.py:912
+btech/mech.hitloc.c,2977,FindTCHitLoc,PRESENT,systems/combat.py:985; systems/combat.py:998; systems/combat.py:1021; systems/combat.py:1094; systems/combat.py:1568; systems/combat.py:1784; tests/test_aim.py:7; tests/test_aim.py:198; tests/test_aim.py:296
+btech/mech.hitloc.c,3077,FindAimHitLoc,PRESENT,systems/combat.py:984; systems/combat.py:999; systems/combat.py:1021; systems/combat.py:1043; systems/combat.py:1099; systems/combat.py:1762; systems/combat.py:1784; tests/test_aim.py:7; tests/test_aim.py:117

@@ -1,0 +1,58 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        9,
+        9
+      ]
+    },
+    {
+      "name": "inside",
+      "id": 20,
+      "size": [
+        9,
+        9
+      ],
+      "cf": 100,
+      "cfmax": 100,
+      "flags": 6,
+      "grav": 120,
+      "temp": -40
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        1,
+        3,
+        0
+      ],
+      "facing": 0,
+      "weapons": [
+        "IS.MediumLaser"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "transfer",
+      "args": "u",
+      "map": "inside"
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "seed": 5489
+  }
+}

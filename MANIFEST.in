@@ -1,0 +1,42 @@
+include README.md pyproject.toml MANIFEST.in template-catalog.lock.json
+include CONTRIBUTING.md
+include LICENSE CREDITS.md
+recursive-include notices *.txt
+recursive-include core *.py
+recursive-include data *.py *.json
+recursive-include entities *.py
+recursive-include physics *.py
+recursive-include systems *.py
+recursive-include tools *.py
+recursive-include acceptance *.py
+recursive-include tests *.py
+recursive-include hardening *.py
+recursive-include properties *.py
+recursive-include features *.feature
+recursive-include qa *.py *.json *.md
+include qa/fixtures/aerospace/Friday
+recursive-include specs *.json *.csv *.md
+recursive-include docs *.md *.json
+recursive-include examples *.md *.json
+prune .git
+prune .worktrees
+prune .claude
+prune .codex
+prune .agents
+prune .swarmforge
+prune .forge
+prune swarmforge
+prune tasks
+prune btmux
+prune btmux-mechs
+prune references
+prune btmux-function-presence
+prune docs/evidence
+prune docs/gameplay
+prune qa/evidence
+prune tmp
+prune build
+prune dist
+global-exclude __pycache__ *.py[cod] .DS_Store
+prune examples/gameplay_scenarios/results
+prune examples/gameplay_scenarios/ai_results

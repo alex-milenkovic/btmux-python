@@ -1,0 +1,153 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        9,
+        9
+      ],
+      "hexes": []
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        1,
+        3,
+        0
+      ],
+      "facing": 0,
+      "weapons": [
+        "IS.AC/5"
+      ],
+      "ammo": [
+        {
+          "weapon": "IS.AC/5",
+          "rounds": 20,
+          "section": 2,
+          "critical": 5
+        }
+      ],
+      "heat_state": {
+        "num_sinks": 10
+      }
+    },
+    {
+      "name": "pilot",
+      "id": 41,
+      "at": [
+        5,
+        5,
+        0
+      ],
+      "fallen": true
+    }
+  ],
+  "config": {
+    "periodic_updates": true,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {
+      "sensor.detect": [
+        2220,
+        2081
+      ],
+      "attack_rolls": [
+        8,
+        4
+      ],
+      "failure_weapon_chance": [
+        9
+      ],
+      "failure_reliability": [
+        36
+      ],
+      "terrain_rolls": [
+        7,
+        8,
+        5
+      ],
+      "pilot_rolls": [
+        5,
+        5
+      ],
+      "rolls": [
+        7
+      ],
+      "fall_directions": [
+        5
+      ],
+      "hit_location_rolls": [
+        7
+      ],
+      "damage_entry": [
+        5
+      ],
+      "visibility_change": [
+        11,
+        20
+      ]
+    }
+  },
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "conditions": [
+          "heavy_precipitation"
+        ],
+        "temperature": 0,
+        "windspeed": 61
+      }
+    },
+    {
+      "op": "command",
+      "name": "lock",
+      "args": [
+        1,
+        1,
+        "H"
+      ]
+    },
+    {
+      "op": "command",
+      "name": "sight",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "pilot",
+      "name": "stand",
+      "args": [
+        "check"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "pilot",
+      "name": "stand",
+      "args": []
+    },
+    {
+      "op": "advance",
+      "seconds": 2
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

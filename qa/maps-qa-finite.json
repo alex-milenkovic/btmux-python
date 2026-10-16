@@ -1,0 +1,214 @@
+{
+  "conditions/last-jet-actual-fall": {
+    "fall_directions": [
+      2
+    ],
+    "rolls": [
+      4
+    ]
+  },
+  "conditions/reactor-local-False": {
+    "damage_entry": [
+      6,
+      5
+    ],
+    "fall_directions": [
+      2
+    ],
+    "hit_location_rolls": [
+      9
+    ],
+    "rolls": [
+      4
+    ]
+  },
+  "conditions/reactor-local-True": {
+    "damage_entry": [
+      6,
+      5
+    ],
+    "fall_directions": [
+      2
+    ],
+    "hit_location_rolls": [
+      9
+    ],
+    "rolls": [
+      4
+    ]
+  },
+  "integration/example-01-1": {
+    "map_contact_id": [
+      4,
+      4,
+      7,
+      20,
+      9,
+      3
+    ]
+  },
+  "integration/example-01-5": {
+    "map_contact_id": [
+      4,
+      4
+    ]
+  },
+  "integration/example-02-0": {
+    "map_contact_id": [
+      4,
+      4
+    ]
+  },
+  "links/ordinary-edge-carried-100": {
+    "map_contact_id": [
+      4,
+      4,
+      7,
+      20
+    ]
+  },
+  "visibility/example-01-0": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-01-1": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-01-2": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-01-3": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-01-4": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-02-0": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-02-1": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-02-2": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  },
+  "visibility/example-02-3": {
+    "visibility_change": [
+      -23,
+      -24,
+      -12,
+      40,
+      -1,
+      -28,
+      30,
+      -5,
+      -16,
+      30,
+      -20,
+      -26
+    ]
+  }
+}

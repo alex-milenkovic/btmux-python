@@ -1,0 +1,1530 @@
+{
+  "contacts": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Contact readout 01 - packed preferences",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "contact brief value <initial>",
+            "parameters": [
+              "initial"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot issues brief <request>",
+            "parameters": [
+              "request"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the command is <accepted> and brief value is <value>",
+            "parameters": [
+              "accepted",
+              "value"
+            ]
+          }
+        ],
+        "columns": [
+          "initial",
+          "request",
+          "accepted",
+          "value"
+        ]
+      },
+      {
+        "name": "Contact readout 02 - filters",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "identified contacts friend f enemy e shutdown enemy s destroyed enemy d and locked shutdown enemy t"
+          },
+          {
+            "keyword": "And",
+            "text": "contact brevity is 2 with no buildings"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests contacts with filter <filter>",
+            "parameters": [
+              "filter"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the included unit IDs as an unordered set are <ids>",
+            "parameters": [
+              "ids"
+            ]
+          }
+        ],
+        "columns": [
+          "filter",
+          "ids"
+        ]
+      },
+      {
+        "name": "Contact readout 03 - ordering",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "visible live contacts near at range 2 far at range 8 and destroyed wreck at range 1 in that roster order"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests contact brevity <brevity>",
+            "parameters": [
+              "brevity"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "displayed contact order is <order> and ordinary heading is <heading>",
+            "parameters": [
+              "order",
+              "heading"
+            ]
+          }
+        ],
+        "columns": [
+          "brevity",
+          "order",
+          "heading"
+        ]
+      },
+      {
+        "name": "Contact readout 04 - status masking",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a same-team contact with primary visibility and terrain block <block>",
+            "parameters": [
+              "block"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the contact is heated jellied burning and has active ECM and attached NARC"
+          },
+          {
+            "keyword": "When",
+            "text": "a brief contact list is requested"
+          },
+          {
+            "keyword": "Then",
+            "text": "the name is <name> apparent friend is <friend> and five status characters are <status>",
+            "parameters": [
+              "name",
+              "friend",
+              "status"
+            ]
+          }
+        ],
+        "columns": [
+          "block",
+          "name",
+          "friend",
+          "status"
+        ]
+      }
+    ]
+  },
+  "controls": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Sensor controls 01 - delayed selection",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "visual sensors and a unit target lock with retained hex coordinates"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests sensors <request>",
+            "parameters": [
+              "request"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "current sensors are <current> wanted sensors are <wanted> and the unit target is <target>",
+            "parameters": [
+              "current",
+              "wanted",
+              "target"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the hex coordinates and lock mode bits are unchanged"
+          }
+        ],
+        "columns": [
+          "request",
+          "seconds",
+          "current",
+          "wanted",
+          "target"
+        ]
+      },
+      {
+        "name": "Sensor controls 02 - replace pending",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a sensor change from VV to IE requested at time zero"
+          },
+          {
+            "keyword": "When",
+            "text": "the engine advances 3 seconds"
+          },
+          {
+            "keyword": "And",
+            "text": "the pilot requests sensors <request>",
+            "parameters": [
+              "request"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances to time <time>",
+            "parameters": [
+              "time"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "current sensors are <current> wanted sensors are <wanted> and the sensor deadline is <deadline>",
+            "parameters": [
+              "current",
+              "wanted",
+              "deadline"
+            ]
+          }
+        ],
+        "columns": [
+          "request",
+          "time",
+          "current",
+          "wanted",
+          "deadline"
+        ]
+      },
+      {
+        "name": "Sensor controls 03 - light availability",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "current sensors <pair> and map light 0",
+            "parameters": [
+              "pair"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "configured map light <light> is read by the normal time 25 map update",
+            "parameters": [
+              "light"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "current sensors are <current> with no sensor change event created",
+            "parameters": [
+              "current"
+            ]
+          }
+        ],
+        "columns": [
+          "pair",
+          "light",
+          "current"
+        ]
+      },
+      {
+        "name": "Sensor controls 04 - capability readout",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "current sensors <pair> and map light 0",
+            "parameters": [
+              "pair"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "all equipment required by that sensor pair is installed"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests sensor readout <style>",
+            "parameters": [
+              "style"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the sensor name includes <name> and scanning description is <arc>",
+            "parameters": [
+              "name",
+              "arc"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "blocker details are <details>",
+            "parameters": [
+              "details"
+            ]
+          }
+        ],
+        "columns": [
+          "pair",
+          "style",
+          "name",
+          "arc",
+          "details"
+        ]
+      }
+    ]
+  },
+  "detection": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Contact acquisition 01 - normal lifecycle",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a started observer and an enemy one hex ahead with no cached contact"
+          },
+          {
+            "keyword": "When",
+            "text": "the visibility workflow is <workflow>",
+            "parameters": [
+              "workflow"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the enemy contact is <seen> and enemy count is <count>",
+            "parameters": [
+              "seen",
+              "count"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the observer has <chains> pending acquisition chains",
+            "parameters": [
+              "chains"
+            ]
+          }
+        ],
+        "columns": [
+          "workflow",
+          "seen",
+          "count",
+          "chains"
+        ]
+      },
+      {
+        "name": "Contact acquisition 02 - autocontacts",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "autocontact mode <mode> and a new <relation> contact with clear NB visibility",
+            "parameters": [
+              "mode",
+              "relation"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "an ordinary acquisition sweep notices the contact"
+          },
+          {
+            "keyword": "Then",
+            "text": "the acquisition notification style is <style> and warning is <warning>",
+            "parameters": [
+              "style",
+              "warning"
+            ]
+          }
+        ],
+        "columns": [
+          "mode",
+          "relation",
+          "style",
+          "warning"
+        ]
+      },
+      {
+        "name": "Contact acquisition 03 - map sensor mask",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "equal sensors <sensor> with valid equipment and an eligible target at range 1",
+            "parameters": [
+              "sensor"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the configured sensor disable mask is <mask>",
+            "parameters": [
+              "mask"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "sensor eligibility is inspected through the diagnostic command"
+          },
+          {
+            "keyword": "Then",
+            "text": "the eligible sensor mask is <eligible>",
+            "parameters": [
+              "eligible"
+            ]
+          }
+        ],
+        "columns": [
+          "sensor",
+          "mask",
+          "eligible"
+        ]
+      },
+      {
+        "name": "Contact acquisition 04 - blind recovery",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an observer with primary sensor <primary> secondary V and clear LOS to a flash source",
+            "parameters": [
+              "primary"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "a guaranteed flash of duration 4 occurs"
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances <seconds> seconds with recovery consciousness <conscious>",
+            "parameters": [
+              "seconds",
+              "conscious"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "blinded is <blinded> and recovery message count is <messages>",
+            "parameters": [
+              "blinded",
+              "messages"
+            ]
+          }
+        ],
+        "columns": [
+          "primary",
+          "seconds",
+          "conscious",
+          "blinded",
+          "messages"
+        ]
+      }
+    ]
+  },
+  "ecm": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "ECM fields 01 - inclusive ranges",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a hostile <suite> ECM emitter at real 3D range <range> from an otherwise unjammed observer",
+            "parameters": [
+              "suite",
+              "range"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the normal ECM update runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "the observer is ECM disturbed <disturbed>",
+            "parameters": [
+              "disturbed"
+            ]
+          }
+        ],
+        "columns": [
+          "suite",
+          "range",
+          "disturbed"
+        ]
+      },
+      {
+        "name": "ECM fields 02 - strength thresholds",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "friendly Guardian ECM count <fg> Angel ECM count <fa> and hostile Guardian ECCM count <hc>",
+            "parameters": [
+              "fg",
+              "fa",
+              "hc"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "friendly Guardian ECCM count <fc> and hostile Angel ECM count <ha>",
+            "parameters": [
+              "fc",
+              "ha"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the normal ECM update runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "ECM countered is <countered>",
+            "parameters": [
+              "countered"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the observer is ECM disturbed <disturbed>",
+            "parameters": [
+              "disturbed"
+            ]
+          }
+        ],
+        "columns": [
+          "fg",
+          "fa",
+          "hc",
+          "fc",
+          "ha",
+          "countered",
+          "disturbed"
+        ]
+      },
+      {
+        "name": "ECM fields 03 - transition delivery",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a hostile Guardian emitter initially in range of the observer"
+          },
+          {
+            "keyword": "And",
+            "text": "the observer has functional Beagle equipment and BB sensors with a separate unprotected nonstealth target at range 1"
+          },
+          {
+            "keyword": "When",
+            "text": "the engine performs <updates> ECM updates followed by emitter removal and one update",
+            "parameters": [
+              "updates"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "static notification count is 1 and normal-again notification count is 1"
+          },
+          {
+            "keyword": "And",
+            "text": "ECM disturbed is False and the probe can detect an eligible target"
+          }
+        ],
+        "columns": [
+          "updates"
+        ]
+      },
+      {
+        "name": "ECM fields 04 - live pod sections",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "one iNARC ECM pod on a MECH section with armor <armor> internal <internal> and destroyed config bit <config>",
+            "parameters": [
+              "armor",
+              "internal",
+              "config"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "there are no other ECM or ECCM fields"
+          },
+          {
+            "keyword": "When",
+            "text": "the normal ECM update runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "the observer is ECM disturbed <disturbed>",
+            "parameters": [
+              "disturbed"
+            ]
+          }
+        ],
+        "columns": [
+          "armor",
+          "internal",
+          "config",
+          "disturbed"
+        ]
+      }
+    ]
+  },
+  "illumination": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Searchlight illumination 01 - switching",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a functional searchlight initially <initial>",
+            "parameters": [
+              "initial"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests slite twice and the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "searchlight on is <on> with transition pending <pending>",
+            "parameters": [
+              "on",
+              "pending"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "exactly one slite request was accepted"
+          }
+        ],
+        "columns": [
+          "initial",
+          "seconds",
+          "on",
+          "pending"
+        ]
+      },
+      {
+        "name": "Searchlight illumination 02 - source predicate",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an on searchlight at range <range> and target arc <arc>",
+            "parameters": [
+              "range",
+              "arc"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "cached intervening woods are <woods> water hexes <water> and terrain blocked <block>",
+            "parameters": [
+              "woods",
+              "water",
+              "block"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the unit illumination diagnostic evaluates the source"
+          },
+          {
+            "keyword": "Then",
+            "text": "the source qualifies <qualifies>",
+            "parameters": [
+              "qualifies"
+            ]
+          }
+        ],
+        "columns": [
+          "range",
+          "arc",
+          "woods",
+          "water",
+          "block",
+          "qualifies"
+        ]
+      },
+      {
+        "name": "Searchlight illumination 03 - retention",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an already illuminated target with warning preference <warn>",
+            "parameters": [
+              "warn"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "<sources> qualifying other light sources remain at range 30",
+            "parameters": [
+              "sources"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the normal end-light update runs twice"
+          },
+          {
+            "keyword": "Then",
+            "text": "the target illuminated flag is <lit> and loss notification count is <messages>",
+            "parameters": [
+              "lit",
+              "messages"
+            ]
+          }
+        ],
+        "columns": [
+          "warn",
+          "sources",
+          "lit",
+          "messages"
+        ]
+      }
+    ]
+  },
+  "los": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "LOS geometry and modifiers 01 - eye heights",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a unit of class <class> posture <posture> movement <movement> at Z 2",
+            "parameters": [
+              "class",
+              "posture",
+              "movement"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the LOS height diagnostic is requested"
+          },
+          {
+            "keyword": "Then",
+            "text": "effective unit LOS elevation is <height>",
+            "parameters": [
+              "height"
+            ]
+          }
+        ],
+        "columns": [
+          "class",
+          "posture",
+          "movement",
+          "height"
+        ]
+      },
+      {
+        "name": "LOS geometry and modifiers 02 - overlay woods",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a target in <terrain> under <overlay> at height <height> above the floor",
+            "parameters": [
+              "terrain",
+              "overlay",
+              "height"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the observer has visual primary visibility at daylight with no intervening woods or partial cover"
+          },
+          {
+            "keyword": "When",
+            "text": "the sensor terrain modifier is inspected"
+          },
+          {
+            "keyword": "Then",
+            "text": "the terrain modifier is <modifier>",
+            "parameters": [
+              "modifier"
+            ]
+          }
+        ],
+        "columns": [
+          "terrain",
+          "overlay",
+          "height",
+          "modifier"
+        ]
+      },
+      {
+        "name": "LOS geometry and modifiers 03 - infrared profiles",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "infrared profile <profile> and a hulldown target with partial cover and no woods",
+            "parameters": [
+              "profile"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "target heat is <heat> plus heat <plus> and minus heat <minus>",
+            "parameters": [
+              "heat",
+              "plus",
+              "minus"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the observer has primary infrared visibility"
+          },
+          {
+            "keyword": "When",
+            "text": "the sensor terrain modifier is inspected"
+          },
+          {
+            "keyword": "Then",
+            "text": "the terrain modifier is <modifier>",
+            "parameters": [
+              "modifier"
+            ]
+          }
+        ],
+        "columns": [
+          "profile",
+          "heat",
+          "plus",
+          "minus",
+          "modifier"
+        ]
+      },
+      {
+        "name": "LOS geometry and modifiers 04 - cached identification",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "the diagnostic cached contact has primary <primary> secondary <secondary> and terrain block <block>",
+            "parameters": [
+              "primary",
+              "secondary",
+              "block"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "normal and NB line of sight are requested"
+          },
+          {
+            "keyword": "Then",
+            "text": "detected is <detected> and identified is <identified>",
+            "parameters": [
+              "detected",
+              "identified"
+            ]
+          }
+        ],
+        "columns": [
+          "primary",
+          "secondary",
+          "block",
+          "detected",
+          "identified"
+        ]
+      }
+    ]
+  },
+  "scanning": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Scanner commands 01 - range gates",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a scanner range <scan_range> and an identified ordinary unit at real range <range>",
+            "parameters": [
+              "scan_range",
+              "range"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot issues <command> for the target ID",
+            "parameters": [
+              "command"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the command is <accepted> and the target receives <notices> scan notifications",
+            "parameters": [
+              "accepted",
+              "notices"
+            ]
+          }
+        ],
+        "columns": [
+          "scan_range",
+          "range",
+          "command",
+          "accepted",
+          "notices"
+        ]
+      },
+      {
+        "name": "Scanner commands 02 - report options",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an identified target with real armor and mounted weapon state within scanner range"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests scan option <option>",
+            "parameters": [
+              "option"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "armor details are <armor> information extras are <info> and weapon details are <weapons>",
+            "parameters": [
+              "armor",
+              "info",
+              "weapons"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the base position and movement report is present"
+          }
+        ],
+        "columns": [
+          "option",
+          "armor",
+          "info",
+          "weapons"
+        ]
+      },
+      {
+        "name": "Scanner commands 03 - markings",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a target with markings <markings> and NB visibility <nb>",
+            "parameters": [
+              "markings",
+              "nb"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot views its contact ID"
+          },
+          {
+            "keyword": "Then",
+            "text": "the view outcome is <outcome>",
+            "parameters": [
+              "outcome"
+            ]
+          }
+        ],
+        "columns": [
+          "markings",
+          "nb",
+          "outcome"
+        ]
+      },
+      {
+        "name": "Scanner commands 04 - dark map range",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an observer at hex 2 2 Z 0 and destination hex 2 5 at floor 4"
+          },
+          {
+            "keyword": "And",
+            "text": "the map is dark <dark>",
+            "parameters": [
+              "dark"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests coordinate range"
+          },
+          {
+            "keyword": "Then",
+            "text": "displayed 3D range rounded to one decimal is <range> and displayed ground range is 3.0",
+            "parameters": [
+              "range"
+            ]
+          }
+        ],
+        "columns": [
+          "dark",
+          "range"
+        ]
+      }
+    ]
+  },
+  "spotting": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Spotter links 01 - delayed datalink",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a shooter with a mounted artillery weapon and no LOS to a friendly self-spotter"
+          },
+          {
+            "keyword": "And",
+            "text": "their real range is <range> and observer radio range is 10",
+            "parameters": [
+              "range"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the shooter requests that spotter and the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the spot request is <accepted> and the datalink is <linked> with handshake pending <pending>",
+            "parameters": [
+              "accepted",
+              "linked",
+              "pending"
+            ]
+          }
+        ],
+        "columns": [
+          "range",
+          "seconds",
+          "accepted",
+          "linked",
+          "pending"
+        ]
+      },
+      {
+        "name": "Spotter links 02 - coordinate movement gate",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an accepted artillery spot handshake at range 10"
+          },
+          {
+            "keyword": "When",
+            "text": "before expiry shooter X changes <sx> shooter Y changes <sy> observer X changes <ox> and observer Y changes <oy>",
+            "parameters": [
+              "sx",
+              "sy",
+              "ox",
+              "oy"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances to the handshake deadline"
+          },
+          {
+            "keyword": "Then",
+            "text": "the datalink is <linked> and movement failure notifications total <messages>",
+            "parameters": [
+              "linked",
+              "messages"
+            ]
+          }
+        ],
+        "columns": [
+          "sx",
+          "sy",
+          "ox",
+          "oy",
+          "linked",
+          "messages"
+        ]
+      },
+      {
+        "name": "Spotter links 03 - watchdog distinction",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a spot link established by <method>",
+            "parameters": [
+              "method"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the observer state becomes <state> and the engine advances 10 seconds",
+            "parameters": [
+              "state"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the datalink is <linked> and a watchdog is pending <watchdog>",
+            "parameters": [
+              "linked",
+              "watchdog"
+            ]
+          }
+        ],
+        "columns": [
+          "method",
+          "state",
+          "linked",
+          "watchdog"
+        ]
+      },
+      {
+        "name": "Spotter links 04 - fire adjustments",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a self-spotter with two linked shooters at fire adjustments 3 and 5 and an unrelated shooter at 7"
+          },
+          {
+            "keyword": "When",
+            "text": "the self-spotter performs <action>",
+            "parameters": [
+              "action"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "both linked adjustments are zero and the unrelated adjustment remains 7"
+          }
+        ],
+        "columns": [
+          "action"
+        ]
+      },
+      {
+        "name": "Spotter links 05 - indirect target rules",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stationary conscious self-spotter with a visible <target> target and no settling lock",
+            "parameters": [
+              "target"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the linked shooter sights with a mounted <weapon> weapon",
+            "parameters": [
+              "weapon"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the indirect attempt is <accepted> with observer modifier <modifier> and target selection <selection>",
+            "parameters": [
+              "accepted",
+              "modifier",
+              "selection"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "ammunition and armor are unchanged"
+          }
+        ],
+        "columns": [
+          "target",
+          "weapon",
+          "accepted",
+          "modifier",
+          "selection"
+        ]
+      }
+    ]
+  },
+  "tag": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "TAG designation 01 - range and stabilization",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a functional TAG unit and an identified enemy at range <range>",
+            "parameters": [
+              "range"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot tags that enemy and the engine advances <seconds> seconds",
+            "parameters": [
+              "seconds"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the TAG command is <accepted> reciprocal relationship is <linked> and stable message count is <stable>",
+            "parameters": [
+              "accepted",
+              "linked",
+              "stable"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the TAG system is recycling <recycling>",
+            "parameters": [
+              "recycling"
+            ]
+          }
+        ],
+        "columns": [
+          "range",
+          "seconds",
+          "accepted",
+          "linked",
+          "stable",
+          "recycling"
+        ]
+      },
+      {
+        "name": "TAG designation 02 - stop and cooldown",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a TAG relationship started at time zero with its original target"
+          },
+          {
+            "keyword": "When",
+            "text": "at time <cancel_time> the pilot requests tag cancellation",
+            "parameters": [
+              "cancel_time"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the engine advances to time <time>",
+            "parameters": [
+              "time"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "cancellation is <accepted> reciprocal relationship is <linked> and the TAG system is recycling <recycling>",
+            "parameters": [
+              "accepted",
+              "linked",
+              "recycling"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "ready message count is <ready>",
+            "parameters": [
+              "ready"
+            ]
+          }
+        ],
+        "columns": [
+          "cancel_time",
+          "time",
+          "accepted",
+          "linked",
+          "recycling",
+          "ready"
+        ]
+      },
+      {
+        "name": "TAG designation 03 - relationship ownership",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a stable TAG relationship to target t and another tagger b"
+          },
+          {
+            "keyword": "When",
+            "text": "the target change is <change> and normal TAG validation runs",
+            "parameters": [
+              "change"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the original tagger remains linked <linked> and target tagged-by is <owner>",
+            "parameters": [
+              "linked",
+              "owner"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the original tagger has a cooldown pending <cooldown>",
+            "parameters": [
+              "cooldown"
+            ]
+          }
+        ],
+        "columns": [
+          "change",
+          "linked",
+          "owner",
+          "cooldown"
+        ]
+      },
+      {
+        "name": "TAG designation 04 - semiguided movement",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a target speed <speed> started <started> and tagged-by relation <tagger>",
+            "parameters": [
+              "speed",
+              "started",
+              "tagger"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the shooter sights with ammunition <ammo>",
+            "parameters": [
+              "ammo"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the applied target movement modifier is <applied>",
+            "parameters": [
+              "applied"
+            ]
+          }
+        ],
+        "columns": [
+          "speed",
+          "started",
+          "tagger",
+          "ammo",
+          "applied"
+        ]
+      }
+    ]
+  },
+  "visibility": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh sensor session with ready units and event time zero"
+      },
+      {
+        "keyword": "And",
+        "text": "an upright observer at hex 2 1 Z 0 facing south on a clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Map terrain visibility 01 - clear strip",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "selected sensors <pair> map visibility <visibility> light <light> and clairvoyance <clairvoyant>",
+            "parameters": [
+              "pair",
+              "visibility",
+              "light",
+              "clairvoyant"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot renders rectangle origin 2 2 width 1 height 5"
+          },
+          {
+            "keyword": "Then",
+            "text": "row-major visibility flags are <flags>",
+            "parameters": [
+              "flags"
+            ]
+          }
+        ],
+        "columns": [
+          "pair",
+          "visibility",
+          "light",
+          "clairvoyant",
+          "flags"
+        ]
+      },
+      {
+        "name": "Map terrain visibility 02 - fire illumination",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "visual sensors map visibility 3 and light 0"
+          },
+          {
+            "keyword": "And",
+            "text": "a <source> light source at hex 2 5",
+            "parameters": [
+              "source"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot renders rectangle origin 2 2 width 1 height 5"
+          },
+          {
+            "keyword": "Then",
+            "text": "row-major visibility flags are <flags>",
+            "parameters": [
+              "flags"
+            ]
+          }
+        ],
+        "columns": [
+          "source",
+          "flags"
+        ]
+      },
+      {
+        "name": "Map terrain visibility 03 - terrain horizons",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "sensors <pair> visibility 30 light 0 and hex 2 2 containing <terrain> at floor <floor>",
+            "parameters": [
+              "pair",
+              "terrain",
+              "floor"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot renders rectangle origin 2 2 width 1 height 3"
+          },
+          {
+            "keyword": "Then",
+            "text": "row-major visibility flags are <flags>",
+            "parameters": [
+              "flags"
+            ]
+          }
+        ],
+        "columns": [
+          "pair",
+          "terrain",
+          "floor",
+          "flags"
+        ]
+      },
+      {
+        "name": "Map terrain visibility 04 - rectangle bounds",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a clear 80 by 60 map"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot renders rectangle origin 0 0 width <width> height <height>",
+            "parameters": [
+              "width",
+              "height"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the render is <accepted> and cell count is <count>",
+            "parameters": [
+              "accepted",
+              "count"
+            ]
+          }
+        ],
+        "columns": [
+          "width",
+          "height",
+          "accepted",
+          "count"
+        ]
+      }
+    ]
+  }
+}

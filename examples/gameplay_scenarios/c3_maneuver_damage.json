@@ -1,0 +1,967 @@
+{
+  "map": {
+    "size": [
+      24,
+      24
+    ]
+  },
+  "random": {
+    "seed": 0,
+    "streams": {
+      "sensor.detect": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "visibility_change": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attack_rolls": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "failure_weapon_chance": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "hit_location_rolls": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "damage_entry": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "failure_generic_chance": [
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000
+      ],
+      "critical_rolls": [
+        8,
+        8,
+        8
+      ],
+      "critical_slot": [
+        0,
+        0
+      ]
+    }
+  },
+  "units": [
+    {
+      "name": "Master",
+      "contact_id": "MM",
+      "at": [
+        3,
+        14,
+        0
+      ],
+      "team": 1,
+      "id": 10,
+      "gunnery": 2,
+      "weapons": [
+        {
+          "name": "IS.MediumLaser",
+          "section": "LA",
+          "critical": 4
+        }
+      ],
+      "communications": {
+        "specials": 128,
+        "working_c3_masters": 1
+      },
+      "sections": [
+        {
+          "index": "LT",
+          "armor": 0,
+          "internal": 12,
+          "slots": [
+            {
+              "index": 0,
+              "special": "C3_MASTER"
+            },
+            {
+              "index": 1,
+              "special": "C3_MASTER"
+            },
+            {
+              "index": 2,
+              "special": "C3_MASTER"
+            },
+            {
+              "index": 3,
+              "special": "C3_MASTER"
+            },
+            {
+              "index": 4,
+              "special": "C3_MASTER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scout",
+      "contact_id": "SS",
+      "at": [
+        3,
+        10,
+        0
+      ],
+      "team": 1,
+      "id": 11,
+      "communications": {
+        "specials": 256
+      },
+      "sections": [
+        {
+          "index": "LT",
+          "armor": 0,
+          "internal": 12,
+          "slots": [
+            {
+              "index": 0,
+              "special": "C3_SLAVE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Backup",
+      "contact_id": "BB",
+      "at": [
+        4,
+        11,
+        0
+      ],
+      "team": 1,
+      "id": 12,
+      "communications": {
+        "specials": 256
+      },
+      "sections": [
+        {
+          "index": "LT",
+          "slots": [
+            {
+              "index": 0,
+              "special": "C3_SLAVE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Target",
+      "contact_id": "TT",
+      "at": [
+        3,
+        6,
+        0
+      ],
+      "team": 2,
+      "id": 13,
+      "facing": 180,
+      "gunnery": 0,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "weapons": [
+        {
+          "name": "IS.LargeLaser",
+          "section": "LA",
+          "critical": 4
+        },
+        {
+          "name": "IS.LargeLaser",
+          "section": "RA",
+          "critical": 4
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "command",
+      "unit": "Scout",
+      "name": "c3",
+      "args": [
+        "MM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Backup",
+      "name": "c3",
+      "args": [
+        "MM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "lock",
+      "args": [
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Scout",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Scout",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "fire",
+      "args": [
+        0,
+        "SS"
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "fire",
+      "args": [
+        1,
+        "MM"
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Master",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Scout",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Scout",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 50
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

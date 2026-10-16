@@ -1,0 +1,1554 @@
+{
+  "kind": "Executable feature inventory and example data",
+  "features": [
+    {
+      "path": "features/six_location_aerofighters/criticals.feature",
+      "sha256": "9b52d21a08545522244fdf00fd69cd21348a97aea24e7d09b00fc351cb40f86f",
+      "outlines": 7,
+      "example_count": 60,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Six location fighter criticals 01 - armor gates",
+          "examples": [
+            {
+              "armor": "89",
+              "original": "100",
+              "threshold": "90",
+              "chance": "6",
+              "result": "true",
+              "draw": "none"
+            },
+            {
+              "armor": "90",
+              "original": "100",
+              "threshold": "90",
+              "chance": "6",
+              "result": "true",
+              "draw": "1..11"
+            },
+            {
+              "armor": "90",
+              "original": "100",
+              "threshold": "90",
+              "chance": "5",
+              "result": "false",
+              "draw": "1..11"
+            },
+            {
+              "armor": "94",
+              "original": "100",
+              "threshold": "90",
+              "chance": "6",
+              "result": "true",
+              "draw": "1..11"
+            },
+            {
+              "armor": "95",
+              "original": "100",
+              "threshold": "90",
+              "chance": "6",
+              "result": "false",
+              "draw": "none"
+            },
+            {
+              "armor": "99",
+              "original": "100",
+              "threshold": "90",
+              "chance": "6",
+              "result": "false",
+              "draw": "none"
+            },
+            {
+              "armor": "100",
+              "original": "100",
+              "threshold": "90",
+              "chance": "23",
+              "result": "true",
+              "draw": "1..71"
+            },
+            {
+              "armor": "100",
+              "original": "100",
+              "threshold": "90",
+              "chance": "22",
+              "result": "false",
+              "draw": "1..71"
+            },
+            {
+              "armor": "98",
+              "original": "100",
+              "threshold": "99",
+              "chance": "6",
+              "result": "true",
+              "draw": "none"
+            },
+            {
+              "armor": "99",
+              "original": "100",
+              "threshold": "99",
+              "chance": "6",
+              "result": "true",
+              "draw": "1..11"
+            },
+            {
+              "armor": "99",
+              "original": "100",
+              "threshold": "99",
+              "chance": "5",
+              "result": "false",
+              "draw": "1..11"
+            },
+            {
+              "armor": "100",
+              "original": "100",
+              "threshold": "99",
+              "chance": "23",
+              "result": "true",
+              "draw": "1..71"
+            },
+            {
+              "armor": "24",
+              "original": "24",
+              "threshold": "90",
+              "chance": "22",
+              "result": "false",
+              "draw": "1..71"
+            },
+            {
+              "armor": "23",
+              "original": "24",
+              "threshold": "90",
+              "chance": "6",
+              "result": "false",
+              "draw": "none"
+            },
+            {
+              "armor": "22",
+              "original": "24",
+              "threshold": "90",
+              "chance": "6",
+              "result": "true",
+              "draw": "1..11"
+            },
+            {
+              "armor": "21",
+              "original": "24",
+              "threshold": "90",
+              "chance": "5",
+              "result": "true",
+              "draw": "none"
+            },
+            {
+              "armor": "0",
+              "original": "0",
+              "threshold": "90",
+              "chance": "6",
+              "result": "true",
+              "draw": "none"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 02 - gate precedence",
+          "examples": [
+            {
+              "overrides": "critproof",
+              "result": "false"
+            },
+            {
+              "overrides": "Move_NONE",
+              "result": "false"
+            },
+            {
+              "overrides": "vcrit0",
+              "result": "true"
+            },
+            {
+              "overrides": "vcrit1",
+              "result": "true"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 03 - disabled critical gates",
+          "examples": [
+            {
+              "overrides": "critproof"
+            },
+            {
+              "overrides": "Move_NONE"
+            },
+            {
+              "overrides": "vcrit0"
+            },
+            {
+              "overrides": "vcrit1"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 04 - direct effects",
+          "examples": [
+            {
+              "fixture": "one-global-weapon-only-weapon-loss",
+              "observation": "no-candidate-no-selection-draw"
+            },
+            {
+              "fixture": "two-Nose-medium-lasers-select-ordinal1",
+              "observation": "global-mount0-destroyed-global-mount1-retained"
+            },
+            {
+              "fixture": "second-global-mount-recycling-selected",
+              "observation": "no-destruction"
+            },
+            {
+              "fixture": "second-global-mount-destroyed-selected",
+              "observation": "no-destruction"
+            },
+            {
+              "fixture": "first-of-same-type-destroyed-second-ready-selected",
+              "observation": "first-redestroyed-second-retained"
+            },
+            {
+              "fixture": "sink90-with-aggregate25-no-local-sink",
+              "observation": "sinks25-no-slot-change"
+            },
+            {
+              "fixture": "sink90-with-two-local-single-sinks",
+              "observation": "first-sink-destroyed-capacity-minus2"
+            },
+            {
+              "fixture": "sink90-first-sink-destroyed-second-live",
+              "observation": "first-redestroyed-capacity-minus2-second-live"
+            },
+            {
+              "fixture": "rear3-airborne",
+              "observation": "spinning-start-time-set"
+            },
+            {
+              "fixture": "rear11-landed",
+              "observation": "no-spin"
+            },
+            {
+              "fixture": "rear3-already-spinning",
+              "observation": "start-time-preserved"
+            },
+            {
+              "fixture": "rear11-destroyed",
+              "observation": "no-spin"
+            },
+            {
+              "fixture": "front10-live-bomb",
+              "observation": "payload-retained-no-explosion"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 05 - deferred critical counts",
+          "examples": [
+            {
+              "roll": "2",
+              "count": "0"
+            },
+            {
+              "roll": "7",
+              "count": "0"
+            },
+            {
+              "roll": "8",
+              "count": "1"
+            },
+            {
+              "roll": "9",
+              "count": "1"
+            },
+            {
+              "roll": "10",
+              "count": "2"
+            },
+            {
+              "roll": "11",
+              "count": "2"
+            },
+            {
+              "roll": "12",
+              "count": "3"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 06 - component behavior",
+          "examples": [
+            {
+              "fixture": "Cockpit-LifeSupport",
+              "observation": "life-support-destroyed"
+            },
+            {
+              "fixture": "Cockpit-Sensors-first-ranges80-40-20-BTH0",
+              "observation": "ranges40-20-10-BTH2"
+            },
+            {
+              "fixture": "Cockpit-Sensors-second",
+              "observation": "ranges0-0-0-BTH75"
+            },
+            {
+              "fixture": "Cockpit-Cockpit-IC-pilot",
+              "observation": "craft-destroyed-pilot-cleared-local-contents-killed"
+            },
+            {
+              "fixture": "single-HeatSink-capacity25",
+              "observation": "capacity24-slot-destroyed"
+            },
+            {
+              "fixture": "Engine-component-engineheat0",
+              "observation": "engineheat5-no-thrust-zeroing"
+            },
+            {
+              "fixture": "Engine-component-engineheat5",
+              "observation": "engineheat10-no-thrust-zeroing"
+            },
+            {
+              "fixture": "Engine-component-engineheat10",
+              "observation": "engineheat15-craft-destroyed"
+            },
+            {
+              "fixture": "no-eligible-slots",
+              "observation": "no-draw-no-critical-transfer"
+            },
+            {
+              "fixture": "eligible-slot-with-destroyed-and-damaged-neighbors",
+              "observation": "only-eligible-slot-selected"
+            },
+            {
+              "fixture": "combat-safe",
+              "observation": "no-slot-effect"
+            },
+            {
+              "fixture": "critproof",
+              "observation": "no-slot-effect"
+            },
+            {
+              "fixture": "vcrit0",
+              "observation": "no-slot-effect"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter criticals 07 - sequential missile groups",
+          "examples": [
+            {
+              "family": "LRM15-three-groups-of5",
+              "before": "24-19-14",
+              "after": "9",
+              "draws": "1..71-only"
+            },
+            {
+              "family": "SRM-two-groups-of2",
+              "before": "24-22",
+              "after": "20",
+              "draws": "1..71-then-1..11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/six_location_aerofighters/damage.feature",
+      "sha256": "02e873375095deff124fb5499a34c0b705bf2574703d2e1df3d2e001fd1dbb84",
+      "outlines": 5,
+      "example_count": 32,
+      "dry_advisories": 5,
+      "scenarios": [
+        {
+          "name": "Six location fighter damage 01 - normal armor exhaustion",
+          "examples": [
+            {
+              "section": "Nose",
+              "armor": "3",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "0",
+              "fuselage_after": "30",
+              "result": "alive"
+            },
+            {
+              "section": "Left_Wing",
+              "armor": "3",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "0",
+              "fuselage_after": "30",
+              "result": "alive"
+            },
+            {
+              "section": "Right_Wing",
+              "armor": "3",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "0",
+              "fuselage_after": "30",
+              "result": "alive"
+            },
+            {
+              "section": "Fuselage",
+              "armor": "3",
+              "fuselage": "3",
+              "damage": "8",
+              "after": "0",
+              "fuselage_after": "0",
+              "result": "alive"
+            },
+            {
+              "section": "Cockpit",
+              "armor": "3",
+              "fuselage": "30",
+              "damage": "3",
+              "after": "0",
+              "fuselage_after": "30",
+              "result": "destroyed"
+            },
+            {
+              "section": "Engine",
+              "armor": "3",
+              "fuselage": "30",
+              "damage": "3",
+              "after": "0",
+              "fuselage_after": "30",
+              "result": "thrust-lost"
+            },
+            {
+              "section": "Nose",
+              "armor": "24",
+              "fuselage": "30",
+              "damage": "5",
+              "after": "19",
+              "fuselage_after": "30",
+              "result": "alive"
+            },
+            {
+              "section": "Cockpit",
+              "armor": "16",
+              "fuselage": "30",
+              "damage": "1",
+              "after": "15",
+              "fuselage_after": "30",
+              "result": "shared-head-injury"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter damage 02 - already empty routing",
+          "examples": [
+            {
+              "section": "Nose",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "22",
+              "result": "alive"
+            },
+            {
+              "section": "Left_Wing",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "22",
+              "result": "alive"
+            },
+            {
+              "section": "Right_Wing",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "22",
+              "result": "alive"
+            },
+            {
+              "section": "Engine",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "22",
+              "result": "no-new-engine-depletion-effect"
+            },
+            {
+              "section": "Cockpit",
+              "fuselage": "30",
+              "damage": "8",
+              "after": "22",
+              "result": "no-cockpit-injury"
+            },
+            {
+              "section": "Fuselage",
+              "fuselage": "0",
+              "damage": "1",
+              "after": "0",
+              "result": "destroyed"
+            },
+            {
+              "section": "Left_Wing",
+              "fuselage": "0",
+              "damage": "1",
+              "after": "0",
+              "result": "destroyed"
+            },
+            {
+              "section": "Nose",
+              "fuselage": "3",
+              "damage": "8",
+              "after": "0",
+              "result": "alive"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter damage 03 - damage entry distinctions",
+          "examples": [
+            {
+              "fixture": "Right_Wing15-Fuselage30-rear-hit5",
+              "observation": "source-rear-remap-Fuselage25-Right_Wing15"
+            },
+            {
+              "fixture": "Left_Wing15-Fuselage30-rear-hit5",
+              "observation": "Left_Wing10-Fuselage30"
+            },
+            {
+              "fixture": "Nose3-Fuselage30-explicit-transfer-hit8",
+              "observation": "Nose0-Fuselage25"
+            },
+            {
+              "fixture": "Fuselage3-explicit-transfer-hit8",
+              "observation": "destroyed"
+            },
+            {
+              "fixture": "Nose3-Fuselage30-internal-only8-transfer-disabled",
+              "observation": "Nose0-Fuselage30-internals10"
+            },
+            {
+              "fixture": "Nose3-Fuselage30-internal-only8-transfer-enabled",
+              "observation": "Nose0-Fuselage25-internals10"
+            },
+            {
+              "fixture": "Nose3-Fuselage30-internal-only8-CASE",
+              "observation": "Nose0-Fuselage30-internals10"
+            },
+            {
+              "fixture": "empty-Fuselage-SI50-hit1",
+              "observation": "destroyed-SI-not-a-health-pool"
+            },
+            {
+              "fixture": "all-positive-armor-SI0",
+              "observation": "alive-before-damage"
+            },
+            {
+              "fixture": "Engine0-Fuselage30-deferred-critical-hit1-count8",
+              "observation": "Fuselage29-critical-in-Fuselage-no-Engine-effect"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter damage 04 - engine depletion",
+          "examples": [
+            {
+              "flight": "airborne",
+              "outcome": "speed-maxspeed-vertical-zero-fall-scheduled"
+            },
+            {
+              "flight": "landed",
+              "outcome": "speed-maxspeed-vertical-zero-no-new-airborne-fall-event"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter damage 05 - retained equipment",
+          "examples": [
+            {
+              "section": "Nose"
+            },
+            {
+              "section": "Left_Wing"
+            },
+            {
+              "section": "Right_Wing"
+            },
+            {
+              "section": "Fuselage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/six_location_aerofighters/layout.feature",
+      "sha256": "61c5950cd79a90fefcb396a763ab3ee793b86efd2650842a6eecbb9811ccd83e",
+      "outlines": 5,
+      "example_count": 31,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Six location fighter layout 01 - original sections",
+          "examples": [
+            {
+              "index": "0",
+              "name": "Nose",
+              "armor": "24",
+              "slots": "12"
+            },
+            {
+              "index": "1",
+              "name": "Left_Wing",
+              "armor": "15",
+              "slots": "12"
+            },
+            {
+              "index": "2",
+              "name": "Right_Wing",
+              "armor": "15",
+              "slots": "12"
+            },
+            {
+              "index": "3",
+              "name": "Fuselage",
+              "armor": "30",
+              "slots": "12"
+            },
+            {
+              "index": "4",
+              "name": "Cockpit",
+              "armor": "16",
+              "slots": "5"
+            },
+            {
+              "index": "5",
+              "name": "Engine",
+              "armor": "20",
+              "slots": "12"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter layout 02 - installed equipment",
+          "examples": [
+            {
+              "observation": "Nose-five-single-slot-weapons"
+            },
+            {
+              "observation": "each-wing-large-lasers-at-slots-1-and-3-slot-2-empty"
+            },
+            {
+              "observation": "Fuselage-four-LRM15-ammo-bins-of-8-and-one-SRM6-bin-of-15"
+            },
+            {
+              "observation": "Cockpit-LifeSupport-Sensors-Cockpit-Sensors-LifeSupport"
+            },
+            {
+              "observation": "Engine-two-small-lasers-no-default-engine-or-sink-components"
+            },
+            {
+              "observation": "six-sections-armor-total120-internals-total60-SI0-alive"
+            },
+            {
+              "observation": "Fly-90tons-MaxSpeed86-Fuel750-HeatSinks25"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter layout 03 - builder defaults",
+          "examples": [
+            {
+              "section": "Nose",
+              "contents": "empty"
+            },
+            {
+              "section": "Left_Wing",
+              "contents": "empty"
+            },
+            {
+              "section": "Right_Wing",
+              "contents": "empty"
+            },
+            {
+              "section": "Fuselage",
+              "contents": "empty"
+            },
+            {
+              "section": "Cockpit",
+              "contents": "LifeSupport-Sensors-Cockpit-Sensors-LifeSupport"
+            },
+            {
+              "section": "Engine",
+              "contents": "Engine-at-3-and-11-HeatSink-at-other-ten-slots"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter layout 04 - section addressing",
+          "examples": [
+            {
+              "operation": "display-Fuselage",
+              "result": "section3"
+            },
+            {
+              "operation": "display-Cockpit",
+              "result": "section4-five-slots"
+            },
+            {
+              "operation": "display-Engine",
+              "result": "section5-twelve-slots"
+            },
+            {
+              "operation": "add-special-Cockpit-slot5",
+              "result": "accepted"
+            },
+            {
+              "operation": "add-special-Cockpit-slot6",
+              "result": "rejected-no-write"
+            },
+            {
+              "operation": "add-weapon-Engine-slot12",
+              "result": "one-slot-accepted"
+            },
+            {
+              "operation": "add-weapon-Engine-slot13",
+              "result": "rejected-no-write"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter layout 05 - modern design round trip",
+          "examples": [
+            {
+              "modification": "none",
+              "observation": "all-six-design-sections-and-installed-equipment-preserved"
+            },
+            {
+              "modification": "Nose-current-armor19",
+              "observation": "Nose-armor24-internals10-on-reload"
+            },
+            {
+              "modification": "Fuselage-current-armor0",
+              "observation": "Fuselage-armor30-internals10-on-reload"
+            },
+            {
+              "modification": "LRM-bin-current-ammo3",
+              "observation": "LRM-bin-full-capacity-on-reload"
+            },
+            {
+              "modification": "wing-slot3-rear-mounted",
+              "observation": "rear-mount-and-slot-gap-preserved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/six_location_aerofighters/locations.feature",
+      "sha256": "8ff313e85088e64dee02b5400473785c53b7c47875eb0a0e81e8473b3db80fb4",
+      "outlines": 3,
+      "example_count": 92,
+      "dry_advisories": 0,
+      "scenarios": [
+        {
+          "name": "Six location fighter hit tables 01 - active profiles",
+          "examples": [
+            {
+              "side": "FRONT",
+              "roll": "2",
+              "location": "Cockpit",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "3",
+              "location": "Nose",
+              "effect": "weapon90"
+            },
+            {
+              "side": "FRONT",
+              "roll": "4",
+              "location": "Fuselage",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "5",
+              "location": "Right_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "6",
+              "location": "Nose",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "7",
+              "location": "Nose",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "8",
+              "location": "Nose",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "9",
+              "location": "Left_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "FRONT",
+              "roll": "10",
+              "location": "Fuselage",
+              "effect": "inert-bomb-hook"
+            },
+            {
+              "side": "FRONT",
+              "roll": "11",
+              "location": "Nose",
+              "effect": "weapon90"
+            },
+            {
+              "side": "FRONT",
+              "roll": "12",
+              "location": "Cockpit",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "2",
+              "location": "Cockpit",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "3",
+              "location": "Left_Wing",
+              "effect": "weapon99"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "4",
+              "location": "Engine",
+              "effect": "sink90"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "5",
+              "location": "Fuselage",
+              "effect": "inert-bomb-hook"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "6",
+              "location": "Left_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "7",
+              "location": "Fuselage",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "8",
+              "location": "Left_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "9",
+              "location": "Nose",
+              "effect": "none"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "10",
+              "location": "Engine",
+              "effect": "sink90"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "11",
+              "location": "Left_Wing",
+              "effect": "weapon99"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "12",
+              "location": "Engine",
+              "effect": "deferred99"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "2",
+              "location": "Cockpit",
+              "effect": "none"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "3",
+              "location": "Right_Wing",
+              "effect": "weapon99"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "4",
+              "location": "Engine",
+              "effect": "sink90"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "5",
+              "location": "Fuselage",
+              "effect": "inert-bomb-hook"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "6",
+              "location": "Right_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "7",
+              "location": "Fuselage",
+              "effect": "none"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "8",
+              "location": "Right_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "9",
+              "location": "Nose",
+              "effect": "none"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "10",
+              "location": "Engine",
+              "effect": "sink90"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "11",
+              "location": "Right_Wing",
+              "effect": "weapon99"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "12",
+              "location": "Engine",
+              "effect": "deferred99"
+            },
+            {
+              "side": "BACK",
+              "roll": "2",
+              "location": "Engine",
+              "effect": "deferred90"
+            },
+            {
+              "side": "BACK",
+              "roll": "3",
+              "location": "Fuselage",
+              "effect": "control"
+            },
+            {
+              "side": "BACK",
+              "roll": "4",
+              "location": "Fuselage",
+              "effect": "sink90"
+            },
+            {
+              "side": "BACK",
+              "roll": "5",
+              "location": "Right_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "BACK",
+              "roll": "6",
+              "location": "Engine",
+              "effect": "none"
+            },
+            {
+              "side": "BACK",
+              "roll": "7",
+              "location": "Fuselage",
+              "effect": "sink90"
+            },
+            {
+              "side": "BACK",
+              "roll": "8",
+              "location": "Engine",
+              "effect": "none"
+            },
+            {
+              "side": "BACK",
+              "roll": "9",
+              "location": "Left_Wing",
+              "effect": "none"
+            },
+            {
+              "side": "BACK",
+              "roll": "10",
+              "location": "Fuselage",
+              "effect": "sink90"
+            },
+            {
+              "side": "BACK",
+              "roll": "11",
+              "location": "Fuselage",
+              "effect": "control"
+            },
+            {
+              "side": "BACK",
+              "roll": "12",
+              "location": "Engine",
+              "effect": "deferred90"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter hit tables 02 - critical proof",
+          "examples": [
+            {
+              "side": "FRONT",
+              "roll": "2",
+              "location": "Cockpit"
+            },
+            {
+              "side": "FRONT",
+              "roll": "3",
+              "location": "Nose"
+            },
+            {
+              "side": "FRONT",
+              "roll": "4",
+              "location": "Fuselage"
+            },
+            {
+              "side": "FRONT",
+              "roll": "5",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "FRONT",
+              "roll": "6",
+              "location": "Nose"
+            },
+            {
+              "side": "FRONT",
+              "roll": "7",
+              "location": "Nose"
+            },
+            {
+              "side": "FRONT",
+              "roll": "8",
+              "location": "Nose"
+            },
+            {
+              "side": "FRONT",
+              "roll": "9",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "FRONT",
+              "roll": "10",
+              "location": "Fuselage"
+            },
+            {
+              "side": "FRONT",
+              "roll": "11",
+              "location": "Nose"
+            },
+            {
+              "side": "FRONT",
+              "roll": "12",
+              "location": "Cockpit"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "2",
+              "location": "Cockpit"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "3",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "4",
+              "location": "Engine"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "5",
+              "location": "Fuselage"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "6",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "7",
+              "location": "Fuselage"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "8",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "9",
+              "location": "Nose"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "10",
+              "location": "Engine"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "11",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "LEFTSIDE",
+              "roll": "12",
+              "location": "Engine"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "2",
+              "location": "Cockpit"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "3",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "4",
+              "location": "Engine"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "5",
+              "location": "Fuselage"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "6",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "7",
+              "location": "Fuselage"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "8",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "9",
+              "location": "Nose"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "10",
+              "location": "Engine"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "11",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "RIGHTSIDE",
+              "roll": "12",
+              "location": "Engine"
+            },
+            {
+              "side": "BACK",
+              "roll": "2",
+              "location": "Engine"
+            },
+            {
+              "side": "BACK",
+              "roll": "3",
+              "location": "Fuselage"
+            },
+            {
+              "side": "BACK",
+              "roll": "4",
+              "location": "Fuselage"
+            },
+            {
+              "side": "BACK",
+              "roll": "5",
+              "location": "Right_Wing"
+            },
+            {
+              "side": "BACK",
+              "roll": "6",
+              "location": "Engine"
+            },
+            {
+              "side": "BACK",
+              "roll": "7",
+              "location": "Fuselage"
+            },
+            {
+              "side": "BACK",
+              "roll": "8",
+              "location": "Engine"
+            },
+            {
+              "side": "BACK",
+              "roll": "9",
+              "location": "Left_Wing"
+            },
+            {
+              "side": "BACK",
+              "roll": "10",
+              "location": "Fuselage"
+            },
+            {
+              "side": "BACK",
+              "roll": "11",
+              "location": "Fuselage"
+            },
+            {
+              "side": "BACK",
+              "roll": "12",
+              "location": "Engine"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter hit tables 03 - normal dispatch",
+          "examples": [
+            {
+              "configuration": "FASA-off",
+              "profile": "legacy"
+            },
+            {
+              "configuration": "FASA-on",
+              "profile": "FASA"
+            },
+            {
+              "configuration": "critproof-with-FASA-on",
+              "profile": "critproof"
+            },
+            {
+              "configuration": "critproof-with-FASA-off",
+              "profile": "critproof"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/six_location_aerofighters/weapons.feature",
+      "sha256": "cf8f6635b1ebf27c3f1fa5153585aeb89adab08ddb1a7dc637365d15eec28ef1",
+      "outlines": 6,
+      "example_count": 39,
+      "dry_advisories": 0,
+      "scenarios": [
+        {
+          "name": "Six location fighter weapons 01 - location arcs",
+          "examples": [
+            {
+              "section": "Nose",
+              "mount": "normal",
+              "arcs": "front-left-right"
+            },
+            {
+              "section": "Fuselage",
+              "mount": "normal",
+              "arcs": "front-left-right-rear"
+            },
+            {
+              "section": "Left_Wing",
+              "mount": "normal",
+              "arcs": "front-left"
+            },
+            {
+              "section": "Left_Wing",
+              "mount": "rear",
+              "arcs": "left-rear"
+            },
+            {
+              "section": "Right_Wing",
+              "mount": "normal",
+              "arcs": "front-right"
+            },
+            {
+              "section": "Right_Wing",
+              "mount": "rear",
+              "arcs": "right-rear"
+            },
+            {
+              "section": "Engine",
+              "mount": "normal",
+              "arcs": "rear"
+            },
+            {
+              "section": "Cockpit",
+              "mount": "normal",
+              "arcs": "none"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter weapons 02 - recycling with depleted armor",
+          "examples": [
+            {
+              "fixture": "armor0-functional-ready-valid-arc",
+              "observation": "fire-accepted-recycle-started"
+            },
+            {
+              "fixture": "armor0-functional-recycle5-advance5",
+              "observation": "recycle-remains5"
+            },
+            {
+              "fixture": "armor-positive-functional-recycle5-advance5",
+              "observation": "recycle-finishes"
+            },
+            {
+              "fixture": "armor0-destroyed-weapon",
+              "observation": "fire-refused"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter weapons 03 - aimed fighter shots",
+          "examples": [
+            {
+              "location": "Nose",
+              "index": "0"
+            },
+            {
+              "location": "Left_Wing",
+              "index": "1"
+            },
+            {
+              "location": "Right_Wing",
+              "index": "2"
+            },
+            {
+              "location": "Fuselage",
+              "index": "3"
+            },
+            {
+              "location": "Cockpit",
+              "index": "4"
+            },
+            {
+              "location": "Engine",
+              "index": "5"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter weapons 04 - targeting computer masks",
+          "examples": [
+            {
+              "aim": "Nose",
+              "side": "FRONT",
+              "location": "Nose",
+              "path": "fighter"
+            },
+            {
+              "aim": "Cockpit",
+              "side": "FRONT",
+              "location": "Cockpit",
+              "path": "fighter"
+            },
+            {
+              "aim": "Engine",
+              "side": "BACK",
+              "location": "Engine",
+              "path": "fighter"
+            },
+            {
+              "aim": "Fuselage",
+              "side": "BACK",
+              "location": "Fuselage",
+              "path": "fighter"
+            },
+            {
+              "aim": "Left_Wing",
+              "side": "RIGHTSIDE",
+              "location": "Left_Wing",
+              "path": "vehicle-fallthrough"
+            },
+            {
+              "aim": "Right_Wing",
+              "side": "LEFTSIDE",
+              "location": "Right_Wing",
+              "path": "vehicle-fallthrough"
+            },
+            {
+              "aim": "Cockpit",
+              "side": "BACK",
+              "location": "Cockpit",
+              "path": "vehicle-fallthrough"
+            },
+            {
+              "aim": "Nose",
+              "side": "BACK",
+              "location": "Nose",
+              "path": "vehicle-fallthrough"
+            },
+            {
+              "aim": "Engine",
+              "side": "FRONT",
+              "location": "Nose",
+              "path": "normal-table"
+            },
+            {
+              "aim": "Fuselage",
+              "side": "FRONT",
+              "location": "Nose",
+              "path": "normal-table"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter weapons 05 - failed targeting computer gate",
+          "examples": [
+            {
+              "fixture": "matching-type-roll2",
+              "draws": "tc-d6-consumed"
+            },
+            {
+              "fixture": "mismatched-type",
+              "draws": "no-tc-d6"
+            }
+          ]
+        },
+        {
+          "name": "Six location fighter weapons 06 - cockpit aiming penalty",
+          "examples": [
+            {
+              "weapon": "Laser",
+              "aim": "Cockpit",
+              "mobility": "immobile",
+              "tc": "off",
+              "modifier": "7"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Cockpit",
+              "mobility": "mobile",
+              "tc": "off",
+              "modifier": "25"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Cockpit",
+              "mobility": "immobile",
+              "tc": "on",
+              "modifier": "7"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Cockpit",
+              "mobility": "mobile",
+              "tc": "on",
+              "modifier": "25"
+            },
+            {
+              "weapon": "Missile",
+              "aim": "Cockpit",
+              "mobility": "mobile",
+              "tc": "off",
+              "modifier": "0"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Engine",
+              "mobility": "mobile",
+              "tc": "off",
+              "modifier": "0"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Fuselage",
+              "mobility": "immobile",
+              "tc": "off",
+              "modifier": "0"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Engine",
+              "mobility": "mobile",
+              "tc": "on",
+              "modifier": "3"
+            },
+            {
+              "weapon": "Laser",
+              "aim": "Engine",
+              "mobility": "immobile",
+              "tc": "on",
+              "modifier": "-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/six_location_aerofighters/workflows.feature",
+      "sha256": "deb4d7739d1fe8792c6275f68e3d255058ce3b6c391ecc25022f1642bf492e92",
+      "outlines": 1,
+      "example_count": 6,
+      "dry_advisories": 0,
+      "scenarios": [
+        {
+          "name": "Six location fighter workflows 01 - original fighter operations",
+          "examples": [
+            {
+              "workflow": "original-load-save-reload",
+              "result": "CHP-W5-six-sections-equipment-and-design-values-preserved"
+            },
+            {
+              "workflow": "original-takeoff-fly-land",
+              "result": "CHP-W5-launches-moves-consumes-fuel-and-lands"
+            },
+            {
+              "workflow": "original-fire-and-missiles",
+              "result": "physical-mount-heat-ammo-recycling-and-six-location-damage-observed"
+            },
+            {
+              "workflow": "original-combat-damage",
+              "result": "depletion-transfer-cockpit-and-engine-outcomes-observed"
+            },
+            {
+              "workflow": "fighter-bomb-release",
+              "result": "six-location-payload-releases-and-impacts-through-shared-events"
+            },
+            {
+              "workflow": "nonfighter-regression",
+              "result": "DS-Union-Cavalry-WVR6R-load-and-scoped-flight-combat-behavior-preserved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

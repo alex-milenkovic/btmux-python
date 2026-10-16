@@ -1,0 +1,99 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        9,
+        9
+      ],
+      "hexes": [
+        {
+          "at": [
+            1,
+            1
+          ],
+          "terrain": "BUILDING",
+          "elevation": 0
+        }
+      ],
+      "map_objects": [
+        {
+          "kind": "BUILDING",
+          "x": 1,
+          "y": 1,
+          "obj": 20
+        }
+      ]
+    },
+    {
+      "name": "inside",
+      "id": 20,
+      "size": [
+        9,
+        9
+      ],
+      "cf": 5,
+      "cfmax": 5
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        1,
+        3,
+        0
+      ],
+      "facing": 0,
+      "weapons": [
+        "IS.MediumLaser"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "command",
+      "name": "lock",
+      "args": [
+        1,
+        1,
+        "B"
+      ]
+    },
+    {
+      "op": "command",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "scan",
+      "args": [
+        1,
+        1,
+        "B"
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 7200
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "seed": 5489
+  }
+}

@@ -1,0 +1,51 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Reproducible scratch and packaging outputs
+/tmp/
+/build/
+/dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Local source/dependency checkouts; preserve their original notices
+/btmux/
+/references/
+/btmux-mechs/
+
+# Local development tooling and historical records
+/.worktrees/
+/.claude/
+/.codex/
+/.agents/
+/.swarmforge/
+/.forge/
+/swarmforge/
+/swarm
+/tasks/
+/docs/evidence/
+/qa/evidence/
+/btmux-function-presence/
+/Run_Brief_Templates_Test_Run.md
+/SUBSYSTEM_SUMMARY.md
+/FOCUSED_BEHAVIOR_COVERAGE.md
+/MANIFEST.md
+/findings.md
+/Pre_2006_damage_model.md
+.DS_Store
+Thumbs.db
+/examples/gameplay_scenarios/results/
+/examples/gameplay_scenarios/ai_results/

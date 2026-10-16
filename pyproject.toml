@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btmux-engine"
+version = "0.1.0"
+description = "Python reimplementation of the BTMux combat and physics simulation"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+license = "LicenseRef-3030MUX-Artistic AND LicenseRef-TinyMUX AND LicenseRef-MT19937"
+license-files = ["LICENSE", "CREDITS.md", "notices/*.txt"]
+
+[project.urls]
+Source = "https://github.com/alex-milenkovic/btmux-python"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core", "core.*", "data", "data.*", "entities", "entities.*", "physics", "physics.*", "systems", "systems.*", "tools", "tools.*", "acceptance", "acceptance.*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+data = ["template-catalog.lock.json"]

@@ -1,0 +1,2150 @@
+{
+  "features": [
+    {
+      "path": "features/c3_communications/channels.feature",
+      "sha256": "5c130649979c665019d3c493b7ecf3795527cd879169c68b3a3990ec5cd972eb",
+      "outlines": 4,
+      "examples": 46,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "Radio channel configuration 01 - frequency parser",
+          "examples": [
+            {
+              "input": "a=0",
+              "observation": "A-frequency0"
+            },
+            {
+              "input": "a=999999",
+              "observation": "A-frequency999999"
+            },
+            {
+              "input": "A=123tail",
+              "observation": "A-frequency123"
+            },
+            {
+              "input": "b=17",
+              "observation": "B-frequency17"
+            },
+            {
+              "input": "c=17",
+              "observation": "channel-error"
+            },
+            {
+              "input": "a=00",
+              "observation": "invalid-frequency"
+            },
+            {
+              "input": "a=0x1",
+              "observation": "invalid-frequency"
+            },
+            {
+              "input": "a=-1",
+              "observation": "negative-error"
+            },
+            {
+              "input": "a=1000000",
+              "observation": "frequency-range-error"
+            },
+            {
+              "input": "a17",
+              "observation": "missing-equals"
+            },
+            {
+              "input": "a=",
+              "observation": "invalid-input"
+            },
+            {
+              "input": "blank",
+              "observation": "invalid-input"
+            },
+            {
+              "input": "a=17-no-map",
+              "observation": "A-frequency17"
+            }
+          ]
+        },
+        {
+          "name": "Radio channel configuration 02 - title storage",
+          "examples": [
+            {
+              "value": "Alpha",
+              "observation": "Alpha-and-set-to-set-to-Alpha"
+            },
+            {
+              "value": "123456789012345",
+              "observation": "all15-stored"
+            },
+            {
+              "value": "1234567890123456",
+              "observation": "first15-stored-full16-echoed"
+            },
+            {
+              "value": "empty",
+              "observation": "cleared"
+            },
+            {
+              "value": "leading-space-Alpha",
+              "observation": "Alpha-leading-whitespace-stripped"
+            }
+          ]
+        },
+        {
+          "name": "Radio channel configuration 03 - mode parser",
+          "examples": [
+            {
+              "input": "empty",
+              "capabilities": "all",
+              "observation": "analog0"
+            },
+            {
+              "input": "D",
+              "capabilities": "all",
+              "observation": "digital1"
+            },
+            {
+              "input": "DIUES",
+              "capabilities": "all",
+              "observation": "mode31-flagsIUES"
+            },
+            {
+              "input": "E",
+              "capabilities": "all",
+              "observation": "digital-required-old-mode-retained"
+            },
+            {
+              "input": "I",
+              "capabilities": "all",
+              "observation": "info-requires-digital-old-mode-retained"
+            },
+            {
+              "input": "D",
+              "capabilities": "NODIGITAL",
+              "observation": "capability-error-old-mode-retained"
+            },
+            {
+              "input": "DE",
+              "capabilities": "no-relay",
+              "observation": "capability-error-old-mode-retained"
+            },
+            {
+              "input": "DI",
+              "capabilities": "no-info",
+              "observation": "capability-error-old-mode-retained"
+            },
+            {
+              "input": "S",
+              "capabilities": "no-scan",
+              "observation": "capability-error-old-mode-retained"
+            },
+            {
+              "input": "Drg",
+              "capabilities": "all",
+              "observation": "mode97-color-g"
+            },
+            {
+              "input": "DX",
+              "capabilities": "all",
+              "observation": "mode289-bright-x"
+            },
+            {
+              "input": "D?S",
+              "capabilities": "all",
+              "observation": "digital1-suffix-ignored"
+            },
+            {
+              "input": "?D",
+              "capabilities": "all",
+              "observation": "analog0"
+            },
+            {
+              "input": "s",
+              "capabilities": "all",
+              "observation": "scan16"
+            },
+            {
+              "input": "u",
+              "capabilities": "all",
+              "observation": "mute2"
+            }
+          ]
+        },
+        {
+          "name": "Radio channel configuration 04 - listing color and logging",
+          "examples": [
+            {
+              "state": "DI-color-r-S",
+              "observation": "D--S"
+            },
+            {
+              "state": "DI-color-r",
+              "observation": "D--r"
+            },
+            {
+              "state": "DI",
+              "observation": "D--I"
+            },
+            {
+              "state": "DU",
+              "observation": "D-M-"
+            },
+            {
+              "state": "ccode-none",
+              "observation": "empty"
+            },
+            {
+              "state": "ccode-r",
+              "observation": "%cr"
+            },
+            {
+              "state": "ccode-bright-X",
+              "observation": "%ch%c"
+            },
+            {
+              "state": "observer-team1",
+              "observation": "%cw"
+            },
+            {
+              "state": "observer-team16",
+              "observation": "%cw"
+            },
+            {
+              "state": "observer-team0-after-ccode-r",
+              "observation": "%cr"
+            },
+            {
+              "state": "set17-two-enemy-matching-nonscan-channels",
+              "observation": "two-MechFreqs-log-requests"
+            },
+            {
+              "state": "set17-enemy-scan-only",
+              "observation": "no-log-request"
+            },
+            {
+              "state": "set0-enemy-matching",
+              "observation": "no-log-request"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/displays.feature",
+      "sha256": "bb8d28f3a768074e98e18ce079b4d02f1363d508cd6e3aefc5f1908be076def5",
+      "outlines": 5,
+      "examples": 88,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "Communications displays 01 - identity",
+          "examples": [
+            {
+              "relation": "same-team",
+              "visible": "True",
+              "identity": "Atlas [ab]"
+            },
+            {
+              "relation": "enemy",
+              "visible": "True",
+              "identity": "Atlas [AB]"
+            },
+            {
+              "relation": "same-team",
+              "visible": "False",
+              "identity": "something [AB]"
+            },
+            {
+              "relation": "enemy",
+              "visible": "False",
+              "identity": "something [AB]"
+            },
+            {
+              "relation": "null-viewer",
+              "visible": "True",
+              "identity": "empty"
+            },
+            {
+              "relation": "invalid-target",
+              "visible": "True",
+              "identity": "empty"
+            },
+            {
+              "relation": "self-GetMechID",
+              "visible": "False",
+              "identity": "Atlas [AB]"
+            }
+          ]
+        },
+        {
+          "name": "Communications displays 02 - movement and arc",
+          "examples": [
+            {
+              "input": "MOVE_QUAD",
+              "label": "QUAD"
+            },
+            {
+              "input": "MOVE_BIPED",
+              "label": "BIPED"
+            },
+            {
+              "input": "MOVE_TRACK",
+              "label": "TRACKED"
+            },
+            {
+              "input": "MOVE_WHEEL",
+              "label": "WHEELED"
+            },
+            {
+              "input": "MOVE_HOVER",
+              "label": "HOVER"
+            },
+            {
+              "input": "MOVE_VTOL",
+              "label": "VTOL"
+            },
+            {
+              "input": "MOVE_FLY",
+              "label": "FLY"
+            },
+            {
+              "input": "MOVE_HULL",
+              "label": "HULL"
+            },
+            {
+              "input": "MOVE_SUB",
+              "label": "SUBMARINE"
+            },
+            {
+              "input": "MOVE_FOIL",
+              "label": "HYDROFOIL"
+            },
+            {
+              "input": "MOVE_NONE",
+              "label": "Unknown"
+            },
+            {
+              "input": "MECH-forward-and-right",
+              "label": "Forward"
+            },
+            {
+              "input": "MW-right",
+              "label": "Right Arm"
+            },
+            {
+              "input": "BSUIT-left",
+              "label": "Left Arm"
+            },
+            {
+              "input": "VEH_GROUND-right",
+              "label": "Right Side"
+            },
+            {
+              "input": "VTOL-left",
+              "label": "Left Side"
+            },
+            {
+              "input": "MECH-rear",
+              "label": "Rear"
+            },
+            {
+              "input": "MECH-turret-only",
+              "label": "NO"
+            }
+          ]
+        },
+        {
+          "name": "Communications displays 03 - ammunition modes",
+          "examples": [
+            {
+              "mode": "none",
+              "description": "empty",
+              "letter": "space"
+            },
+            {
+              "mode": "LBX",
+              "description": "leading-space:Shotgun",
+              "letter": "L"
+            },
+            {
+              "mode": "ARTEMIS",
+              "description": "leading-space:Artemis IV",
+              "letter": "A"
+            },
+            {
+              "mode": "NARC",
+              "description": "leading-space:Narc",
+              "letter": "N"
+            },
+            {
+              "mode": "NARC-on-NARC-weapon",
+              "description": "leading-space:Explosive",
+              "letter": "E"
+            },
+            {
+              "mode": "INARC_EXPLO",
+              "description": "leading-space:iExplosive",
+              "letter": "X"
+            },
+            {
+              "mode": "INARC_HAYWIRE",
+              "description": "leading-space:Haywire",
+              "letter": "Y"
+            },
+            {
+              "mode": "INARC_ECM",
+              "description": "leading-space:ECM",
+              "letter": "E"
+            },
+            {
+              "mode": "INARC_NEMESIS",
+              "description": "leading-space:Nemesis",
+              "letter": "Z"
+            },
+            {
+              "mode": "SWARM",
+              "description": "leading-space:Swarm",
+              "letter": "W"
+            },
+            {
+              "mode": "SWARM1",
+              "description": "leading-space:Swarm1",
+              "letter": "1"
+            },
+            {
+              "mode": "INFERNO",
+              "description": "leading-space:Inferno",
+              "letter": "I"
+            },
+            {
+              "mode": "CLUSTER",
+              "description": "leading-space:Cluster",
+              "letter": "C"
+            },
+            {
+              "mode": "SMOKE",
+              "description": "leading-space:Smoke",
+              "letter": "S"
+            },
+            {
+              "mode": "MINE",
+              "description": "leading-space:Mine",
+              "letter": "M"
+            },
+            {
+              "mode": "AC_AP",
+              "description": "leading-space:Armor Piercing",
+              "letter": "R"
+            },
+            {
+              "mode": "AC_FLECHETTE",
+              "description": "leading-space:Flechette",
+              "letter": "F"
+            },
+            {
+              "mode": "AC_INCENDIARY",
+              "description": "leading-space:Incendiary",
+              "letter": "D"
+            },
+            {
+              "mode": "AC_PRECISION",
+              "description": "leading-space:Precision",
+              "letter": "P"
+            },
+            {
+              "mode": "STINGER",
+              "description": "leading-space:Stinger",
+              "letter": "T"
+            },
+            {
+              "mode": "AC_CASELESS",
+              "description": "leading-space:Caseless",
+              "letter": "U"
+            },
+            {
+              "mode": "SGUIDED",
+              "description": "leading-space:Sguided",
+              "letter": "G"
+            },
+            {
+              "mode": "ATM_ER",
+              "description": "leading-space:ExtendedRange",
+              "letter": "R"
+            },
+            {
+              "mode": "ATM_HE",
+              "description": "leading-space:HighExplosive",
+              "letter": "X"
+            },
+            {
+              "mode": "MML_LRM",
+              "description": "leading-space:LRM",
+              "letter": "#"
+            },
+            {
+              "mode": "LBX+CLUSTER",
+              "description": "leading-space:Shotgun",
+              "letter": "C"
+            },
+            {
+              "mode": "INFERNO+SWARM",
+              "description": "leading-space:Swarm",
+              "letter": "I"
+            }
+          ]
+        },
+        {
+          "name": "Communications displays 04 - fire letters",
+          "examples": [
+            {
+              "mode": "none",
+              "letter": "space"
+            },
+            {
+              "mode": "HOTLOAD",
+              "letter": "H"
+            },
+            {
+              "mode": "ULTRA",
+              "letter": "U"
+            },
+            {
+              "mode": "RFAC",
+              "letter": "F"
+            },
+            {
+              "mode": "GATTLING",
+              "letter": "G"
+            },
+            {
+              "mode": "HEAT",
+              "letter": "H"
+            },
+            {
+              "mode": "RAC_TWO",
+              "letter": "2"
+            },
+            {
+              "mode": "RAC_FOUR",
+              "letter": "4"
+            },
+            {
+              "mode": "RAC_SIX",
+              "letter": "6"
+            },
+            {
+              "mode": "HOTLOAD+ULTRA",
+              "letter": "H"
+            },
+            {
+              "mode": "ULTRA+GATTLING",
+              "letter": "U"
+            },
+            {
+              "mode": "RAC_TWO+RAC_SIX",
+              "letter": "2"
+            }
+          ]
+        },
+        {
+          "name": "Communications displays 05 - flags and report fields",
+          "examples": [
+            {
+              "state": "fallen-BIPED",
+              "observation": "FALLEN"
+            },
+            {
+              "state": "fallen-TRACK",
+              "observation": "TRACK-DESTROYED"
+            },
+            {
+              "state": "fallen-WHEEL",
+              "observation": "AXLE-DESTROYED"
+            },
+            {
+              "state": "fallen-HOVER",
+              "observation": "LIFT-FAN-DESTROYED"
+            },
+            {
+              "state": "fallen-VTOL",
+              "observation": "ROTOR-DESTROYED"
+            },
+            {
+              "state": "fallen-FLY",
+              "observation": "ENGINE-DESTROYED"
+            },
+            {
+              "state": "fallen-HULL",
+              "observation": "ENGINE-ROOM-DESTROYED"
+            },
+            {
+              "state": "fallen-SUB",
+              "observation": "ENGINE-ROOM-DESTROYED"
+            },
+            {
+              "state": "fallen-FOIL",
+              "observation": "FOIL-DESTROYED"
+            },
+            {
+              "state": "burning-and-jellied",
+              "observation": "one-ON-FIRE-line"
+            },
+            {
+              "state": "light-on-and-illuminated",
+              "observation": "SEARCHLIGHT-ON-only"
+            },
+            {
+              "state": "own-level0-ECM-protected-and-disturbed",
+              "observation": "both-lines-in-source-order"
+            },
+            {
+              "state": "other-level1-ECM-protected",
+              "observation": "no-private-ECM-line"
+            },
+            {
+              "state": "level0-torso-right-and-left",
+              "observation": "both-torso-lines"
+            },
+            {
+              "state": "level1-torso-right-shutdown",
+              "observation": "SHUTDOWN-without-torso"
+            },
+            {
+              "state": "level2-destroyed-shutdown",
+              "observation": "neither-final-flag"
+            },
+            {
+              "state": "indent3-combat-safe",
+              "observation": "three-leading-spaces-before-color"
+            },
+            {
+              "state": "network-armor33-of100-internal2-of3",
+              "observation": "armor33-internal66"
+            },
+            {
+              "state": "network-zero-originals",
+              "observation": "armor0-internal0"
+            },
+            {
+              "state": "contacts-live-ranges3,8-destroyed-range1",
+              "observation": "destroyed1,live8,live3"
+            },
+            {
+              "state": "contacts-own-something-network-clear",
+              "observation": "identified-name-and-status"
+            },
+            {
+              "state": "contacts-own-something-network-invisible",
+              "observation": "something-and-five-blank-statuses"
+            },
+            {
+              "state": "contacts-own-unseen-network-invisible",
+              "observation": "row-omitted"
+            },
+            {
+              "state": "status3-viewer-spinning-target-stationary",
+              "observation": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/hardware.feature",
+      "sha256": "775428458aba4aa32afefce661e682deff75fcfafd2dfed17ec62fc4e4e8fb27",
+      "outlines": 3,
+      "examples": 25,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "C3 hardware 01 - master grouping",
+          "examples": [
+            {
+              "class": "MECH",
+              "slots": "LT:0-4-functional",
+              "total": "1",
+              "working": "1"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-3-functional",
+              "total": "0",
+              "working": "0"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-2;RT:0-1-functional",
+              "total": "0",
+              "working": "0"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0,2,4,6,8-functional",
+              "total": "1",
+              "working": "1"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-9-functional",
+              "total": "2",
+              "working": "1"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-4;RT:0-4-functional",
+              "total": "2",
+              "working": "2"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-4-slot2-destroyed",
+              "total": "1",
+              "working": "0"
+            },
+            {
+              "class": "MECH",
+              "slots": "LT:0-4-slot2-disabled",
+              "total": "1",
+              "working": "0"
+            },
+            {
+              "class": "VEH_GROUND",
+              "slots": "LT:0-functional",
+              "total": "1",
+              "working": "1"
+            },
+            {
+              "class": "VEH_GROUND",
+              "slots": "LT:0,1-functional",
+              "total": "2",
+              "working": "1"
+            },
+            {
+              "class": "VEH_GROUND",
+              "slots": "LT:0;RT:0-functional",
+              "total": "2",
+              "working": "2"
+            }
+          ]
+        },
+        {
+          "name": "C3 hardware 02 - queried slot window",
+          "examples": [
+            {
+              "class": "MECH",
+              "layout": "only-master-type-at-LT0;all-slots-functional;query4",
+              "result": "True"
+            },
+            {
+              "class": "MECH",
+              "layout": "only-master-type-at-LT0;slot4-destroyed;query4",
+              "result": "True"
+            },
+            {
+              "class": "MECH",
+              "layout": "only-master-type-at-LT0;slot3-destroyed;query4",
+              "result": "False"
+            },
+            {
+              "class": "MECH",
+              "layout": "no-master-types;query4",
+              "result": "False"
+            },
+            {
+              "class": "MECH",
+              "layout": "masters-at-LT0-and1;all-functional;query4",
+              "result": "False"
+            },
+            {
+              "class": "MECH",
+              "layout": "only-master-type-at-HEAD4;all-12-slots-functional;query4",
+              "result": "True"
+            },
+            {
+              "class": "MECH",
+              "layout": "only-master-type-at-HEAD4;allocated-slot7-destroyed;query4",
+              "result": "False"
+            },
+            {
+              "class": "VEH_GROUND",
+              "layout": "no-master-types;query0",
+              "result": "True"
+            }
+          ]
+        },
+        {
+          "name": "C3 hardware 03 - critical and transfer consumers",
+          "examples": [
+            {
+              "network": "C3-two-separate-working-masters",
+              "action": "destroy-one-master-slot",
+              "observation": "one-working-master-retained-capacity-reduced-on-validation"
+            },
+            {
+              "network": "C3-one-working-master",
+              "action": "destroy-last-master",
+              "observation": "destroyed-flag-TAG-check-and-no-shared-range"
+            },
+            {
+              "network": "C3-slave",
+              "action": "destroy-slave",
+              "observation": "destroyed-flag-and-removed-on-validation"
+            },
+            {
+              "network": "C3i-integer-identity-peers",
+              "action": "destroy-C3i-slot",
+              "observation": "reciprocal-detachment"
+            },
+            {
+              "network": "C3",
+              "action": "cross-map",
+              "observation": "owner-cleared-old-peers-detached"
+            },
+            {
+              "network": "C3i",
+              "action": "cross-map",
+              "observation": "owner-cleared-old-peers-detached"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/membership.feature",
+      "sha256": "81f5f6df1f39e4ebdd763023ea89065b2c39b363467afe2795b39811ba75bae0",
+      "outlines": 6,
+      "examples": 64,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "C3 membership 01 - capacity boundary",
+          "examples": [
+            {
+              "kind": "C3",
+              "masters": "0",
+              "peers": "0",
+              "result": "capacity-refusal"
+            },
+            {
+              "kind": "C3",
+              "masters": "1",
+              "peers": "0",
+              "result": "accepted"
+            },
+            {
+              "kind": "C3",
+              "masters": "1",
+              "peers": "2",
+              "result": "accepted"
+            },
+            {
+              "kind": "C3",
+              "masters": "1",
+              "peers": "3",
+              "result": "capacity-refusal"
+            },
+            {
+              "kind": "C3",
+              "masters": "2",
+              "peers": "5",
+              "result": "accepted"
+            },
+            {
+              "kind": "C3",
+              "masters": "2",
+              "peers": "6",
+              "result": "capacity-refusal"
+            },
+            {
+              "kind": "C3",
+              "masters": "4",
+              "peers": "10",
+              "result": "accepted"
+            },
+            {
+              "kind": "C3",
+              "masters": "4",
+              "peers": "11",
+              "result": "capacity-refusal"
+            },
+            {
+              "kind": "C3i",
+              "masters": "0",
+              "peers": "4",
+              "result": "accepted"
+            },
+            {
+              "kind": "C3i",
+              "masters": "0",
+              "peers": "5",
+              "result": "capacity-refusal"
+            }
+          ]
+        },
+        {
+          "name": "C3 membership 02 - join gates",
+          "examples": [
+            {
+              "kind": "C3",
+              "condition": "two-arguments",
+              "observation": "argument-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "empty-argument",
+              "observation": "argument-error"
+            },
+            {
+              "kind": "C3",
+              "condition": "no-own-technology",
+              "observation": "technology-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "own-system-destroyed",
+              "observation": "system-error"
+            },
+            {
+              "kind": "C3",
+              "condition": "own-AngelECM",
+              "observation": "operational-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "already-connected",
+              "observation": "already-connected-error"
+            },
+            {
+              "kind": "C3",
+              "condition": "target-no-LOS",
+              "observation": "targetID-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "enemy-target",
+              "observation": "unfriendly-error"
+            },
+            {
+              "kind": "C3",
+              "condition": "self-target",
+              "observation": "self-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "destroyed-target",
+              "observation": "target-destroyed-error"
+            },
+            {
+              "kind": "C3",
+              "condition": "stopped-target",
+              "observation": "target-not-started-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "target-only-C3",
+              "observation": "target-technology-error"
+            },
+            {
+              "kind": "C3i",
+              "condition": "intact-target-under-ECM",
+              "observation": "join-stored-target-temporarily-unusable"
+            },
+            {
+              "kind": "C3i",
+              "condition": "destroyed-target-system",
+              "observation": "confirmation-then-source-validation-clears-connection"
+            },
+            {
+              "kind": "C3",
+              "condition": "disconnected-leave",
+              "observation": "not-connected-message"
+            },
+            {
+              "kind": "C3i",
+              "condition": "connected-leave",
+              "observation": "reciprocal-clear-and-disconnect-message"
+            }
+          ]
+        },
+        {
+          "name": "C3 membership 03 - replication order",
+          "examples": [
+            {
+              "kind": "C3",
+              "sequence": "B-joins-master-A;C-joins-A",
+              "order": "A:B,C;B:A,C;C:A,B"
+            },
+            {
+              "kind": "C3i",
+              "sequence": "B-joins-A;C-joins-B",
+              "order": "A:B,C;B:A,C;C:B,A"
+            },
+            {
+              "kind": "C3",
+              "sequence": "B-joins-master-A;C-joins-A;B-leaves",
+              "order": "A:C;B:empty;C:A"
+            },
+            {
+              "kind": "C3i",
+              "sequence": "B-joins-A;C-joins-A;C-leaves",
+              "order": "A:B;B:A;C:empty"
+            }
+          ]
+        },
+        {
+          "name": "C3 membership 04 - stored validation and temporary use",
+          "examples": [
+            {
+              "state": "healthy",
+              "inclusion": "True,True,True"
+            },
+            {
+              "state": "stopped",
+              "inclusion": "True,False,False"
+            },
+            {
+              "state": "unconscious",
+              "inclusion": "True,True,False"
+            },
+            {
+              "state": "blinded",
+              "inclusion": "True,True,True"
+            },
+            {
+              "state": "ECM-disturbed",
+              "inclusion": "True,False,False"
+            },
+            {
+              "state": "Angel-disturbed",
+              "inclusion": "True,False,False"
+            },
+            {
+              "state": "destroyed",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "wrong-team",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "wrong-map",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "missing",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "zero-ID",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "no-tech",
+              "inclusion": "False,False,False"
+            },
+            {
+              "state": "system-destroyed",
+              "inclusion": "False,False,False"
+            }
+          ]
+        },
+        {
+          "name": "C3 membership 05 - source arrays and trim",
+          "examples": [
+            {
+              "state": "C3i-size-negative;validate",
+              "observation": "owner-cleared-peer-entries-retained-negative-prefix"
+            },
+            {
+              "state": "C3i-size2;slots-B,-1,C;validate",
+              "observation": "B-only-C-outside-prefix"
+            },
+            {
+              "state": "C3i-size3;slots-B,-1,C;validate",
+              "observation": "B,C-compacted"
+            },
+            {
+              "state": "C3i-size2;slots-B,B;validate",
+              "observation": "duplicates-retained"
+            },
+            {
+              "state": "C3i-size1;slots-B;free-B",
+              "observation": "minus1"
+            },
+            {
+              "state": "C3i-size5;slots-B,C,D,E,F;free-G",
+              "observation": "minus2"
+            },
+            {
+              "state": "C3i-size1;slots-B;free-C",
+              "observation": "index1"
+            },
+            {
+              "state": "C3i-size2;slots-B,C;clear-local",
+              "observation": "owner-empty-peers-unchanged"
+            },
+            {
+              "state": "C3i-size2;slots-B,C;clear-B",
+              "observation": "C-only"
+            },
+            {
+              "state": "C3-owner-master0;peers-S1,M1,S2,S3,S4;trim",
+              "observation": "M1,S1,S2"
+            },
+            {
+              "state": "C3-owner-master1;peers-S1,S2;trim",
+              "observation": "S1,S2"
+            },
+            {
+              "state": "C3-owner-master0;peers-S1,S2;temporary-trim",
+              "observation": "temporary-empty-stored-S1,S2"
+            },
+            {
+              "state": "C3i-size1;slots-B,-1;temp-index1",
+              "observation": "null-padding-readable"
+            },
+            {
+              "state": "C3i-size1;slots-B,-1;other-index1",
+              "observation": "null-outside-prefix"
+            }
+          ]
+        },
+        {
+          "name": "C3 membership 06 - network messages",
+          "examples": [
+            {
+              "condition": "C3-leading-spaces-hello",
+              "observation": "stripped-hello-peer-C3-identity-and-self-You"
+            },
+            {
+              "condition": "C3i-leading-spaces-hello",
+              "observation": "stripped-hello-peer-C3i-identity-and-self-You"
+            },
+            {
+              "condition": "C3-empty-stored-network",
+              "observation": "no-other-units-error"
+            },
+            {
+              "condition": "C3i-nonempty-network-blank-message",
+              "observation": "what-to-send-error"
+            },
+            {
+              "condition": "C3i-only-stopped-peers",
+              "observation": "self-echo-no-peer-delivery"
+            },
+            {
+              "condition": "C3i-only-unconscious-peers",
+              "observation": "self-echo-no-peer-delivery"
+            },
+            {
+              "condition": "C3-owner-slave-master-peer-ECM",
+              "observation": "self-echo-no-peers-after-temporary-trim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/notifications.feature",
+      "sha256": "d8e77618d61934c5987221d0c76ece0af9e75fc4e4ecb8e4ef9857121606817a",
+      "outlines": 5,
+      "examples": 56,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "Communications audiences 01 - notification gates",
+          "examples": [
+            {
+              "type": "ALL",
+              "state": "healthy-stopped-pilot-and-passenger",
+              "observation": "both-occupants"
+            },
+            {
+              "type": "STARTED",
+              "state": "healthy-stopped-pilot-and-passenger",
+              "observation": "none"
+            },
+            {
+              "type": "PILOT",
+              "state": "healthy-stopped-pilot-inside",
+              "observation": "pilot-only"
+            },
+            {
+              "type": "PILOT",
+              "state": "pilot-outside-passenger-inside",
+              "observation": "passenger-only-fallback"
+            },
+            {
+              "type": "PILOT",
+              "state": "destroyed-pilot-inside",
+              "observation": "pilot-only"
+            },
+            {
+              "type": "ALL",
+              "state": "destroyed-started",
+              "observation": "none"
+            },
+            {
+              "type": "STARTED",
+              "state": "destroyed-started",
+              "observation": "occupants"
+            },
+            {
+              "type": "ALL",
+              "state": "unconscious",
+              "observation": "none"
+            },
+            {
+              "type": "PILOT",
+              "state": "blinded",
+              "observation": "none"
+            },
+            {
+              "type": "STARTED",
+              "state": "negative-ID",
+              "observation": "none"
+            },
+            {
+              "type": "ALL",
+              "state": "arc-override-two-turrets",
+              "observation": "unit-and-both-turret-contents"
+            },
+            {
+              "type": "ALL",
+              "state": "no-arc-override-two-turrets",
+              "observation": "unit-contents-only"
+            },
+            {
+              "type": "PRINTF",
+              "state": "formatted-value17",
+              "observation": "same-gates-and-hello17"
+            }
+          ]
+        },
+        {
+          "name": "Communications audiences 02 - map and limited broadcasts",
+          "examples": [
+            {
+              "fixture": "map-A-started-B-stopped",
+              "observation": "A-only-inbox"
+            },
+            {
+              "fixture": "mech-source-A-target-B-observers-C,D",
+              "observation": "C,D-inboxes"
+            },
+            {
+              "fixture": "mech-source-A-no-target-observers-B,C",
+              "observation": "B,C-inboxes"
+            },
+            {
+              "fixture": "2D-radius5-unit-distance5-Z10",
+              "observation": "count1-and-delivery"
+            },
+            {
+              "fixture": "3D-radius5-unit-XY0-Z6-scaled",
+              "observation": "count0"
+            },
+            {
+              "fixture": "2D-radius5-unit-distance5.01",
+              "observation": "count0"
+            },
+            {
+              "fixture": "3D-radius5-unit-distance5-unconscious",
+              "observation": "count1-no-delivery"
+            },
+            {
+              "fixture": "2D-radius5-stopped-and-started-inside",
+              "observation": "count2-one-delivery"
+            },
+            {
+              "fixture": "debug-C3-default",
+              "observation": "no-output-or-external-request"
+            }
+          ]
+        },
+        {
+          "name": "Communications audiences 03 - LOS and hex expansion",
+          "examples": [
+            {
+              "state": "single-visible-AtlasAB-same-team-message-moves",
+              "observation": "Atlas [ab] moves"
+            },
+            {
+              "state": "single-visible-AtlasAB-enemy-message-apostrophe-s-arm",
+              "observation": "Atlas [AB]'s arm"
+            },
+            {
+              "state": "single-ordinary-visible-NB-unseen",
+              "observation": "something [AB] moves"
+            },
+            {
+              "state": "single-unseen",
+              "observation": "no-delivery"
+            },
+            {
+              "state": "pair-only-attacker-visible",
+              "observation": "attacker-ID-and-someone"
+            },
+            {
+              "state": "pair-only-target-visible",
+              "observation": "Someone-and-target-ID"
+            },
+            {
+              "state": "pair-neither-visible",
+              "observation": "no-delivery"
+            },
+            {
+              "state": "pair-both-visible",
+              "observation": "both-observer-specific-IDs"
+            },
+            {
+              "state": "hex-own-dollar-h",
+              "observation": "your hex"
+            },
+            {
+              "state": "hex-other3,4-dollar-h",
+              "observation": "3,4"
+            },
+            {
+              "state": "hex-own-dollar-H",
+              "observation": "%ch%crYOUR HEX%cn"
+            },
+            {
+              "state": "hex-other3,4-dollar-H",
+              "observation": "%ch%cy3,4%cn"
+            },
+            {
+              "state": "hex-unknown-dollar-q-terminal-dollar",
+              "observation": "unknown-dollar-q-retained-terminal-dollar-removed"
+            },
+            {
+              "state": "hex-height3",
+              "observation": "sight-uses-Elevation-times-ZSCALE"
+            }
+          ]
+        },
+        {
+          "name": "Communications audiences 04 - real fire broadcasts",
+          "examples": [
+            {
+              "fixture": "unit-hit-both-visible",
+              "observation": "observer-hits-text-hit-counter-plus1"
+            },
+            {
+              "fixture": "unit-miss-defender-only-visible",
+              "observation": "Something-misses-target-ID"
+            },
+            {
+              "fixture": "unit-shot-attacker-only-visible",
+              "observation": "attacker-fires-at-something"
+            },
+            {
+              "fixture": "unit-shot-neither-visible",
+              "observation": "no-observer-message"
+            },
+            {
+              "fixture": "hex-shot-both-visible",
+              "observation": "attacker-fires-at-hex-no-shot-counter"
+            },
+            {
+              "fixture": "hex-shot-defender-only-visible",
+              "observation": "Something-fires-at-hex"
+            },
+            {
+              "fixture": "unit-hit-unconscious-observer",
+              "observation": "no-observer-inbox-hit-counter-plus1"
+            }
+          ]
+        },
+        {
+          "name": "Communications audiences 05 - common command checks",
+          "examples": [
+            {
+              "state": "null-unit",
+              "observation": "rejected"
+            },
+            {
+              "state": "destroyed-and-stopped-USUALO",
+              "observation": "destroyed-error"
+            },
+            {
+              "state": "stopped-and-blinded-USUALO",
+              "observation": "reactor-error"
+            },
+            {
+              "state": "blinded-and-unconscious-USUALO",
+              "observation": "blinded-error"
+            },
+            {
+              "state": "unconscious-started-pilot-USUAL",
+              "observation": "unconscious-error"
+            },
+            {
+              "state": "unconscious-started-passenger-USUAL",
+              "observation": "eligible"
+            },
+            {
+              "state": "unconscious-stopped-passenger-USUALS",
+              "observation": "unconscious-error"
+            },
+            {
+              "state": "IC-nonwizard-nonpilot-USUALO",
+              "observation": "pilot-only-error"
+            },
+            {
+              "state": "IC-wizard-nonpilot-USUALO",
+              "observation": "eligible"
+            },
+            {
+              "state": "OOC-nonpilot-USUALO",
+              "observation": "eligible"
+            },
+            {
+              "state": "negative-map-USUAL",
+              "observation": "no-map-error"
+            },
+            {
+              "state": "unresolved-nonnegative-map-USUAL",
+              "observation": "invalid-map-shutdown-reset-minus1"
+            },
+            {
+              "state": "last-use99-no-check-flags",
+              "observation": "eligible-last-use0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/ranges.feature",
+      "sha256": "8455a75e0c93db73fd33ef859c62ba1dbc9b2e847d2d49959755ca6f40f429ab",
+      "outlines": 4,
+      "examples": 32,
+      "dry_findings": 1,
+      "scenarios": [
+        {
+          "name": "C3 shared targeting 01 - best contributor",
+          "examples": [
+            {
+              "real": "12",
+              "peers": "B:3-visible;C:5-visible",
+              "result": "3,B"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-visible;C:3-visible",
+              "result": "3,B"
+            },
+            {
+              "real": "12",
+              "peers": "B:12-visible",
+              "result": "12,0"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-invisible",
+              "result": "12,0"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-visible-unconscious",
+              "result": "3,B"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-visible-stopped",
+              "result": "12,0"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-visible-AngelECM",
+              "result": "12,0"
+            },
+            {
+              "real": "12",
+              "peers": "target:0-visible",
+              "result": "12,0"
+            },
+            {
+              "real": "12",
+              "peers": "B:3-something",
+              "result": "3,B"
+            },
+            {
+              "real": "5",
+              "peers": "B:8-visible",
+              "result": "5,0"
+            }
+          ]
+        },
+        {
+          "name": "C3 shared targeting 02 - hex and early return",
+          "examples": [
+            {
+              "state": "hex-X0-Y4",
+              "observation": "real-range-no-source"
+            },
+            {
+              "state": "hex-X4-Y0",
+              "observation": "real-range-no-source"
+            },
+            {
+              "state": "hex-X4-Y4-height3",
+              "observation": "targetZ3-and-elevated-NB-peer-range"
+            },
+            {
+              "state": "owner-C3-destroyed-ref77",
+              "observation": "real-range-ref77-stored-unchanged"
+            },
+            {
+              "state": "owner-C3i-destroyed-ref77",
+              "observation": "real-range-ref77-reciprocal-clear"
+            },
+            {
+              "state": "owner-ECM-ref77",
+              "observation": "real-range-ref77-stored-unchanged"
+            },
+            {
+              "state": "empty-working-network-ref77",
+              "observation": "real-range-ref0"
+            }
+          ]
+        },
+        {
+          "name": "C3 shared targeting 03 - network visibility fold",
+          "examples": [
+            {
+              "views": "none",
+              "code": "0"
+            },
+            {
+              "views": "something",
+              "code": "2"
+            },
+            {
+              "views": "something,invisible",
+              "code": "0"
+            },
+            {
+              "views": "invisible,something",
+              "code": "2"
+            },
+            {
+              "views": "something,clear,invisible",
+              "code": "1"
+            },
+            {
+              "views": "clear,invisible",
+              "code": "1"
+            },
+            {
+              "views": "target-self",
+              "code": "0"
+            },
+            {
+              "views": "unconscious-clear",
+              "code": "1"
+            }
+          ]
+        },
+        {
+          "name": "C3 shared targeting 04 - normal firing consumers",
+          "examples": [
+            {
+              "condition": "real12-peer3-IS.MediumLaser",
+              "observation": "TOFAR-no-network-extension"
+            },
+            {
+              "condition": "real8-peer2-IS.MediumLaser",
+              "observation": "SHORT-network-bracket-and-peer-reference"
+            },
+            {
+              "condition": "real8-peer4-IS.MediumLaser",
+              "observation": "MED-network-bracket-and-peer-reference"
+            },
+            {
+              "condition": "real8-peer2-then-peer-shutdown",
+              "observation": "LONG-bracket-after-shutdown-membership-retained"
+            },
+            {
+              "condition": "real8-peer2-then-owner-ECM",
+              "observation": "LONG-bracket-while-disturbed"
+            },
+            {
+              "condition": "both-technologies-C3-peer4-C3i-peer2",
+              "observation": "C3-peer4-selected"
+            },
+            {
+              "condition": "own-fractional-minimum-LRM",
+              "observation": "accepted-combat-minimum-bypass-retained"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/routing.feature",
+      "sha256": "0453358f948e1b018b0d43a3fc0570ce0a876f6556dc0b3b9f4f4a4e669ae557",
+      "outlines": 3,
+      "examples": 26,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "Radio communication links 01 - relay eligibility",
+          "examples": [
+            {
+              "state": "same-team-started-relay-capable-matching",
+              "exists": "True"
+            },
+            {
+              "state": "enemy",
+              "exists": "False"
+            },
+            {
+              "state": "movable-stopped",
+              "exists": "False"
+            },
+            {
+              "state": "stationary-stopped-intact",
+              "exists": "True"
+            },
+            {
+              "state": "stationary-destroyed",
+              "exists": "False"
+            },
+            {
+              "state": "no-relay-capability",
+              "exists": "False"
+            },
+            {
+              "state": "matching-channel-without-relay-mode",
+              "exists": "False"
+            },
+            {
+              "state": "wrong-frequency",
+              "exists": "False"
+            },
+            {
+              "state": "relay-ECM",
+              "exists": "True"
+            },
+            {
+              "state": "relay-muted",
+              "exists": "True"
+            },
+            {
+              "state": "relay-mode-without-digital-diagnostic",
+              "exists": "True"
+            }
+          ]
+        },
+        {
+          "name": "Radio communication links 02 - path and edge behavior",
+          "examples": [
+            {
+              "graph": "A-range5-B-distance5-B-range5-C-distance5",
+              "observation": "A,B-path-C-recipient"
+            },
+            {
+              "graph": "A-range5-B-distance5.01-B-range10-C",
+              "observation": "no-route"
+            },
+            {
+              "graph": "A-range5-B-distance5-B-range1-C-distance5",
+              "observation": "no-route"
+            },
+            {
+              "graph": "A-range10-B-distance5-B-range1-C-distance5",
+              "observation": "A-path-C-direct"
+            },
+            {
+              "graph": "A-B-C-D-chain",
+              "observation": "A,B,C-path-D-recipient"
+            },
+            {
+              "graph": "A-B-D-and-A-C-D-equal",
+              "observation": "A,C-last-equal-route"
+            },
+            {
+              "graph": "A-B-C-D-and-A-E-D",
+              "observation": "A,E-shorter-route"
+            },
+            {
+              "graph": "A-B-cycle-no-target-edge",
+              "observation": "no-route-terminates"
+            },
+            {
+              "graph": "A-and-D-only-direct-helper",
+              "observation": "false-no-relay-candidates"
+            },
+            {
+              "graph": "A-B-D-B-two-matching-relay-channels",
+              "observation": "duplicate-candidates-retained"
+            },
+            {
+              "graph": "recursive-A-B-D",
+              "observation": "source-dep1-path-A-only"
+            }
+          ]
+        },
+        {
+          "name": "Radio communication links 03 - relay information",
+          "examples": [
+            {
+              "mode": "D",
+              "route": "A-B-C",
+              "observation": "no-R-path-header-bearing-to-B"
+            },
+            {
+              "mode": "DI",
+              "route": "A-B-C",
+              "observation": "R-path-B-bearing-to-A-then-Ops-title"
+            },
+            {
+              "mode": "DI",
+              "route": "A-B-D-C",
+              "observation": "R-path-B-then-D-bearing-to-D"
+            },
+            {
+              "mode": "DI",
+              "route": "A-C-direct",
+              "observation": "no-R-path-header-bearing-to-A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/transmission.feature",
+      "sha256": "9d4d11b2595fa20950995e9534c076431bc8dc7b6309c412adbba658c352cd23",
+      "outlines": 6,
+      "examples": 72,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "Radio transmission 01 - send parsing and gates",
+          "examples": [
+            {
+              "request": "a=hello",
+              "observation": "channel0-send-and-mine-check"
+            },
+            {
+              "request": "b=hello",
+              "observation": "channel1-send-and-mine-check"
+            },
+            {
+              "request": "A=hello",
+              "observation": "format-error"
+            },
+            {
+              "request": "Y=hello",
+              "observation": "format-error"
+            },
+            {
+              "request": "Z=hello",
+              "observation": "channel0-send-and-mine-check"
+            },
+            {
+              "request": "1=hello",
+              "observation": "channel0-send-and-mine-check"
+            },
+            {
+              "request": "a ignored hello",
+              "observation": "channel0-send-hello-and-mine-check"
+            },
+            {
+              "request": "leading-space-a=hello",
+              "observation": "channel0-send-equals-hello-from-empty-first-token"
+            },
+            {
+              "request": "a=empty",
+              "observation": "format-error"
+            },
+            {
+              "request": "a=hello-stopped",
+              "observation": "send-allowed"
+            },
+            {
+              "request": "a=hello-destroyed",
+              "observation": "gear-inoperative"
+            },
+            {
+              "request": "a=hello-radio-range0",
+              "observation": "gear-inoperative"
+            },
+            {
+              "request": "a=hello-crew-stunned",
+              "observation": "stunned-error"
+            },
+            {
+              "request": "a=byte10",
+              "observation": "control-character-error-no-mine-check"
+            },
+            {
+              "request": "a=hello-IC-frequency0",
+              "observation": "ZeroFrequencies-request-and-send"
+            }
+          ]
+        },
+        {
+          "name": "Radio transmission 02 - recipient selection",
+          "examples": [
+            {
+              "condition": "matching-two-receiver-channels",
+              "observation": "first-eligible-channel-only"
+            },
+            {
+              "condition": "first-matching-muted-second-matching",
+              "observation": "second-channel-only"
+            },
+            {
+              "condition": "enemy-matching-analog",
+              "observation": "delivered"
+            },
+            {
+              "condition": "matching-stopped-receiver",
+              "observation": "delivered"
+            },
+            {
+              "condition": "matching-unconscious-receiver",
+              "observation": "inbox-suppressed"
+            },
+            {
+              "condition": "matching-blinded-receiver",
+              "observation": "inbox-suppressed"
+            },
+            {
+              "condition": "matching-destroyed-receiver",
+              "observation": "skipped"
+            },
+            {
+              "condition": "matching-receiver-ID2",
+              "observation": "skipped"
+            },
+            {
+              "condition": "matching-receiver-radio0",
+              "observation": "no-normal-delivery"
+            },
+            {
+              "condition": "sender-digital-receiver-analog",
+              "observation": "delivered"
+            },
+            {
+              "condition": "sender-digital-receiver-NODIGITAL",
+              "observation": "not-delivered"
+            },
+            {
+              "condition": "sender-digital-range80-radio80",
+              "observation": "delivered"
+            },
+            {
+              "condition": "sender-digital-range80.9-radio80",
+              "observation": "delivered-integer-range80"
+            },
+            {
+              "condition": "sender-digital-range81-radio80-no-relay",
+              "observation": "not-delivered"
+            },
+            {
+              "condition": "sender-digital-receiver-radio1-range50-sender80",
+              "observation": "delivered"
+            },
+            {
+              "condition": "sender-digital-receiver-AngelECM",
+              "observation": "not-delivered"
+            },
+            {
+              "condition": "sender-digital-self-ECM",
+              "observation": "self-echo"
+            },
+            {
+              "condition": "observer-unmatched-frequency-range999-ECM",
+              "observation": "observer-message-once"
+            },
+            {
+              "condition": "observer-all-channels-muted",
+              "observation": "no-observer-message"
+            }
+          ]
+        },
+        {
+          "name": "Radio transmission 03 - scanner retuning",
+          "examples": [
+            {
+              "length": "20",
+              "frequency": "1000",
+              "scanner": "900",
+              "draws": "21",
+              "observation": "unchanged-no-detection"
+            },
+            {
+              "length": "20",
+              "frequency": "1000",
+              "scanner": "900",
+              "draws": "20,20",
+              "observation": "frequency920-somewhat"
+            },
+            {
+              "length": "80",
+              "frequency": "1000",
+              "scanner": "900",
+              "draws": "80,60",
+              "observation": "frequency960-precisely"
+            },
+            {
+              "length": "100",
+              "frequency": "1000",
+              "scanner": "1100",
+              "draws": "80,99",
+              "observation": "frequency1001-exactly"
+            },
+            {
+              "length": "20",
+              "frequency": "1000",
+              "scanner": "999",
+              "draws": "1,1",
+              "observation": "frequency1000-exactly-no-message-this-send"
+            },
+            {
+              "length": "20",
+              "frequency": "0",
+              "scanner": "900",
+              "draws": "none",
+              "observation": "no-scan"
+            },
+            {
+              "length": "20",
+              "frequency": "1000",
+              "scanner": "digital-sender-scanner900",
+              "draws": "none",
+              "observation": "no-scan"
+            },
+            {
+              "length": "20",
+              "frequency": "1000",
+              "scanner": "out-of-range-ECM-scanner900",
+              "draws": "20,20",
+              "observation": "frequency920-somewhat"
+            }
+          ]
+        },
+        {
+          "name": "Radio transmission 04 - scramble arithmetic",
+          "examples": [
+            {
+              "message": "A B",
+              "state": "analog-range80-send80-recv80",
+              "draws": "none",
+              "observation": "A B;xp0"
+            },
+            {
+              "message": "A B",
+              "state": "analog-range81-send80-recv80-bth4",
+              "draws": "percent100-roll9-for-each-byte-twice",
+              "observation": "A!B;xp1"
+            },
+            {
+              "message": "A",
+              "state": "analog-range100-send50-recv100-bth4",
+              "draws": "percent51-roll8-sign1-delta3",
+              "observation": "greater-than-symbol;xp1"
+            },
+            {
+              "message": "A",
+              "state": "analog-range100-send50-recv100-bth4",
+              "draws": "percent50",
+              "observation": "A;xp1"
+            },
+            {
+              "message": "A",
+              "state": "analog-range100-send50-recv100-bth4",
+              "draws": "percent51-roll9",
+              "observation": "A;xp1"
+            },
+            {
+              "message": "A",
+              "state": "digital-range100-send50-recv1",
+              "draws": "none",
+              "observation": "A;xp0"
+            },
+            {
+              "message": "A",
+              "state": "analog-ECM-range0",
+              "draws": "none",
+              "observation": "A;xp0"
+            },
+            {
+              "message": "A",
+              "state": "digital-ECM-range1-bth4",
+              "draws": "chance30-percent31-roll8-sign2-delta1",
+              "observation": "B;xp1"
+            },
+            {
+              "message": "space",
+              "state": "analog-ECM-range1-bth4",
+              "draws": "chance50-percent1",
+              "observation": "exclamation;xp1"
+            }
+          ]
+        },
+        {
+          "name": "Radio transmission 05 - CommXP and outside calls",
+          "examples": [
+            {
+              "workflow": "scrambled-IC-last0-tick60",
+              "observation": "no-XP-last0"
+            },
+            {
+              "workflow": "scrambled-IC-last0-tick61",
+              "observation": "CommXP-award-last61"
+            },
+            {
+              "workflow": "scrambled-IC-last61-tick121",
+              "observation": "no-new-XP-last61"
+            },
+            {
+              "workflow": "scrambled-IC-last61-tick122",
+              "observation": "CommXP-award-last122"
+            },
+            {
+              "workflow": "scrambled-OOC-last0-tick61",
+              "observation": "no-XP-last0"
+            },
+            {
+              "workflow": "clear-IC-last0-tick61",
+              "observation": "no-XP-last0"
+            },
+            {
+              "workflow": "channel-matching-command-mine",
+              "observation": "actual-detonation-and-mine-state-change"
+            },
+            {
+              "workflow": "channel-unmatched-command-mine",
+              "observation": "mine-retained"
+            },
+            {
+              "workflow": "missing-autopilot-object",
+              "observation": "autopilot-reset-minus1"
+            },
+            {
+              "workflow": "wrong-location-autopilot",
+              "observation": "unapplied-AI-log-request"
+            },
+            {
+              "workflow": "valid-unported-autopilot-parser",
+              "observation": "unapplied-parser-request"
+            },
+            {
+              "workflow": "radio-range-recovery",
+              "observation": "subsequent-send-uses-restored-range"
+            }
+          ]
+        },
+        {
+          "name": "Radio transmission 06 - direct radio differences",
+          "examples": [
+            {
+              "condition": "visible-enemy-radio0-ECM",
+              "observation": "sender-and-target-delivery"
+            },
+            {
+              "condition": "visible-target-stopped",
+              "observation": "sender-only-delivery-and-reply-request"
+            },
+            {
+              "condition": "sender-stopped",
+              "observation": "reactor-error"
+            },
+            {
+              "condition": "sender-observer",
+              "observation": "observer-error"
+            },
+            {
+              "condition": "no-LOS",
+              "observation": "target-LOS-error"
+            },
+            {
+              "condition": "wrong-separator",
+              "observation": "format-error"
+            },
+            {
+              "condition": "one-letter-target",
+              "observation": "format-error"
+            },
+            {
+              "condition": "three-letter-target",
+              "observation": "format-error"
+            },
+            {
+              "condition": "sender-crew-stunned",
+              "observation": "send-allowed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/c3_communications/workflows.feature",
+      "sha256": "89ddeabcee7cb0340af64068b815853495e52100982437a6525e4a5be9c23a03",
+      "outlines": 1,
+      "examples": 12,
+      "dry_findings": 0,
+      "scenarios": [
+        {
+          "name": "C3 communications workflows 01 - independent end to end procedures",
+          "examples": [
+            {
+              "procedure": "c3-formation-and-fire",
+              "outcome": "joined-network-changes-real-shot-range"
+            },
+            {
+              "procedure": "c3i-membership-and-loss",
+              "outcome": "six-unit-capacity-and-real-critical-detachment"
+            },
+            {
+              "procedure": "network-availability",
+              "outcome": "ECM-shutdown-and-unconscious-distinguished"
+            },
+            {
+              "procedure": "network-reports-and-messages",
+              "outcome": "ordered-masked-reports-and-recipient-inboxes"
+            },
+            {
+              "procedure": "channel-configuration",
+              "outcome": "parsed-settings-list-and-transmission-agree"
+            },
+            {
+              "procedure": "radio-relay",
+              "outcome": "multihop-digital-delivery-and-route-bearing"
+            },
+            {
+              "procedure": "analog-scan-and-XP",
+              "outcome": "retuning-scrambling-and-real-CommXP"
+            },
+            {
+              "procedure": "channel-mines-and-recovery",
+              "outcome": "actual-mine-detonation-and-restored-radio"
+            },
+            {
+              "procedure": "notification-audiences",
+              "outcome": "occupant-pilot-turret-and-suppression-cases"
+            },
+            {
+              "procedure": "visibility-broadcasts",
+              "outcome": "ordinary-fire-and-movement-observer-delivery"
+            },
+            {
+              "procedure": "map-transfer-and-pilot-radio",
+              "outcome": "detached-networks-and-emergency-MW-channel"
+            },
+            {
+              "procedure": "presentation-and-boundaries",
+              "outcome": "all-source-display-modes-and-explicit-external-effects"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "outlines": 37,
+  "examples": 421
+}

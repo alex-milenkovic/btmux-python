@@ -1,0 +1,74 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        1,
+        1
+      ],
+      "hexes": [
+        {
+          "at": [
+            0,
+            0
+          ],
+          "terrain": "ICE",
+          "elevation": 2
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "class": "VEH_GROUND",
+      "movement": "TRACK"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {
+      "pilot_rolls": [
+        4
+      ],
+      "rolls": [
+        8
+      ],
+      "fall_directions": [
+        3
+      ],
+      "hit_location_rolls": [
+        6
+      ],
+      "damage_entry": [
+        5
+      ]
+    }
+  },
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "temperature": 1
+      }
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

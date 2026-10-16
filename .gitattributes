@@ -1,0 +1,3 @@
+# Preserve original license and notice bytes, including their line endings.
+LICENSE -text
+notices/*.txt -text

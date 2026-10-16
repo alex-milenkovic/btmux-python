@@ -1,0 +1,307 @@
+{
+  "maps": [
+    {
+      "name": "field",
+      "id": 1000,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "name": "bay",
+      "id": 1001,
+      "size": [
+        7,
+        5
+      ],
+      "onmap": 10,
+      "bay": {
+        "onmap": "Ship"
+      }
+    }
+  ],
+  "random": {
+    "seed": 0
+  },
+  "units": [
+    {
+      "name": "Ship",
+      "contact_id": "SS",
+      "at": [
+        10,
+        10,
+        0
+      ],
+      "team": 1,
+      "id": 10,
+      "tonnage": 2000,
+      "real_mass": 2000,
+      "class": "DS",
+      "aerospace": {
+        "bays": [
+          "bay",
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "sections": [
+        {
+          "index": 5,
+          "slots": [
+            {
+              "index": 0,
+              "special": "DS_MECHDOOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alpha",
+      "contact_id": "AA",
+      "at": [
+        1,
+        1,
+        0
+      ],
+      "team": 1,
+      "id": 11,
+      "map": "bay",
+      "core": {
+        "preferred_contact_id": "AA"
+      }
+    },
+    {
+      "name": "Bravo",
+      "contact_id": "BB",
+      "at": [
+        3,
+        1,
+        0
+      ],
+      "team": 1,
+      "id": 12,
+      "map": "bay",
+      "core": {
+        "preferred_contact_id": "BB"
+      }
+    },
+    {
+      "name": "Charlie",
+      "contact_id": "CC",
+      "at": [
+        5,
+        1,
+        0
+      ],
+      "team": 1,
+      "id": 13,
+      "map": "bay",
+      "core": {
+        "preferred_contact_id": "CC"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Alpha",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Alpha",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Bravo",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Bravo",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Charlie",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Charlie",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Alpha",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Alpha",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 50
+    },
+    {
+      "op": "command",
+      "unit": "Alpha",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "command",
+      "unit": "Bravo",
+      "name": "heading",
+      "args": [
+        270
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Bravo",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 50
+    },
+    {
+      "op": "command",
+      "unit": "Bravo",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "command",
+      "unit": "Charlie",
+      "name": "heading",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Charlie",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 50
+    },
+    {
+      "op": "command",
+      "unit": "Charlie",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

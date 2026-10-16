@@ -1,0 +1,59 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        1,
+        1
+      ],
+      "hexes": []
+    }
+  ],
+  "units": [],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {
+      "snow_growth": [
+        10,
+        20
+      ]
+    }
+  },
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "conditions": [
+          "precipitation"
+        ],
+        "temperature": 0
+      }
+    },
+    {
+      "op": "advance",
+      "seconds": 59
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 1
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

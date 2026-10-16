@@ -1,0 +1,120 @@
+{
+  "units": [
+    {
+      "name": "u",
+      "sections": [
+        {
+          "index": 0,
+          "armor": 100,
+          "armor_orig": 100,
+          "internal": 10
+        }
+      ],
+      "weapons": [
+        {
+          "name": "IS.MediumLaser",
+          "section": 0,
+          "critical": 4
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "conditions",
+      "args": "100 20 1"
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "name": "damage-section",
+      "args": [
+        "LA",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "name": "repair",
+      "args": [
+        "LA",
+        4
+      ]
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "seed": 5489
+  }
+}

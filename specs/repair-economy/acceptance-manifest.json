@@ -1,0 +1,2391 @@
+{
+  "kind": "Executable feature inventory and example data",
+  "features": [
+    {
+      "path": "features/repair_economy/access.feature",
+      "sha256": "06df015e35762ffd662e54c218b7c67822f1c882ff78fbe0b8a7edb718f56693",
+      "outlines": 2,
+      "example_count": 33,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy access and parsing 01 command gates",
+          "examples": [
+            {
+              "initial": "Tech false and Wiz true",
+              "operation": "fixinternal CT",
+              "expected": "refuse clearance before dice or writes"
+            },
+            {
+              "initial": "Tech true startup true stall true",
+              "operation": "fixinternal CT",
+              "expected": "refuse startup"
+            },
+            {
+              "initial": "Tech true started true stall true",
+              "operation": "fixinternal CT",
+              "expected": "refuse started"
+            },
+            {
+              "initial": "Tech true shutdown nonDS stall false",
+              "operation": "fixinternal CT",
+              "expected": "refuse stall"
+            },
+            {
+              "initial": "Tech true shutdown DS stall false",
+              "operation": "fixinternal Nose",
+              "expected": "pass shared C gate"
+            },
+            {
+              "initial": "Tech true Wiz true started true stall false",
+              "operation": "fixinternal CT",
+              "expected": "pass shared C gate"
+            },
+            {
+              "initial": "Tech true shutdown limitedrepairs 0 stall false",
+              "operation": "reload CT 1",
+              "expected": "pass shared D gate"
+            },
+            {
+              "initial": "Tech true shutdown limitedrepairs 1 stall false",
+              "operation": "reload CT 1",
+              "expected": "refuse stall"
+            },
+            {
+              "initial": "Tech true shutdown pending minutes 599",
+              "operation": "replacepart CT 1",
+              "expected": "pass fatigue gate"
+            },
+            {
+              "initial": "Tech true Wiz true pending minutes 600",
+              "operation": "replacepart CT 1",
+              "expected": "refuse fatigue"
+            },
+            {
+              "initial": "IC true Wiz false Tech true",
+              "operation": "toggletype CT 1 -",
+              "expected": "refuse IC wizard gate"
+            },
+            {
+              "initial": "IC false Wiz false Tech false",
+              "operation": "toggletype CT 1 -",
+              "expected": "fill valid ammo immediately"
+            },
+            {
+              "initial": "Tech true pending minutes 600 stall true",
+              "operation": "fixextra",
+              "expected": "immediate existing restoration without dice"
+            },
+            {
+              "initial": "Tech true pending minutes 600 stall true template missing",
+              "operation": "magic",
+              "expected": "explicit template dependency without invented restoration"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy access and parsing 02 parser boundaries",
+          "examples": [
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart CT 1",
+              "expected": "location4 position0"
+            },
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart CT 12",
+              "expected": "location4 position11"
+            },
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart CT 13",
+              "expected": "error -2"
+            },
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart CT 0",
+              "expected": "error -2"
+            },
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart BAD 1",
+              "expected": "error -1"
+            },
+            {
+              "initial": "Mech CT with twelve slots",
+              "operation": "parsepart CT 2junk",
+              "expected": "location4 position1"
+            },
+            {
+              "initial": "rear-aware armor parser",
+              "operation": "parsepart CT rear",
+              "expected": "location12"
+            },
+            {
+              "initial": "rear-aware armor parser",
+              "operation": "parsepart LT R",
+              "expected": "location10"
+            },
+            {
+              "initial": "optional-extra part parser",
+              "operation": "parsepart CT 2 cluster",
+              "expected": "extra c"
+            },
+            {
+              "initial": "optional-extra part parser",
+              "operation": "parsepart CT 2",
+              "expected": "extra zero"
+            },
+            {
+              "initial": "AERO Cockpit with five slots",
+              "operation": "parsepart Cockpit 5",
+              "expected": "location4 position4"
+            },
+            {
+              "initial": "AERO Cockpit with five slots",
+              "operation": "parsepart Cockpit 6",
+              "expected": "error -2"
+            },
+            {
+              "initial": "first global gun destroyed",
+              "operation": "parsegun 0",
+              "expected": "locate destroyed mount"
+            },
+            {
+              "initial": "first global gun recycling",
+              "operation": "parsegun 0",
+              "expected": "locate recycling mount"
+            },
+            {
+              "initial": "Mech CT weapon begins slot3 width2",
+              "operation": "validgun CT 4",
+              "expected": "false"
+            },
+            {
+              "initial": "Mech CT weapon begins slot3 width2",
+              "operation": "validgun CT 3",
+              "expected": "true"
+            },
+            {
+              "initial": "brand-enabled CT slot3 weapon",
+              "operation": "parsegun CT 13 Brand",
+              "expected": "error -4"
+            },
+            {
+              "initial": "brand-enabled CT slot3 weapon",
+              "operation": "parsegun CT 3 MissingBrand",
+              "expected": "error -2"
+            },
+            {
+              "initial": "brand-enabled CT slot3 weapon",
+              "operation": "parsegun CT 3 OtherPartBrand",
+              "expected": "error -3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/ammo.feature",
+      "sha256": "d88450dd5fb63505e1e34a6197982594e97c8fd33f9cc56f95859ce7ec7da79a",
+      "outlines": 3,
+      "example_count": 60,
+      "dry_advisories": 2,
+      "scenarios": [
+        {
+          "name": "Repair economy ammunition economy 01 literal mode compatibility",
+          "examples": [
+            {
+              "initial": "NOSPA ammo",
+              "operation": "normal -",
+              "expected": "invalid"
+            },
+            {
+              "initial": "ordinary ammo without specials",
+              "operation": "normal -",
+              "expected": "valid zero mask"
+            },
+            {
+              "initial": "nonammo weapon",
+              "operation": "cluster L",
+              "expected": "invalid"
+            },
+            {
+              "initial": "LBX ammo",
+              "operation": "cluster l",
+              "expected": "valid LBX_MODE"
+            },
+            {
+              "initial": "missile DAR ammo",
+              "operation": "artemis A",
+              "expected": "invalid"
+            },
+            {
+              "initial": "missile ordinary ammo",
+              "operation": "artemis A",
+              "expected": "valid ARTEMIS_MODE"
+            },
+            {
+              "initial": "missile INARC ammo",
+              "operation": "narc N",
+              "expected": "invalid"
+            },
+            {
+              "initial": "missile ordinary ammo",
+              "operation": "narc N",
+              "expected": "valid NARC_MODE"
+            },
+            {
+              "initial": "missile IDF ammo",
+              "operation": "swarm S",
+              "expected": "valid SWARM_MODE"
+            },
+            {
+              "initial": "missile without IDF ammo",
+              "operation": "swarm S",
+              "expected": "invalid"
+            },
+            {
+              "initial": "missile IDF ammo",
+              "operation": "swarm1 1",
+              "expected": "valid SWARM1_MODE"
+            },
+            {
+              "initial": "missile IDF ammo",
+              "operation": "inferno I",
+              "expected": "invalid"
+            },
+            {
+              "initial": "missile without IDF ammo",
+              "operation": "inferno I",
+              "expected": "valid INFERNO_MODE"
+            },
+            {
+              "initial": "missile INARC ammo",
+              "operation": "explosive X",
+              "expected": "valid INARC_EXPLO_MODE"
+            },
+            {
+              "initial": "missile INARC ammo",
+              "operation": "haywire Y",
+              "expected": "valid INARC_HAYWIRE_MODE"
+            },
+            {
+              "initial": "missile INARC ammo",
+              "operation": "ecm E",
+              "expected": "valid INARC_ECM_MODE"
+            },
+            {
+              "initial": "missile INARC ammo",
+              "operation": "nemesis Z",
+              "expected": "valid INARC_NEMESIS_MODE"
+            },
+            {
+              "initial": "TAMMO RFAC ammo",
+              "operation": "armor piercing R",
+              "expected": "valid AC_AP_MODE"
+            },
+            {
+              "initial": "TAMMO RFAC ammo",
+              "operation": "flechette F",
+              "expected": "valid AC_FLECHETTE_MODE"
+            },
+            {
+              "initial": "TAMMO RFAC ammo",
+              "operation": "incendiary D",
+              "expected": "valid AC_INCENDIARY_MODE"
+            },
+            {
+              "initial": "TAMMO RFAC ammo",
+              "operation": "precision P",
+              "expected": "valid AC_PRECISION_MODE"
+            },
+            {
+              "initial": "TAMMO RFAC ammo",
+              "operation": "caseless U",
+              "expected": "valid AC_CASELESS_MODE"
+            },
+            {
+              "initial": "TAMMO without RFAC ammo",
+              "operation": "precision P",
+              "expected": "invalid"
+            },
+            {
+              "initial": "missile IDF ammo",
+              "operation": "stinger T",
+              "expected": "valid STINGER_MODE"
+            },
+            {
+              "initial": "missile IDF ammo",
+              "operation": "semiguided G",
+              "expected": "valid SGUIDED_MODE"
+            },
+            {
+              "initial": "missile IDF ammo not ATM",
+              "operation": "high explosive H",
+              "expected": "valid ATM_HE_MODE"
+            },
+            {
+              "initial": "missile IDF ammo not ATM",
+              "operation": "extended range V",
+              "expected": "valid ATM_ER_MODE"
+            },
+            {
+              "initial": "missile IDF ammo not MML",
+              "operation": "LRM mode #",
+              "expected": "valid MML_LRM_MODE"
+            },
+            {
+              "initial": "missile IDF DAR ammo",
+              "operation": "LRM mode #",
+              "expected": "invalid"
+            },
+            {
+              "initial": "ordinary ammo",
+              "operation": "unknown Q",
+              "expected": "invalid"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy ammunition economy 02 commodity priorities",
+          "examples": [
+            {
+              "initial": "StreakSRM6 normal",
+              "expected": "SSRM base cargo"
+            },
+            {
+              "initial": "StreakLRM10 normal",
+              "expected": "SLRM base cargo"
+            },
+            {
+              "initial": "ELRM15 normal",
+              "expected": "ELRM base cargo"
+            },
+            {
+              "initial": "LR_DFM5 normal",
+              "expected": "LR_DFM base cargo"
+            },
+            {
+              "initial": "SR_DFM2 normal",
+              "expected": "SR_DFM base cargo"
+            },
+            {
+              "initial": "LRM15 normal",
+              "expected": "LRM base cargo"
+            },
+            {
+              "initial": "SRM6 normal",
+              "expected": "SRM base cargo"
+            },
+            {
+              "initial": "MRM20 normal",
+              "expected": "MRM base cargo"
+            },
+            {
+              "initial": "ordinary nonmissile ammo normal",
+              "expected": "encoded ammo identity"
+            },
+            {
+              "initial": "LB20 ammo LBX",
+              "expected": "LBX20 cargo"
+            },
+            {
+              "initial": "LB10 ammo LBX",
+              "expected": "LBX10 cargo"
+            },
+            {
+              "initial": "LB5 ammo LBX",
+              "expected": "LBX5 cargo"
+            },
+            {
+              "initial": "LB2 ammo LBX",
+              "expected": "LBX2 cargo"
+            },
+            {
+              "initial": "AC10 AP and PRECISION",
+              "expected": "AC10 precision cargo"
+            },
+            {
+              "initial": "LightAC5 CASELESS",
+              "expected": "LightAC5 caseless cargo"
+            },
+            {
+              "initial": "iNarc explosive and haywire",
+              "expected": "explosive commodity"
+            },
+            {
+              "initial": "LRM15 Narc and Artemis",
+              "expected": "LRM Narc commodity"
+            },
+            {
+              "initial": "LRM15 Swarm1",
+              "expected": "LRM Swarm1 commodity"
+            },
+            {
+              "initial": "LRM15 ATM_HE",
+              "expected": "LRM base cargo"
+            },
+            {
+              "initial": "nonammo Engine",
+              "expected": "Engine identity"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy ammunition economy 03 reload unload and early writes",
+          "examples": [
+            {
+              "initial": "partial bin8 of10 ammo stock1 roll success",
+              "operation": "reload and advance600",
+              "expected": "stock0 at command ammo10 only at600"
+            },
+            {
+              "initial": "partial bin8 of10 ammo stock1 roll fail",
+              "operation": "reload and advance900",
+              "expected": "stock0 ammo8 and no refill"
+            },
+            {
+              "initial": "full bin10 of10 mode normal",
+              "operation": "reload with valid alternative",
+              "expected": "refuse full and keep normal mode"
+            },
+            {
+              "initial": "partial bin8 of10 pending600 minutes",
+              "operation": "reload with valid alternative",
+              "expected": "refuse fatigue after emptying and mode change"
+            },
+            {
+              "initial": "partial bin8 of10 replacement ammo stock0",
+              "operation": "reload with valid alternative",
+              "expected": "refuse stock after emptying and mode change"
+            },
+            {
+              "initial": "full bin10 of10 roll success",
+              "operation": "unload and advance600",
+              "expected": "ammo0 and returned commodity1"
+            },
+            {
+              "initial": "partial bin8 of10 roll success",
+              "operation": "unload and advance600",
+              "expected": "ammo0 and returned commodity0"
+            },
+            {
+              "initial": "full bin10 of10 roll fail",
+              "operation": "unload and advance900",
+              "expected": "ammo0 and returned commodity1"
+            },
+            {
+              "initial": "empty bin0 of10",
+              "operation": "unload",
+              "expected": "refuse empty without dice"
+            },
+            {
+              "initial": "OOC nonTech ammo2 of10 unrelated mode retained",
+              "operation": "toggletype valid alternative",
+              "expected": "ammo10 and only ammo mode bits replaced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/cargo.feature",
+      "sha256": "cbcac51f48830f2c69937b26bef5c412bc23d3f757b3bc1d703381b11d29e852",
+      "outlines": 2,
+      "example_count": 25,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy cargo transfer and mass 01 load unload restrictions",
+          "examples": [
+            {
+              "initial": "started pilot CargoTech in unit in OOC hangar at bay speed0 store5",
+              "operation": "loadcargo item 3",
+              "expected": "unit plus3 store minus3"
+            },
+            {
+              "initial": "shutdown pilot CargoTech in unit in OOC hangar at bay store5",
+              "operation": "loadcargo item 3",
+              "expected": "refuse shared started gate"
+            },
+            {
+              "initial": "started pilot without CargoTech valid hangar",
+              "operation": "loadcargo item 3",
+              "expected": "refuse CargoTech"
+            },
+            {
+              "initial": "started pilot valid hangar speed0.1",
+              "operation": "loadcargo item 3",
+              "expected": "refuse movement"
+            },
+            {
+              "initial": "started pilot valid hangar speed-0.1",
+              "operation": "loadcargo item 3",
+              "expected": "refuse movement"
+            },
+            {
+              "initial": "started pilot valid hangar wrong bay third coordinate flag1",
+              "operation": "loadcargo item 3",
+              "expected": "refuse and reveal required coordinates"
+            },
+            {
+              "initial": "started pilot valid hangar wrong bay third coordinate flag0",
+              "operation": "loadcargo item 3",
+              "expected": "refuse without coordinates"
+            },
+            {
+              "initial": "started pilot IC hangar",
+              "operation": "loadcargo item 3",
+              "expected": "refuse IC hangar"
+            },
+            {
+              "initial": "shutdown pilot CargoTech moving IC hangar wrong bay cargo5",
+              "operation": "unloadcargo item 3",
+              "expected": "unit minus3 store plus3"
+            },
+            {
+              "initial": "pilot outside unit",
+              "operation": "unloadcargo item 3",
+              "expected": "refuse actor location"
+            },
+            {
+              "initial": "unit outside its map room",
+              "operation": "unloadcargo item 3",
+              "expected": "refuse hangar relationship"
+            },
+            {
+              "initial": "store itemA2 itemB5 selector both count4",
+              "operation": "loadcargo selector 4",
+              "expected": "transfer A2 B4 independently"
+            },
+            {
+              "initial": "store21 matching items each1",
+              "operation": "loadcargo selector 1",
+              "expected": "all21 transfer without admin match cap"
+            },
+            {
+              "initial": "bay attribute one numeric token",
+              "operation": "loadcargo item 1",
+              "expected": "no bay-coordinate restriction"
+            },
+            {
+              "initial": "valid load guards selector matches no items",
+              "operation": "loadcargo missing 1",
+              "expected": "nothing matching and correct-speed refresh still occurs"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy cargo transfer and mass 02 weight and speed coupling",
+          "examples": [
+            {
+              "initial": "unit inventory two one-ton parts brands1 and2",
+              "operation": "refresh cargo weight",
+              "expected": "mass2 tons regardless brands and LOAD_OK cleared"
+            },
+            {
+              "initial": "flying unit mounted fuel tank1 stored tank2",
+              "operation": "refresh cargo weight",
+              "expected": "max fuel original plus6000"
+            },
+            {
+              "initial": "flying unit destroyed mounted fuel tank1",
+              "operation": "refresh cargo weight",
+              "expected": "max fuel original plus2000"
+            },
+            {
+              "initial": "nonflying unit mounted fuel tank1 no stored tanks",
+              "operation": "refresh cargo weight",
+              "expected": "no mounted tank capacity addition"
+            },
+            {
+              "initial": "flying unit bomb in backing section7 slot11 destroyed",
+              "operation": "refresh cargo weight",
+              "expected": "bomb mass included"
+            },
+            {
+              "initial": "stored bomb commodity count2",
+              "operation": "refresh cargo weight",
+              "expected": "source bomb weight times8 mass units"
+            },
+            {
+              "initial": "flying unit fuel original100 current150 no tanks",
+              "operation": "refresh cargo weight",
+              "expected": "excess50 raw mass added"
+            },
+            {
+              "initial": "flying unit fuel original100 current90 no tanks",
+              "operation": "refresh cargo weight",
+              "expected": "no excess-fuel mass"
+            },
+            {
+              "initial": "old cargo maximum60 new cargo maximum40 speed55 desired55",
+              "operation": "correct speed once then twice",
+              "expected": "first speeds55 second speeds40"
+            },
+            {
+              "initial": "old cargo maximum60 desired-50 actual-50",
+              "operation": "correct speed",
+              "expected": "actual-40 desired-40 using reverse two-thirds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/economy.feature",
+      "sha256": "ca1a41ca5f2096057799681656ac0a029743e58920d470768a3a9d3076c0e812",
+      "outlines": 2,
+      "example_count": 31,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy object inventory storage 01 raw storage mutations",
+          "examples": [
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "find idA brand0",
+              "expected": "count2 without write"
+            },
+            {
+              "initial": "[idA,0,2],[idA,0,5]",
+              "operation": "find idA brand0",
+              "expected": "count2 not7"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "change idA brand0 plus4",
+              "expected": "[idB,0,3],[idA,0,6]"
+            },
+            {
+              "initial": "[idA,0,2],[idA,0,5]",
+              "operation": "change idA brand0 plus1",
+              "expected": "[idA,0,5],[idA,0,3]"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "change idA brand0 minus2",
+              "expected": "[idB,0,3]"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "change idA brand0 minus9",
+              "expected": "[idB,0,3]"
+            },
+            {
+              "initial": "[idB,0,3]",
+              "operation": "change idA brand0 minus1",
+              "expected": "identical raw storage without attribute write"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "set idA brand0 to2",
+              "expected": "identical raw storage without attribute write"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "set idA brand0 to5",
+              "expected": "[idB,0,3],[idA,0,5]"
+            },
+            {
+              "initial": "invalid object",
+              "operation": "change idA brand0 plus3",
+              "expected": "no write"
+            },
+            {
+              "initial": "brand2 same catalog short name as brand0",
+              "operation": "change idA brand2 plus3",
+              "expected": "normalized brand0 count3"
+            },
+            {
+              "initial": "brand2 distinct catalog short name",
+              "operation": "change idA brand2 plus3",
+              "expected": "retained brand2 count3"
+            },
+            {
+              "initial": "raw actuator count2",
+              "operation": "change actuator plus1",
+              "expected": "actuator removed and standard actuator cargo plus3"
+            },
+            {
+              "initial": "raw actuator count2",
+              "operation": "find standard actuator cargo",
+              "expected": "count0 without alias lookup"
+            },
+            {
+              "initial": "[idA,0,2 missing closing bracket",
+              "operation": "remove idA brand0",
+              "expected": "raw text unchanged"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "remove idB brand0",
+              "expected": "[idA,0,2]"
+            },
+            {
+              "initial": "[idA,0,2],[idB,0,3]",
+              "operation": "remove idA brand0",
+              "expected": "[idB,0,3]"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy object inventory storage 02 cleanup listing and admin",
+          "examples": [
+            {
+              "initial": "duplicate idA counts2 and5",
+              "operation": "manifest",
+              "expected": "aggregated count7"
+            },
+            {
+              "initial": "idA raw counts2 and-5",
+              "operation": "manifest",
+              "expected": "displayed count-3"
+            },
+            {
+              "initial": "idA count2 one-ton item",
+              "operation": "manifest",
+              "expected": "count2 weight2 tons"
+            },
+            {
+              "initial": "raw valid positive duplicate crap negative and invalid catalog entries",
+              "operation": "Rfixstuff",
+              "expected": "aggregate valid positives only and canonical order"
+            },
+            {
+              "initial": "actor room has inventory and unit differs",
+              "operation": "manifest",
+              "expected": "actor-room inventory"
+            },
+            {
+              "initial": "selector matches short family and different long family",
+              "operation": "Raddstuff selector 3",
+              "expected": "short family only gains3 each"
+            },
+            {
+              "initial": "admin selector matches20 parts",
+              "operation": "Raddstuff selector 3",
+              "expected": "all20 gain3"
+            },
+            {
+              "initial": "admin nonGOD selector matches21 parts",
+              "operation": "Raddstuff selector 3",
+              "expected": "refuse before any stock mutation"
+            },
+            {
+              "initial": "admin GOD selector matches21 parts",
+              "operation": "Raddstuff selector 3",
+              "expected": "all21 gain3"
+            },
+            {
+              "initial": "admin count50001",
+              "operation": "Raddstuff selector 50001",
+              "expected": "each match gains50000"
+            },
+            {
+              "initial": "admin count0",
+              "operation": "Raddstuff selector 0",
+              "expected": "refuse positive-count requirement"
+            },
+            {
+              "initial": "admin count3junk",
+              "operation": "Rremovestuff selector 3junk",
+              "expected": "remove3 by atoi prefix"
+            },
+            {
+              "initial": "admin nonempty room inventory",
+              "operation": "Rresetstuff",
+              "expected": "room storage empty and log request"
+            },
+            {
+              "initial": "empty room inventory",
+              "operation": "manifest",
+              "expected": "empty footer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/events.feature",
+      "sha256": "28f7a44aaac5cd2e89567583da654af7eb4cb023d7449e61aa30ded639f9bdc3",
+      "outlines": 2,
+      "example_count": 31,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy repair event execution 01 queue identity and conflict",
+          "examples": [
+            {
+              "initial": "actor7 loc4 pos3 extra2",
+              "operation": "pack repair payload",
+              "expected": "459316"
+            },
+            {
+              "initial": "actor7 loc4 pos3 extra2 type53",
+              "operation": "conflict same loc4 pos3",
+              "expected": "true"
+            },
+            {
+              "initial": "actor7 loc4 pos3 extra2 type53",
+              "operation": "conflict loc4 pos4",
+              "expected": "false"
+            },
+            {
+              "initial": "actor8 loc4 pos3 extra0 fake type53",
+              "operation": "conflict loc4 pos3",
+              "expected": "true"
+            },
+            {
+              "initial": "two type53 events same unit loc4 pos3",
+              "operation": "SomeoneRepairing_s type53 loc4 pos3",
+              "expected": "count2"
+            },
+            {
+              "initial": "two armor events same unit loc4",
+              "operation": "SomeoneFixingA loc4",
+              "expected": "count2"
+            },
+            {
+              "initial": "actor7 loc4 pos3 extra2 type51",
+              "operation": "SomeoneScrappingPart loc4 pos3",
+              "expected": "true"
+            },
+            {
+              "initial": "actor7 loc4 pos3 extra2 type52",
+              "operation": "SomeoneScrappingPart loc4 pos3",
+              "expected": "false"
+            },
+            {
+              "initial": "armor loc12 actor7",
+              "operation": "SomeoneFixingA loc4",
+              "expected": "false"
+            },
+            {
+              "initial": "armor loc12 actor7",
+              "operation": "SomeoneFixingA loc12",
+              "expected": "true"
+            },
+            {
+              "initial": "fake repair delay60",
+              "operation": "advance59 then1",
+              "expected": "present and unchanged then absent and unchanged"
+            },
+            {
+              "initial": "real repairpart delay60",
+              "operation": "advance59 then1",
+              "expected": "broken then repaired and event absent"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy repair event execution 02 callback state and estimates",
+          "examples": [
+            {
+              "initial": "replacegun width2 requestedbrand3",
+              "operation": "execute callback",
+              "expected": "both repaired tempnuke0 brand3"
+            },
+            {
+              "initial": "repairgun width2 existingbrand2",
+              "operation": "execute callback",
+              "expected": "both repaired tempnuke0 brand2"
+            },
+            {
+              "initial": "replacegun requestedbrand0 existingbrand2",
+              "operation": "execute callback",
+              "expected": "repaired but brand2 retained"
+            },
+            {
+              "initial": "repairpart selected oneshot weapon destroyed expended",
+              "operation": "execute callback",
+              "expected": "repaired and oneshot expenditure cleared"
+            },
+            {
+              "initial": "repairpart selected ammo destroyed count8",
+              "operation": "execute callback",
+              "expected": "repaired ammo count0"
+            },
+            {
+              "initial": "repairenhcrit middle damaged first tempnuke1 last damaged",
+              "operation": "execute callback",
+              "expected": "middle clear first tempnuke0 last still damaged"
+            },
+            {
+              "initial": "removegun split second start0 remaining2",
+              "operation": "execute callback",
+              "expected": "second slots0 and1 destroyed"
+            },
+            {
+              "initial": "removegun split second start3 remaining2",
+              "operation": "execute callback",
+              "expected": "second run untouched by source upper-bound quirk"
+            },
+            {
+              "initial": "all populated internals1 armor0",
+              "operation": "completely intact internal query",
+              "expected": "true"
+            },
+            {
+              "initial": "one populated internal0",
+              "operation": "completely intact internal query",
+              "expected": "false"
+            },
+            {
+              "initial": "armor packed amount3 first due180",
+              "operation": "latest tech event",
+              "expected": "540 seconds"
+            },
+            {
+              "initial": "internal packed amount2 first due540",
+              "operation": "latest tech event",
+              "expected": "1080 seconds"
+            },
+            {
+              "initial": "armor payload4144 first due180",
+              "operation": "latest tech event",
+              "expected": "46620 seconds from unmasked payload estimate"
+            },
+            {
+              "initial": "source type57 queued",
+              "operation": "repairs report",
+              "expected": "suit description followed by reseal description"
+            },
+            {
+              "initial": "fake source type53 queued remaining119",
+              "operation": "repairs report with lag0",
+              "expected": "actor location Failure and 1 minute"
+            },
+            {
+              "initial": "fake source type53 queued remaining119",
+              "operation": "repairs report with lag50",
+              "expected": "time1 minute from truncation before lag"
+            },
+            {
+              "initial": "fake source type50 queued",
+              "operation": "repairs report",
+              "expected": "scrapping description without Failure suffix"
+            },
+            {
+              "initial": "fake source type47 queued",
+              "operation": "repairs report",
+              "expected": "Failed armor repair label"
+            },
+            {
+              "initial": "no tech events but movement queued",
+              "operation": "checkstatus",
+              "expected": "ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/inventory.feature",
+      "sha256": "52b8da56de1014c12658d09d4cc40187930c126c0538dac25300b900581d6dc9",
+      "outlines": 2,
+      "example_count": 31,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy damage and scrap reports 01 damage ordering and dispatch",
+          "examples": [
+            {
+              "initial": "Mech CT destroyed with damaged LA",
+              "operation": "build damage table diagnostic",
+              "expected": "CT reattach only"
+            },
+            {
+              "initial": "Mech CT destroyed with damaged LA",
+              "operation": "damages",
+              "expected": "scrap plan instead of CT reattachment"
+            },
+            {
+              "initial": "Mech CT flooded with damaged LA",
+              "operation": "damages",
+              "expected": "CT reseal only"
+            },
+            {
+              "initial": "Mech LT destroyed and damaged LA RT",
+              "operation": "damages",
+              "expected": "LT reattach then RT work with LA suppressed"
+            },
+            {
+              "initial": "Mech CT internal8 original10 armor5 original10 rear3 original5",
+              "operation": "damages",
+              "expected": "internal2 only before part rows"
+            },
+            {
+              "initial": "Mech CT internal10 original10 armor5 original10 rear3 original5",
+              "operation": "damages",
+              "expected": "front5 then rear2 before part rows"
+            },
+            {
+              "initial": "BA one destroyed member",
+              "operation": "damages",
+              "expected": "replace-suit row"
+            },
+            {
+              "initial": "live section ammo partial broken",
+              "operation": "damages",
+              "expected": "reload row before part replacement row"
+            },
+            {
+              "initial": "gun enhanced focus and crystal flags",
+              "operation": "damages",
+              "expected": "focus row only for that critical"
+            },
+            {
+              "initial": "gun enhanced crystal and barrel flags",
+              "operation": "damages",
+              "expected": "crystal row only for that critical"
+            },
+            {
+              "initial": "undestroyed gun tempnuke1 width2",
+              "operation": "damages",
+              "expected": "temporary gun repair row and skip second slot"
+            },
+            {
+              "initial": "destroyed gun width2",
+              "operation": "damages",
+              "expected": "gun replacement row and skip second slot"
+            },
+            {
+              "initial": "pristine Mech",
+              "operation": "damages",
+              "expected": "pristine mech message and empty machine list"
+            },
+            {
+              "initial": "pristine ground vehicle",
+              "operation": "damages",
+              "expected": "pristine unit message and empty machine list"
+            },
+            {
+              "initial": "three snapshot rows",
+              "operation": "fix 3-2",
+              "expected": "no dispatch and no work"
+            },
+            {
+              "initial": "three snapshot rows",
+              "operation": "fix 0-2",
+              "expected": "invalid low and no work"
+            },
+            {
+              "initial": "three snapshot rows",
+              "operation": "fix 1-4",
+              "expected": "invalid high and no work"
+            },
+            {
+              "initial": "three snapshot rows",
+              "operation": "fix 2",
+              "expected": "dispatch second row once"
+            },
+            {
+              "initial": "three damage rows armor2 stock2 then broken actuator stock0 then broken sink stock1",
+              "operation": "fix 1-3",
+              "expected": "first and third jobs queued second refuses stock with original indices"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy damage and scrap reports 02 scrap inventory and status",
+          "examples": [
+            {
+              "initial": "unfixable Mech RA intact removable part",
+              "operation": "scrap table",
+              "expected": "RA part removal before any RT traversal"
+            },
+            {
+              "initial": "unfixable Mech RA pending section removal",
+              "operation": "scrap table",
+              "expected": "RA detach row then RT traversal"
+            },
+            {
+              "initial": "unfixable Mech section broken part only path clear",
+              "operation": "scrap table",
+              "expected": "skip broken part and offer detach"
+            },
+            {
+              "initial": "unfixable Mech section nonempty ammo no queued work",
+              "operation": "scrap table",
+              "expected": "unload row and no detach"
+            },
+            {
+              "initial": "unfixable Mech section nonempty ammo queued reload",
+              "operation": "scrap table",
+              "expected": "unload row and detach when path clear"
+            },
+            {
+              "initial": "front armor repair queued same loc",
+              "operation": "damage report",
+              "expected": "front row in-progress with N/A time and BTH"
+            },
+            {
+              "initial": "rear armor repair queued encodedloc12",
+              "operation": "damage report CT",
+              "expected": "rear row in-progress front row not marked"
+            },
+            {
+              "initial": "fake part replacement queued",
+              "operation": "damage report",
+              "expected": "part row in-progress despite no eventual repair"
+            },
+            {
+              "initial": "ammo8 capacity10 not queued",
+              "operation": "machine report",
+              "expected": "reload data name:2 and in-progress0"
+            },
+            {
+              "initial": "ammo8 on scrap list",
+              "operation": "machine report",
+              "expected": "unload data name:8 and in-progress0"
+            },
+            {
+              "initial": "weapon width1 tempnuke followed width6 tempnuke",
+              "operation": "human report",
+              "expected": "second temporary BTH retains extra_hard0 from first"
+            },
+            {
+              "initial": "weapon width6 tempnuke followed width1 tempnuke",
+              "operation": "human report",
+              "expected": "first temporary BTH uses extra_hard1 then second0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/parts.feature",
+      "sha256": "8cc6cfa01640f975991b1ad36528c46d322a06ad47b842c213896ef37c80e952",
+      "outlines": 2,
+      "example_count": 27,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy part maintenance 01 replacement outcomes",
+          "examples": [
+            {
+              "initial": "broken nonweapon stock2 brand0 general success",
+              "operation": "replacepart then advance2700",
+              "expected": "stock1 part repaired at2700 not2699"
+            },
+            {
+              "initial": "broken nonweapon stock2 initial fail recovery success",
+              "operation": "replacepart then advance4020",
+              "expected": "stock2 part unchanged and fake consumed"
+            },
+            {
+              "initial": "broken nonweapon stock2 both rolls fail",
+              "operation": "replacepart then advance4020",
+              "expected": "stock1 part unchanged and fake consumed"
+            },
+            {
+              "initial": "broken ammo stock0 general success",
+              "operation": "replacepart then advance2700",
+              "expected": "ammo repaired data0 and no negative stored entry"
+            },
+            {
+              "initial": "broken gun width2 stock2 weapon success",
+              "operation": "replacegun then advance7200",
+              "expected": "stock1 both slots repaired only at7200"
+            },
+            {
+              "initial": "broken gun width2 stock2 first fail recovery success",
+              "operation": "replacegun then advance10800",
+              "expected": "stock2 both slots unchanged"
+            },
+            {
+              "initial": "broken gun width2 stock2 both rolls fail",
+              "operation": "replacegun then advance10800",
+              "expected": "stock1 both slots unchanged"
+            },
+            {
+              "initial": "broken gun oldbrand1 requestedbrand2 stock0",
+              "operation": "replacegun",
+              "expected": "refuse stock but slot brand2 remains"
+            },
+            {
+              "initial": "broken gun oldbrand1 requestedbrand2 stock2 success",
+              "operation": "replacegun before due",
+              "expected": "stock1 slot brand1 until event"
+            },
+            {
+              "initial": "broken gun oldbrand1 requestedbrand2 stock2 success",
+              "operation": "replacegun at due",
+              "expected": "slot brand2 and repaired"
+            },
+            {
+              "initial": "functional gun width2 stock2",
+              "operation": "replacegun",
+              "expected": "refuse functional without dice or stock change"
+            },
+            {
+              "initial": "broken gun second slot selected",
+              "operation": "replacegun",
+              "expected": "refuse not mount first"
+            },
+            {
+              "initial": "flooded section broken part stock2",
+              "operation": "replacepart",
+              "expected": "refuse flooded without resource debit"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy part maintenance 02 repair and enhanced outcomes",
+          "examples": [
+            {
+              "initial": "undestroyed gun width2 tempnuke1 electronics1 internal1 success",
+              "operation": "repairgun and advance1200",
+              "expected": "both slots repaired using live callback under source type53"
+            },
+            {
+              "initial": "undestroyed gun width2 BROKEN only tempnuke0",
+              "operation": "repairgun",
+              "expected": "refuse no applicable temporary damage"
+            },
+            {
+              "initial": "undestroyed gun width2 disabled tempnuke1",
+              "operation": "repairgun",
+              "expected": "refuse disabled"
+            },
+            {
+              "initial": "selected destroyed gun width4 second intact",
+              "operation": "repairgun",
+              "expected": "refuse short destroyed weapon"
+            },
+            {
+              "initial": "selected destroyed gun width5 second intact stock3 each success",
+              "operation": "repairgun",
+              "expected": "debit3 each and queue extra-hard repair"
+            },
+            {
+              "initial": "selected destroyed gun width5 second intact stock3 each fail",
+              "operation": "repairgun",
+              "expected": "debit3 each destroy second slot now and fake1800"
+            },
+            {
+              "initial": "selected destroyed gun width5 second destroyed",
+              "operation": "repairgun",
+              "expected": "refuse both destroyed"
+            },
+            {
+              "initial": "undestroyed gun tempnuke1 electronics1 internal0",
+              "operation": "repairgun",
+              "expected": "refuse missing internal and retain electronics1"
+            },
+            {
+              "initial": "nonweapon tempnuke1 electronics1 internal1 success",
+              "operation": "repairpart and advance900",
+              "expected": "selected slot repaired at900"
+            },
+            {
+              "initial": "nonweapon tempnuke1 electronics1 internal1 fail",
+              "operation": "repairpart and advance1320",
+              "expected": "stock consumed and slot unchanged"
+            },
+            {
+              "initial": "nonweapon destroyed electronics3 internal3",
+              "operation": "repairpart",
+              "expected": "refuse destroyed part"
+            },
+            {
+              "initial": "gun width3 damaged middle slot electronics1 success",
+              "operation": "fixenhcrit and advance900",
+              "expected": "middle damage cleared first tempnuke0 other damage retained"
+            },
+            {
+              "initial": "nonweapon damaged flag electronics1",
+              "operation": "fixenhcrit",
+              "expected": "refuse nonweapon"
+            },
+            {
+              "initial": "intact gun middle slot electronics1",
+              "operation": "fixenhcrit",
+              "expected": "refuse no enhanced damage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/persistence.feature",
+      "sha256": "95446995761162936c046dec2f685f2be79bb6c1f35c2df56671c6a40ca75402",
+      "outlines": 2,
+      "example_count": 30,
+      "dry_advisories": 2,
+      "scenarios": [
+        {
+          "name": "Repair economy saved repair queues 01 record semantics",
+          "examples": [
+            {
+              "initial": "real repairpart actor7 loc4 pos3 due120",
+              "operation": "save at tick20",
+              "expected": "remaining100 positive actor and payload preserved"
+            },
+            {
+              "initial": "fake repairpart actor7 loc4 pos3 due120",
+              "operation": "save at tick20",
+              "expected": "remaining-100 and fake marker preserved"
+            },
+            {
+              "initial": "repairpart due20",
+              "operation": "save at tick20",
+              "expected": "remaining1"
+            },
+            {
+              "initial": "repairpart due10",
+              "operation": "save at tick20",
+              "expected": "remaining1"
+            },
+            {
+              "initial": "no tech events",
+              "operation": "save",
+              "expected": "terminator only and no movement records"
+            },
+            {
+              "initial": "real repairpart remaining100",
+              "operation": "load at tick500 advance99 then1",
+              "expected": "unchanged then repaired at600"
+            },
+            {
+              "initial": "fake repairpart remaining-100",
+              "operation": "load at tick500 advance100",
+              "expected": "no repair resources or XP and event consumed"
+            },
+            {
+              "initial": "real reseal type56 remaining100",
+              "operation": "load",
+              "expected": "no reseal event scheduled"
+            },
+            {
+              "initial": "fake reseal type56 remaining-100",
+              "operation": "load",
+              "expected": "fake event scheduled at100"
+            },
+            {
+              "initial": "live repairgun callback saved type53",
+              "operation": "load then due",
+              "expected": "selected part repaired without whole-gun callback"
+            },
+            {
+              "initial": "real repairgun type52 saved",
+              "operation": "load then due",
+              "expected": "whole gun repaired"
+            },
+            {
+              "initial": "unknown real type99 saved",
+              "operation": "load",
+              "expected": "record skipped"
+            },
+            {
+              "initial": "one valid record then truncated record",
+              "operation": "load",
+              "expected": "first retained then bounded end"
+            },
+            {
+              "initial": "one valid record then missing-unit record",
+              "operation": "load",
+              "expected": "first retained and bounded invalid-reference diagnostic"
+            },
+            {
+              "initial": "packed payload outside supported integer domain",
+              "operation": "load",
+              "expected": "explicit range error and no fabricated event"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy saved repair queues 02 all real callback mappings",
+          "examples": [
+            {
+              "initial": "source type43 valid saved record",
+              "expected": "repairpart"
+            },
+            {
+              "initial": "source type44 valid saved record",
+              "expected": "replacegun"
+            },
+            {
+              "initial": "source type45 valid saved record",
+              "expected": "reattach"
+            },
+            {
+              "initial": "source type46 valid saved record",
+              "expected": "reload or unload by extra"
+            },
+            {
+              "initial": "source type47 valid saved record",
+              "expected": "armor point and continuation"
+            },
+            {
+              "initial": "source type48 valid saved record",
+              "expected": "internal point and continuation"
+            },
+            {
+              "initial": "source type49 valid saved record",
+              "expected": "section removal"
+            },
+            {
+              "initial": "source type50 valid saved record",
+              "expected": "part removal"
+            },
+            {
+              "initial": "source type51 valid saved record",
+              "expected": "gun removal"
+            },
+            {
+              "initial": "source type52 valid saved record",
+              "expected": "whole gun repair"
+            },
+            {
+              "initial": "source type53 valid saved record",
+              "expected": "repairpart"
+            },
+            {
+              "initial": "source type54 valid saved record",
+              "expected": "inert bomb mount"
+            },
+            {
+              "initial": "source type55 valid saved record",
+              "expected": "inert bomb unmount"
+            },
+            {
+              "initial": "source type57 valid saved record",
+              "expected": "replace suit"
+            },
+            {
+              "initial": "source type58 valid saved record",
+              "expected": "enhanced critical repair"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/scrap.feature",
+      "sha256": "1bf4bb3479bc2eb47796636bd9c334e817057f54764fb17c8831245cb20c8d06",
+      "outlines": 3,
+      "example_count": 39,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy salvage and failure callbacks 01 salvage commands",
+          "examples": [
+            {
+              "initial": "intact gun width2 weapon success",
+              "operation": "removegun and advance4800",
+              "expected": "gun destroyed at4800 and salvage1"
+            },
+            {
+              "initial": "intact gun width2 first fail recovery pass",
+              "operation": "removegun and advance4800",
+              "expected": "gun destroyed at4800 and salvage1"
+            },
+            {
+              "initial": "intact gun width2 both weapon rolls fail",
+              "operation": "removegun and advance4800",
+              "expected": "gun intact and salvage0 with normal-time fake"
+            },
+            {
+              "initial": "intact removable part first fail recovery pass",
+              "operation": "removepart and advance2400",
+              "expected": "part destroyed salvage1"
+            },
+            {
+              "initial": "intact removable part both rolls fail",
+              "operation": "removepart and advance3600",
+              "expected": "part intact salvage0"
+            },
+            {
+              "initial": "structural Endosteel slot",
+              "operation": "removepart",
+              "expected": "refuse structural material"
+            },
+            {
+              "initial": "weapon slot",
+              "operation": "removepart",
+              "expected": "refuse use weapon removal"
+            },
+            {
+              "initial": "Mech LT with LA intact",
+              "operation": "removesection",
+              "expected": "refuse outside-in path"
+            },
+            {
+              "initial": "Mech CT with HD intact and sides destroyed",
+              "operation": "removesection",
+              "expected": "refuse head prerequisite"
+            },
+            {
+              "initial": "live LA internal10 frontarmor20 reararmor8 success",
+              "operation": "removesection and advance7200",
+              "expected": "detached salvage10 internal20 armor5 electronics"
+            },
+            {
+              "initial": "live LA internal10 frontarmor20 reararmor8 fail",
+              "operation": "removesection and advance10800",
+              "expected": "detached salvage6 internal13 armor3 electronics"
+            },
+            {
+              "initial": "scheduled normal remove-section now internal6 frontarmor8",
+              "operation": "execute event",
+              "expected": "salvage6 internal8 armor3 electronics from due state"
+            },
+            {
+              "initial": "selected part pending repair type53",
+              "operation": "removepart",
+              "expected": "refuse same part repair"
+            },
+            {
+              "initial": "section pending repairgun type52 only",
+              "operation": "CanScrapLoc",
+              "expected": "true under narrow source filter"
+            },
+            {
+              "initial": "section pending replacepart type43",
+              "operation": "CanScrapLoc",
+              "expected": "false"
+            },
+            {
+              "initial": "section pending reload type46",
+              "operation": "CanScrapLoc",
+              "expected": "false"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy salvage and failure callbacks 02 legacy failure helpers",
+          "examples": [
+            {
+              "initial": "old replacement helper initial stock0 recovery pass",
+              "operation": "replaceg_fail",
+              "expected": "refund1 and return-1"
+            },
+            {
+              "initial": "old replacement helper initial stock0",
+              "operation": "replacep_fail",
+              "expected": "refund0 return-1 and no dice"
+            },
+            {
+              "initial": "destroyed gun width5 second intact",
+              "operation": "repairg_fail",
+              "expected": "second destroyed and return-1"
+            },
+            {
+              "initial": "destroyed gun width4 second intact",
+              "operation": "repairp_fail",
+              "expected": "second intact and return-1"
+            },
+            {
+              "initial": "damaged enhanced critical",
+              "operation": "repairenhcrit_fail",
+              "expected": "unchanged and return-1"
+            },
+            {
+              "initial": "partially full bin",
+              "operation": "reload_fail",
+              "expected": "unchanged and return-1"
+            },
+            {
+              "initial": "old reattach originalinternal10 recovery fail percent50",
+              "operation": "reattach_fail",
+              "expected": "refund5 internal5 electronics return-1"
+            },
+            {
+              "initial": "old reattach originalinternal10 recovery pass",
+              "operation": "reattach_fail",
+              "expected": "refund0 return0"
+            },
+            {
+              "initial": "old reseal originalinternal10 recovery fail percent50",
+              "operation": "reseal_fail",
+              "expected": "refund5 internal5 electronics return-1"
+            },
+            {
+              "initial": "suit original resources10,2,2,10 recovery fail percent5",
+              "operation": "replacesuit_fail",
+              "expected": "refund1 internal1 sensor0 life0 electronics return-1"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy salvage and failure callbacks 03 inert source bodies",
+          "examples": [
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "replacep_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "replaceg_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "reload_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "fixinternal_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "fixarmor_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "reattach_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "reseal_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "replacesuit_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "repairg_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "repairenhcrit_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "nonempty inventory and damaged unit",
+              "operation": "repairp_succ",
+              "expected": "return0 with no state dice or queue changes"
+            },
+            {
+              "initial": "mounted bomb and cargo",
+              "operation": "mountbomb event",
+              "expected": "no state inventory or notification changes"
+            },
+            {
+              "initial": "mounted bomb and cargo",
+              "operation": "umountbomb event",
+              "expected": "no state inventory or notification changes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/structure.feature",
+      "sha256": "76c0c72bf017d24d6af977b0758216fc3803ef12868089b371438be04b658941",
+      "outlines": 3,
+      "example_count": 49,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy armor and structure maintenance 01 point scheduling",
+          "examples": [
+            {
+              "initial": "front armor7 original10 full internals stock3 success",
+              "operation": "fixarmor and advance179 then1 then180 then180",
+              "expected": "armor7 then8 then9 then10 and stock0"
+            },
+            {
+              "initial": "internal7 original10 stock3 success",
+              "operation": "fixinternal and advance539 then1 then540 then540",
+              "expected": "internal7 then8 then9 then10 and stock0"
+            },
+            {
+              "initial": "rear armor4 original6 full internals stock2 success",
+              "operation": "fixarmor CT r and advance180 then180",
+              "expected": "rear5 then6 front unchanged encodedloc12"
+            },
+            {
+              "initial": "front armor11 original10 full internals",
+              "operation": "fixarmor",
+              "expected": "refuse no repair need after source clamp"
+            },
+            {
+              "initial": "front armor5 original10 internal9 original10",
+              "operation": "fixarmor",
+              "expected": "refuse internals first"
+            },
+            {
+              "initial": "front armor5 original10 stock5 initial fail recovery pass percentdraw5",
+              "operation": "fixarmor",
+              "expected": "amount2 time9 minutes first due360 then540 total and stock0"
+            },
+            {
+              "initial": "internal5 original10 stock5 initial fail recovery fail percentdraw44",
+              "operation": "fixinternal",
+              "expected": "amount2 time27 minutes first due1080 then1620 total and stock0"
+            },
+            {
+              "initial": "front armor9 original10 stock1 initial fail recovery pass percentdraw44",
+              "operation": "fixarmor and advance1",
+              "expected": "armor10 no finish message and no remaining event"
+            },
+            {
+              "initial": "internal9 original10 stock1 initial fail recovery fail percentdraw5",
+              "operation": "fixinternal and advance1",
+              "expected": "internal10 no finish message and no remaining event"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy armor and structure maintenance 02 structural jobs and resources",
+          "examples": [
+            {
+              "initial": "destroyed Mech LA LT present originalinternal10 stocks10 each success",
+              "operation": "reattach and advance14400",
+              "expected": "LA internal10 unflooded and both stocks0"
+            },
+            {
+              "initial": "destroyed Mech LA originalinternal10 with LT destroyed",
+              "operation": "reattach",
+              "expected": "refuse path without dice or debit"
+            },
+            {
+              "initial": "destroyed Mech CT originalinternal10",
+              "operation": "reattach",
+              "expected": "refuse unfixable"
+            },
+            {
+              "initial": "live Mech LA flooded originalinternal10 stocks10 each success",
+              "operation": "reseal and advance3600",
+              "expected": "unflooded disabled parts repaired and both stocks0"
+            },
+            {
+              "initial": "live Mech LA not flooded",
+              "operation": "reseal",
+              "expected": "refuse not flooded"
+            },
+            {
+              "initial": "live flooded LA originalinternal10 internalstock10 electronics9",
+              "operation": "reseal",
+              "expected": "refuse and retain both full stocks"
+            },
+            {
+              "initial": "live flooded LA originalinternal10 stocks10 each fail then recovery pass",
+              "operation": "reseal and advance5400",
+              "expected": "real reseal and stocks0"
+            },
+            {
+              "initial": "live flooded LA originalinternal10 stocks10 each both fail percent50",
+              "operation": "reseal and advance5400",
+              "expected": "still flooded and refund5 each"
+            },
+            {
+              "initial": "BA three live one destroyed target stock10,2,2,10 success",
+              "operation": "replacesuit and advance7200",
+              "expected": "member restored and all four resources0"
+            },
+            {
+              "initial": "BA no live members and stock10,2,2,10",
+              "operation": "replacesuit",
+              "expected": "refuse all dead without debit"
+            },
+            {
+              "initial": "BA three live one destroyed fourth resource9",
+              "operation": "replacesuit",
+              "expected": "refuse and retain every resource"
+            },
+            {
+              "initial": "BA three live one destroyed full stock both fail percent50",
+              "operation": "replacesuit and advance10800",
+              "expected": "member stays destroyed refunds5 internal1 sensor1 life5 electronics"
+            },
+            {
+              "initial": "nonBA destroyed location",
+              "operation": "replacesuit",
+              "expected": "refuse wrong unit type"
+            },
+            {
+              "initial": "BA destroyed location",
+              "operation": "reattach",
+              "expected": "refuse suits need replacement"
+            },
+            {
+              "initial": "destroyed Mech LA originalinternal10 stocks10 each first fail recovery pass",
+              "operation": "reattach and advance21600",
+              "expected": "restored and stocks0"
+            },
+            {
+              "initial": "destroyed Mech LA originalinternal10 stocks10 each both fail",
+              "operation": "reattach and advance21600",
+              "expected": "not restored and stocks0"
+            },
+            {
+              "initial": "AERO Nose armor0 internal0 original10",
+              "operation": "reattach event",
+              "expected": "internal1 armor0 and still armor-destroyed"
+            },
+            {
+              "initial": "AERO Nose armor5 original10 internal10 original10 stock5 success",
+              "operation": "fixarmor and advance900",
+              "expected": "armor10 with internals10 and SI unchanged"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy armor and structure maintenance 03 repairability and material aliases",
+          "examples": [
+            {
+              "initial": "Mech CT destroyed originalinternal10",
+              "operation": "unit fixability",
+              "expected": "false"
+            },
+            {
+              "initial": "Mech LA destroyed originalinternal10 CT intact",
+              "operation": "unit fixability",
+              "expected": "true"
+            },
+            {
+              "initial": "VTOL rotor5 destroyed populated",
+              "operation": "unit fixability",
+              "expected": "true"
+            },
+            {
+              "initial": "VTOL front destroyed populated",
+              "operation": "unit fixability",
+              "expected": "false"
+            },
+            {
+              "initial": "ground turret4 destroyed populated",
+              "operation": "unit fixability",
+              "expected": "true"
+            },
+            {
+              "initial": "ground front destroyed populated",
+              "operation": "unit fixability",
+              "expected": "false"
+            },
+            {
+              "initial": "AERO Fuselage armor0 populated",
+              "operation": "unit fixability",
+              "expected": "true"
+            },
+            {
+              "initial": "Mech CT unpopulated originalinternal0",
+              "operation": "unit fixability",
+              "expected": "true"
+            },
+            {
+              "initial": "FF and Hardened armor technologies",
+              "operation": "proper armor",
+              "expected": "FF cargo"
+            },
+            {
+              "initial": "Stealth and HeavyFF armor technologies",
+              "operation": "proper armor",
+              "expected": "Stealth cargo"
+            },
+            {
+              "initial": "HeavyFF and LightFF armor technologies",
+              "operation": "proper armor",
+              "expected": "HeavyFF cargo"
+            },
+            {
+              "initial": "Purifier stealth infantry technology",
+              "operation": "proper armor",
+              "expected": "Purifier cargo"
+            },
+            {
+              "initial": "Endosteel and Reinforced internal technologies",
+              "operation": "proper internal",
+              "expected": "Endosteel cargo"
+            },
+            {
+              "initial": "Reinforced and Composite internal technologies",
+              "operation": "proper internal",
+              "expected": "Reinforced cargo"
+            },
+            {
+              "initial": "Composite internal technology",
+              "operation": "proper internal",
+              "expected": "Composite cargo"
+            },
+            {
+              "initial": "shoulder actuator",
+              "operation": "alias part",
+              "expected": "standard actuator cargo"
+            },
+            {
+              "initial": "Engine XL and ICE technology",
+              "operation": "alias part",
+              "expected": "XL engine cargo"
+            },
+            {
+              "initial": "Engine ICE and XXL technology",
+              "operation": "alias part",
+              "expected": "ICE engine cargo"
+            },
+            {
+              "initial": "Engine XXL and Compact technology",
+              "operation": "alias part",
+              "expected": "XXL engine cargo"
+            },
+            {
+              "initial": "Engine Compact and Light technology",
+              "operation": "alias part",
+              "expected": "Compact engine cargo"
+            },
+            {
+              "initial": "Engine Light technology",
+              "operation": "alias part",
+              "expected": "Light engine cargo"
+            },
+            {
+              "initial": "HeatSink with double technology",
+              "operation": "alias part",
+              "expected": "double heat sink cargo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/time.feature",
+      "sha256": "0551b1379befd6c2ac809f2da958902730440d0c2cd810266634be422276bdb9",
+      "outlines": 2,
+      "example_count": 25,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy technician time and rolls 01 clock arithmetic",
+          "examples": [
+            {
+              "initial": "now1000 TECHTIME absent",
+              "operation": "status and pending",
+              "expected": "ready and 0 minutes"
+            },
+            {
+              "initial": "now1000 TECHTIME 999",
+              "operation": "status and pending",
+              "expected": "ready and 0 minutes"
+            },
+            {
+              "initial": "now1000 TECHTIME 1059",
+              "operation": "status and pending",
+              "expected": "pending and 0 minutes"
+            },
+            {
+              "initial": "now1000 TECHTIME 1060",
+              "operation": "status and pending",
+              "expected": "pending and 1 minute"
+            },
+            {
+              "initial": "now1000 TECHTIME 1059",
+              "operation": "append2 minutes",
+              "expected": "TECHTIME1179 and delay179 seconds"
+            },
+            {
+              "initial": "now1000 TECHTIME 900",
+              "operation": "append2 minutes",
+              "expected": "TECHTIME1120 and delay120 seconds"
+            },
+            {
+              "initial": "wall elapsed120 tick100",
+              "operation": "lag-adjust100 seconds",
+              "expected": "lag20 and adjusted120 seconds"
+            },
+            {
+              "initial": "wall elapsed90 tick100",
+              "operation": "lag-adjust100 seconds",
+              "expected": "lag-10 and adjusted90 seconds"
+            },
+            {
+              "initial": "wall elapsed120 tick0",
+              "operation": "lag-adjust100 seconds",
+              "expected": "lag0 and adjusted100 seconds"
+            },
+            {
+              "initial": "pending59 seconds base45 minutes success",
+              "operation": "explicit replacement scheduling",
+              "expected": "updated TECHTIME plus2700 and due2700 seconds"
+            },
+            {
+              "initial": "pending59 seconds base15 minutes success",
+              "operation": "STARTREPAIR scheduling",
+              "expected": "updated TECHTIME plus900 and due959 seconds"
+            },
+            {
+              "initial": "variable time enabled base60 margin2 mod10",
+              "operation": "compute time",
+              "expected": "50 minutes"
+            },
+            {
+              "initial": "variable time enabled base60 margin0 mod10",
+              "operation": "compute time",
+              "expected": "60 minutes"
+            },
+            {
+              "initial": "variable time enabled base60 margin10 mod10",
+              "operation": "compute time",
+              "expected": "bounded invalid-divisor diagnostic"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy technician time and rolls 02 skill and dice selection",
+          "examples": [
+            {
+              "initial": "Mech skill8 diff1 dice4,5 IC",
+              "operation": "general tech roll",
+              "expected": "margin0 success and technician XP"
+            },
+            {
+              "initial": "Ground skill8 diff1 dice4,4 IC",
+              "operation": "general tech roll",
+              "expected": "margin-1 failure and no XP"
+            },
+            {
+              "initial": "AERO skill7 diff2 dice5,5 IC",
+              "operation": "general tech roll",
+              "expected": "margin1 and aerospace technician XP"
+            },
+            {
+              "initial": "VTOL skill7 diff2 dice5,5 OOC",
+              "operation": "general tech roll",
+              "expected": "margin1 and no XP"
+            },
+            {
+              "initial": "BA skill7 diff0 dice3,4 IC",
+              "operation": "general tech roll",
+              "expected": "margin0 and BattleMech technician XP"
+            },
+            {
+              "initial": "weapon skill8 diff1 aptitude dice1,4,5",
+              "operation": "weapon tech roll",
+              "expected": "margin0 from best two dice"
+            },
+            {
+              "initial": "weapon skill8 diff1 normal dice1,4",
+              "operation": "weapon tech roll",
+              "expected": "margin-4 from both dice"
+            },
+            {
+              "initial": "catalog weapon width1 fighter physical1",
+              "operation": "weapon difficulty and replacement base",
+              "expected": "difficulty0 and 60 minutes"
+            },
+            {
+              "initial": "catalog weapon width6 fighter physical1",
+              "operation": "weapon difficulty and replacement base",
+              "expected": "difficulty2 and 60 minutes"
+            },
+            {
+              "initial": "catalog weapon width6 Mech physical6 Clan",
+              "operation": "weapon difficulty and replacement base",
+              "expected": "difficulty2 and 180 minutes"
+            },
+            {
+              "initial": "catalog weapon width1 Mech physical1 Clan",
+              "operation": "weapon difficulty and replacement base",
+              "expected": "difficulty0 and 60 minutes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/towing.feature",
+      "sha256": "ae34fb0468db88fed4d0cc2e8f3b943f70146cdb5af87930f185254720e0a1b9",
+      "outlines": 3,
+      "example_count": 40,
+      "dry_advisories": 2,
+      "scenarios": [
+        {
+          "name": "Repair economy pickup dropoff and cables 01 pickup guards and transitions",
+          "examples": [
+            {
+              "initial": "Mech tower functional arms and enemy intact shutdown team2",
+              "operation": "pickup target",
+              "expected": "refuse intact enemy"
+            },
+            {
+              "initial": "Mech tower functional arms and enemy started",
+              "operation": "pickup target",
+              "expected": "refuse started enemy"
+            },
+            {
+              "initial": "Mech tower functional arms and friendly shutdown target",
+              "operation": "pickup target",
+              "expected": "carrying relation TOWED fallen centered shutdown and mirrored position"
+            },
+            {
+              "initial": "Mech quad tower",
+              "operation": "pickup nonMW",
+              "expected": "refuse quad"
+            },
+            {
+              "initial": "Mech tower left arm destroyed right functional",
+              "operation": "pickup nonMW",
+              "expected": "refuse missing arm"
+            },
+            {
+              "initial": "Mech tower both arms present left shoulder and hand functional right broken",
+              "operation": "pickup nonMW",
+              "expected": "accept equipment gate"
+            },
+            {
+              "initial": "Mech tower both arms present no arm has both shoulder and hand",
+              "operation": "pickup nonMW",
+              "expected": "refuse functional actuator gate"
+            },
+            {
+              "initial": "nonMech tower no SALVAGE_TECH",
+              "operation": "pickup nonMW",
+              "expected": "refuse salvage equipment"
+            },
+            {
+              "initial": "nonMech tower SALVAGE_TECH",
+              "operation": "pickup friendly target",
+              "expected": "accept equipment gate"
+            },
+            {
+              "initial": "Mech tower speed1 vertical-1",
+              "operation": "pickup friendly target",
+              "expected": "accept speed boundary"
+            },
+            {
+              "initial": "Mech tower speed1.01",
+              "operation": "pickup friendly target",
+              "expected": "refuse speed boundary"
+            },
+            {
+              "initial": "Mech tower z3 targetz0 samehex",
+              "operation": "pickup friendly target",
+              "expected": "accept upper height boundary"
+            },
+            {
+              "initial": "Mech tower z4 targetz0 samehex",
+              "operation": "pickup friendly target",
+              "expected": "refuse height"
+            },
+            {
+              "initial": "Mech tower z-2 targetz0 samehex",
+              "operation": "pickup friendly target",
+              "expected": "accept lower height boundary"
+            },
+            {
+              "initial": "Mech tower z-3 targetz0 samehex",
+              "operation": "pickup friendly target",
+              "expected": "refuse height"
+            },
+            {
+              "initial": "Mech tower carrying unit already with valid friendly MW target",
+              "operation": "pickup MW",
+              "expected": "existing MW pickup branch before carrying rejection"
+            },
+            {
+              "initial": "Mech tower enemy shutdown target team0",
+              "operation": "pickup target",
+              "expected": "no intact enemy refusal"
+            },
+            {
+              "initial": "valid target hidden",
+              "operation": "pickup target",
+              "expected": "refuse hidden"
+            },
+            {
+              "initial": "valid target OOC not towable",
+              "operation": "pickup target",
+              "expected": "refuse OOC"
+            },
+            {
+              "initial": "valid target already carrying another unit",
+              "operation": "pickup target",
+              "expected": "prior load dropped through shared release then new tow attached"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy pickup dropoff and cables 02 cable asymmetries",
+          "examples": [
+            {
+              "initial": "actor friendly to IC Mech tower and enemy intact shutdown load",
+              "operation": "attachcables tower load",
+              "expected": "attach permitted without intact enemy rejection"
+            },
+            {
+              "initial": "actor friendly to IC ground tower SALVAGE_TECH",
+              "operation": "attachcables tower load",
+              "expected": "refuse dedicated salvage tower"
+            },
+            {
+              "initial": "actor friendly to OOC towable tower",
+              "operation": "attachcables tower load",
+              "expected": "refuse tower not IC"
+            },
+            {
+              "initial": "actor friendly to IC tower speed0.01",
+              "operation": "attachcables tower load",
+              "expected": "refuse exact stationary gate"
+            },
+            {
+              "initial": "actor friendly to IC tower and OOC towable load",
+              "operation": "attachcables tower load",
+              "expected": "attach permitted"
+            },
+            {
+              "initial": "actor friendly to IC tower and enemy started load",
+              "operation": "attachcables tower load",
+              "expected": "refuse started enemy"
+            },
+            {
+              "initial": "actor enemy to IC tower",
+              "operation": "attachcables tower load",
+              "expected": "refuse tower team"
+            },
+            {
+              "initial": "actor OOD",
+              "operation": "attachcables tower load",
+              "expected": "refuse actor OOD"
+            },
+            {
+              "initial": "actor samehex different elevation from tower",
+              "operation": "attachcables tower load",
+              "expected": "refuse elevation"
+            },
+            {
+              "initial": "valid actor tower and load with different real coordinates samehex",
+              "operation": "attachcables tower load",
+              "expected": "tow attached without mirror-position branch"
+            },
+            {
+              "initial": "nonpilot GOD actor",
+              "operation": "detachcables tower",
+              "expected": "shared usual gate still applies"
+            },
+            {
+              "initial": "enemy actor passing usual guards samehex moving tower carries load",
+              "operation": "detachcables tower",
+              "expected": "detach allowed without team or stationary gate"
+            },
+            {
+              "initial": "valid tower carrying missing object",
+              "operation": "detachcables tower",
+              "expected": "relation cleared before missing-object return"
+            },
+            {
+              "initial": "valid tower on elevated terrain load aloft",
+              "operation": "detachcables tower",
+              "expected": "load integer z set to tower floor no fall and FZ unchanged"
+            }
+          ]
+        },
+        {
+          "name": "Repair economy pickup dropoff and cables 03 release consequences",
+          "examples": [
+            {
+              "initial": "tower with load z3 own floor0",
+              "expected": "relation clear TOWED clear speeds0 FALL due3 payload-1"
+            },
+            {
+              "initial": "same load z2 own floor0 tower floor1",
+              "expected": "z1 and no fall event"
+            },
+            {
+              "initial": "load z0 tower on ICE",
+              "expected": "z0 and no fall event"
+            },
+            {
+              "initial": "load fallen shutdown",
+              "expected": "remains fallen shutdown after release"
+            },
+            {
+              "initial": "tower carrying missing object",
+              "expected": "relation clear and no target mutation"
+            },
+            {
+              "initial": "tower carrying no unit",
+              "expected": "refusal no carrying unit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "features/repair_economy/workflows.feature",
+      "sha256": "92a8f39d0fdcb2ffc761245460cf514b723966fbfde16578a2dcaf2bd1d77022",
+      "outlines": 1,
+      "example_count": 12,
+      "dry_advisories": 1,
+      "scenarios": [
+        {
+          "name": "Repair economy integrated maintenance workflows 01 public journeys and compatibility",
+          "examples": [
+            {
+              "initial": "Mech damaged internal8 original10 armor7 original10 shared hangar stock",
+              "operation": "fix internal then armor then inspect manifest",
+              "expected": "2 internal and3 armor consumed with real sequential restoration"
+            },
+            {
+              "initial": "Mech broken gun stock0 admin in shared hangar",
+              "operation": "add stock then replacegun then repairs then advance",
+              "expected": "command sees added stock and repairs at due without second debit"
+            },
+            {
+              "initial": "Mech full ammo and empty shared hangar",
+              "operation": "unload then advance then reload then advance",
+              "expected": "returned bin commodity funds refill and net stock0"
+            },
+            {
+              "initial": "Mech healthy LA removable part",
+              "operation": "remove part then advance then remove section then advance",
+              "expected": "salvage appears only after each real event and can be loaded"
+            },
+            {
+              "initial": "partial armor job with2 remaining points",
+              "operation": "save then fresh process load advance",
+              "expected": "remaining points restored once without renewed resource charge"
+            },
+            {
+              "initial": "fake part replacement pending",
+              "operation": "save then fresh process load advance",
+              "expected": "conflict persists until due and part remains broken"
+            },
+            {
+              "initial": "local room stock and technician backlog",
+              "operation": "persist then fresh process load",
+              "expected": "inventory and absolute TECHTIME retained across process"
+            },
+            {
+              "initial": "friendly tow pickup then movement then dropoff",
+              "operation": "ordinary commands and advance",
+              "expected": "shared carried unit follows then releases and stops following"
+            },
+            {
+              "initial": "original CHP-W5 positive Nose armor damage",
+              "operation": "load original fixarmor then save template and reload",
+              "expected": "six named sections original stats preserved and repaired armor visible before design reload"
+            },
+            {
+              "initial": "original CHP-W5 zero Engine armor ready weapon",
+              "operation": "repair diagnostics then combat inspection",
+              "expected": "thrust0 fall behavior and armor-based destruction retained without SI substitution"
+            },
+            {
+              "initial": "existing conscious MW local target",
+              "operation": "existing pickup command",
+              "expected": "occupant transfer and health semantics preserved"
+            },
+            {
+              "initial": "existing cost fixture",
+              "operation": "cost readout before and after empty inventory setup",
+              "expected": "identical FASA cost"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

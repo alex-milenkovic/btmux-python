@@ -1,0 +1,108 @@
+c_file,c_line,function,status,python_matches,initial,owner,family,assessment
+btech/bsuit.c,43,GetBSuitName,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,48,GetLCaseBSuitName,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,53,StartBSuitRecycle,ABSENT,,P,systems/swarm.py:detach,swarm,Inline surviving-member recycle but only first6 and not general producer.
+btech/bsuit.c,62,StopSwarming,PRESENT,systems/physical.py:1310,P,systems/swarm.py:detach,swarm,Real shared detach; six-section truncation versus source8 and message gaps.
+btech/bsuit.c,112,IsMechSwarmed,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,138,IsMechMounted,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,164,CountSwarmers,ABSENT,,P,systems/swarm.py:swarmers,swarm,Substantive ordered membership enumeration; lacks source positive-ID filter.
+btech/bsuit.c,183,findSwarmers,ABSENT,,P,systems/combat.py:apply_damage_with_transfer;systems/swarm.py:swarmers,swarm,First member consumed; inherits missing positive-ID filter.
+btech/bsuit.c,205,StopBSuitSwarmers,ABSENT,,P,systems/swarm.py:detach_all,swarm,Substantive detach loop; inherits source membership/detach gaps.
+btech/bsuit.c,222,BSuitMirrorSwarmedTarget,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,237,doBSuitCommonChecks,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,258,CountBSuitMembers,ABSENT,,P,systems/damage.py:destroy_section;systems/combat.py:apply_damage_with_transfer,swarm,Inline first6 positive counts; source8 nonzero.
+btech/bsuit.c,268,FindBSuitTarget,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,314,doJettisonChecks,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,337,bsuit_swarm,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,467,bsuit_attackleg,ABSENT,,A,,swarm,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,635,mech_hide_event,ABSENT,,A,,hiding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,681,bsuit_hide,ABSENT,,A,,hiding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/bsuit.c,731,JettisonPacks,ABSENT,,A,,hiding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,52,silly_get_uptime_to_string,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,69,figure_xp_bonus,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,99,figure_xp_to_next_level,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,129,char_xp_bonus,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,153,list_charvaluestuff,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,196,char_getvaluecode,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,218,char_rollsaving,PRESENT,systems/piloting.py:600,L,systems/piloting.py:roll_saving,skills,Three shared Number dice best pair.
+btech/btechstats.c,244,char_rollunskilled,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,270,char_rollskilled,PRESENT,systems/piloting.py:594,P,systems/piloting.py:roll_skilled,skills,Uses Roll instead of two Number dice; histogram changes.
+btech/btechstats.c,275,char_rolld6,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,290,char_getstatvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,295,char_getvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,300,char_setstatvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,305,char_setvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,310,char_getskilltargetbycode_base,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,350,char_getskilltargetbycode,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,358,char_getskilltargetbycode_noxp,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,367,char_getskilltarget,PRESENT,entities/pilot.py:6; entities/pilot.py:42; systems/piloting.py:192,P,systems/piloting.py:skill_target,skills,Named direct BTH/scalar selection; general attribute/XP computation absent.
+btech/btechstats.c,373,char_getxpbycode,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,383,char_gainxpbycode,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,405,char_gainxp,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,410,char_getskillsuccess,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,434,char_getskillmargsucc,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,451,char_getopposedskill,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,467,char_getattrsave,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,479,char_getattrsavesucc,ABSENT,,A,,skills,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,500,init_btechstats,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,535,create_new_stats,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,545,clear_player,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,556,show_charstatus,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,686,do_charstatus,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,713,do_charclear,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,731,char_lookupplayer,ABSENT,,A,,character,Historical line731 is disabled; active same identity line750 delegates lookup_player; count once.
+btech/btechstats.c,755,loc_mod,ABSENT,,A,,initialization,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,775,initialize_pc,ABSENT,,A,,initialization,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,879,fix_pilotdamage,ABSENT,,P,systems/startup.py:startup,health,Local health-dictionary arithmetic; shared source character retrieval missing.
+btech/btechstats.c,898,mw_ic_bth,PRESENT,systems/piloting.py:646,A,,health,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,929,handlemwconc,PRESENT,systems/piloting.py:584; systems/piloting.py:645,P,systems/piloting.py:handle_mw_conc,health,NonIC and real recovery implemented; IC target/character branch missing.
+btech/btechstats.c,989,headhitmwdamage,PRESENT,systems/criticals.py:815; systems/criticals.py:1195; systems/damage.py:637; systems/piloting.py:723,P,systems/piloting.py:head_hit_mw_damage,health,NonIC hits connected; IC health/negative-ID/order missing.
+btech/btechstats.c,1044,mwlethaldam,PRESENT,systems/piloting.py:738,P,systems/piloting.py:mw_lethal_damage,health,Connected to MW section loss; IC health and negative-ID missing.
+btech/btechstats.c,1086,lower_xp,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1105,AccumulateTechXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1125,AccumulateTechWeaponsXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1140,AccumulateCommXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1156,AccumulatePilXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1190,AccumulateSpotXP,PRESENT,systems/spot.py:12; systems/spot.py:191; systems/spot.py:251,A,,awards,Historical PRESENT is TODO/reference only in current tree; no substantive source body.
+btech/btechstats.c,1212,MadePerceptionRoll,PRESENT,systems/sensors.py:843,A,,awards,Historical PRESENT is TODO/reference only in current tree; no substantive source body.
+btech/btechstats.c,1232,AccumulateArtyXP,PRESENT,systems/spot.py:12; systems/spot.py:191; systems/spot.py:251,A,,awards,Historical PRESENT is TODO/reference only in current tree; no substantive source body.
+btech/btechstats.c,1269,AccumulateComputerXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1283,HasBoolAdvantage,PRESENT,systems/maneuver.py:50; systems/physical.py:271; systems/piloting.py:610,P,systems/piloting.py:_pilot_has_toughness;systems/maneuver.py;systems/physical.py,awards,Specific truthy fields only; generic exact-value-one lookup absent.
+btech/btechstats.c,1307,t_mod,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1323,getPilotBVMod,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1359,AccumulateGunXP,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1511,AccumulateGunXPold,ABSENT,,A,,awards,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1597,fun_btgetcharvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1640,fun_btsetcharvalue,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1739,fun_btcharlist,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1802,debug_xptop,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1863,store_health,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1870,retrieve_health,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1887,store_attrs,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1897,retrieve_attrs,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1917,generic_retrieve_stuff,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1947,generic_store_stuff,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1975,retrieve_skills,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1980,retrieve_advs,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1985,store_skills,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1990,store_advs,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,1995,store_stats,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,2015,retrieve_stats,ABSENT,,A,,character,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,2031,debug_setxplevel,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/btechstats.c,2047,btthreshold_func,ABSENT,,A,,experience,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,39,tele_contents,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,63,mech_discard_event,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,78,discard_mw,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,84,enter_mw_bay,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,90,pickup_mw,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,120,char_eject,ABSENT,,A,,ejection,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,185,mech_eject,ABSENT,,A,,ejection,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,218,char_disembark,ABSENT,,A,,ejection,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,295,mech_disembark,ABSENT,,A,,ejection,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,321,mech_udisembark,ABSENT,,A,,carriers,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,466,mech_embark,ABSENT,,A,,boarding,No substantive current body found; historical references and unavailable service records are not implementation.
+btech/eject.c,689,autoeject,PRESENT,systems/damage.py:635,A,,ejection,Damage emits unavailable service only; no current creation/transfer/OOD body.
+btech/pcombat.c,40,pc_to_dam_conversion,PRESENT,systems/missile.py:341,A,,personal,Historical PRESENT is TODO/reference only in current tree; no substantive source body.
+btech/pcombat.c,55,dam_to_pc_conversion,ABSENT,,L,systems/personal_damage.py:damage_to_personal,personal,Substantive conversion connected to real damage; retain and test.
+btech/pcombat.c,69,pcombat_hitloc,ABSENT,,L,systems/personal_damage.py:personal_armor_effect,personal,Inline source location projection; retain rather than duplicate.
+btech/pcombat.c,83,armor_effect,ABSENT,,P,systems/personal_damage.py:personal_armor_effect,personal,Real damage consumer; missing id=-2 and signed result semantics.

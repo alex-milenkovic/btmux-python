@@ -1,0 +1,1335 @@
+{
+  "map": {
+    "size": [
+      20,
+      22
+    ],
+    "hexes": [
+      {
+        "at": [
+          3,
+          3
+        ],
+        "terrain": "LIGHT_FOREST",
+        "elevation": 0
+      },
+      {
+        "at": [
+          5,
+          5
+        ],
+        "terrain": "HEAVY_FOREST",
+        "elevation": 0
+      }
+    ]
+  },
+  "units": [
+    {
+      "name": "Mech",
+      "id": 10,
+      "contact_id": "ME",
+      "at": [
+        3,
+        8,
+        0
+      ],
+      "team": 1,
+      "class": "MECH",
+      "tonnage": 50,
+      "facing": 0,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "IS.MediumLaser",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 110,
+        "location": 10,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "sensors": [
+        "I",
+        "I"
+      ]
+    },
+    {
+      "name": "Small",
+      "id": 11,
+      "contact_id": "SM",
+      "at": [
+        3,
+        3,
+        0
+      ],
+      "team": 2,
+      "class": "BSUIT",
+      "tonnage": 4,
+      "facing": 180,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 1,
+          "internal_orig": 1
+        },
+        {
+          "index": 1,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 1,
+          "internal_orig": 1
+        },
+        {
+          "index": 2,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 1,
+          "internal_orig": 1
+        },
+        {
+          "index": 3,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 1,
+          "internal_orig": 1
+        },
+        {
+          "index": 4,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 0,
+          "internal_orig": 0
+        },
+        {
+          "index": 5,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 0,
+          "internal_orig": 0
+        },
+        {
+          "index": 6,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 0,
+          "internal_orig": 0
+        },
+        {
+          "index": 7,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 0,
+          "internal_orig": 0
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "CL.ERSmallLaser",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 21.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 111,
+        "location": 11,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      }
+    },
+    {
+      "name": "Infantry",
+      "id": 12,
+      "contact_id": "IN",
+      "at": [
+        5,
+        5,
+        0
+      ],
+      "team": 2,
+      "class": "MW",
+      "tonnage": 1,
+      "facing": 180,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 1,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 2,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 3,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 4,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 6,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        },
+        {
+          "index": 7,
+          "armor": 0,
+          "armor_orig": 0,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 5,
+          "internal_orig": 5
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "PC.IntekLaserRifle",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 21.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 112,
+        "location": 12,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "ammo": [
+        {
+          "weapon": "PC.IntekLaserRifle",
+          "rounds": 45,
+          "section": 2,
+          "critical": 0
+        }
+      ]
+    }
+  ],
+  "random": {
+    "seed": 4,
+    "streams": {
+      "sensor.detect": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "attack_rolls": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "failure_weapon_chance": [
+        1,
+        1,
+        1
+      ],
+      "hit_location_rolls": [
+        7,
+        7
+      ],
+      "damage_entry": [
+        7,
+        7,
+        7
+      ],
+      "physical_location": [
+        4
+      ],
+      "personal_to_normal": [
+        1
+      ],
+      "terrain_rolls": [
+        12,
+        12,
+        12
+      ],
+      "visibility_change": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "failure_generic_chance": [
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000
+      ],
+      "sensor.random": [
+        0
+      ],
+      "suit_choice": [
+        0,
+        0
+      ]
+    }
+  },
+  "actions": [
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sensor",
+      "args": [
+        "I",
+        "I"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "sensor",
+      "args": [
+        "S",
+        "S"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "fire",
+      "args": [
+        0,
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "fire",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "fire",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "fire",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        3,
+        3
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        3,
+        3,
+        "H"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 35
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sensor",
+      "args": [
+        "E",
+        "E"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "fire",
+      "args": [
+        0,
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sensor",
+      "args": [
+        "V",
+        "I"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "heading",
+      "args": [
+        180
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sensor",
+      "args": [
+        "V",
+        "V"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "IN"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "heading",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Infantry",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "lock",
+      "args": [
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Mech",
+      "name": "sight",
+      "args": [
+        0,
+        "SM"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "lock",
+      "args": [
+        "ME"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Small",
+      "name": "sight",
+      "args": [
+        0,
+        "ME"
+      ]
+    }
+  ]
+}

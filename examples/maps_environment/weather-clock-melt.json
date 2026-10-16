@@ -1,0 +1,65 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        1,
+        1
+      ],
+      "hexes": []
+    }
+  ],
+  "units": [],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {
+      "snow_steam": [
+        5
+      ]
+    }
+  },
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "layer.set",
+      "args": {
+        "x": 0,
+        "y": 0,
+        "layers": [
+          "snow"
+        ],
+        "data": 500
+      }
+    },
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "temperature": 10
+      }
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "map_command",
+      "name": "weather.disable",
+      "args": {}
+    },
+    {
+      "op": "advance",
+      "seconds": 95
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

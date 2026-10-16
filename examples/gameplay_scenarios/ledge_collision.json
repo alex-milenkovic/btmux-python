@@ -1,0 +1,183 @@
+{
+  "map": {
+    "size": [
+      20,
+      20
+    ],
+    "hexes": [
+      {
+        "at": [
+          3,
+          6
+        ],
+        "terrain": "GRASSLAND",
+        "elevation": 2
+      },
+      {
+        "at": [
+          3,
+          4
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 3
+      }
+    ]
+  },
+  "random": {
+    "seed": 0
+  },
+  "units": [
+    {
+      "name": "Runner",
+      "contact_id": "RR",
+      "at": [
+        3,
+        6,
+        2
+      ],
+      "team": 1,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "piloting": 9
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "stand",
+      "args": []
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "dfa_hit": {
+    "interface": "core_simulation"
+  },
+  "dfa_hit_fall": {
+    "interface": "core_simulation"
+  },
+  "dfa_miss": {
+    "interface": "core_simulation"
+  },
+  "ice_intact": {
+    "interface": "core_simulation"
+  },
+  "ice_break": {
+    "interface": "core_simulation"
+  },
+  "ledge_stop": {
+    "interface": "core_simulation"
+  },
+  "ledge_collision": {
+    "interface": "core_simulation"
+  },
+  "ledge_fall": {
+    "interface": "core_simulation"
+  },
+  "bay_orderly": {
+    "interface": "aerospace"
+  },
+  "bay_crowded": {
+    "interface": "aerospace"
+  },
+  "stack_2": {
+    "interface": "core_simulation"
+  },
+  "stack_3": {
+    "interface": "core_simulation"
+  },
+  "artillery_hit": {
+    "interface": "core_simulation"
+  },
+  "artillery_scatter": {
+    "interface": "core_simulation"
+  },
+  "reactor": {
+    "interface": "communications"
+  },
+  "fire_smoke": {
+    "interface": "maps_environment"
+  },
+  "c3_maneuver_damage": {
+    "interface": "communications"
+  },
+  "stack_dropship": {
+    "interface": "aerospace"
+  },
+  "los_woods_mw_clear": {
+    "interface": "core_simulation"
+  },
+  "los_woods_mw_light": {
+    "interface": "core_simulation"
+  },
+  "los_woods_mw_heavy": {
+    "interface": "core_simulation"
+  },
+  "los_woods_bsuit_clear": {
+    "interface": "core_simulation"
+  },
+  "los_woods_bsuit_light": {
+    "interface": "core_simulation"
+  },
+  "los_woods_bsuit_heavy": {
+    "interface": "core_simulation"
+  },
+  "los_hidden_five": {
+    "interface": "communications"
+  },
+  "los_hidden_three": {
+    "interface": "communications"
+  },
+  "los_hidden_probe": {
+    "interface": "communications"
+  },
+  "los_asymmetric_sensors": {
+    "interface": "core_simulation"
+  },
+  "los_cover_transitions": {
+    "interface": "core_simulation"
+  },
+  "los_ridge_cover": {
+    "interface": "core_simulation"
+  },
+  "los_night_searchlight": {
+    "interface": "core_simulation"
+  },
+  "los_smoke_maneuver": {
+    "interface": "maps_environment"
+  }
+}

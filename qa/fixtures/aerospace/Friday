@@ -1,0 +1,34 @@
+Name             { Friday }
+Reference        { Friday }
+Comment          { Purpose-built QA fighter; not a historical catalog design. }
+Type             { AeroFighter }
+Move_Type        { Fly }
+Tons             { 50 }
+SI               { 20 }
+Fuel             { 1000 }
+Heat_Sinks       { 10 }
+Max_Speed        { 64.50 }
+Nose
+  Armor            { 40 }
+  Internals        { 10 }
+    CRIT_1           { IS.MediumLaser - - }
+    CRIT_2           { Sensors - - }
+    CRIT_3           { Cockpit - - }
+    CRIT_4           { LifeSupport - - }
+    CRIT_5           { Bomb_10_Standard - - }
+Left_Wing
+  Armor            { 30 }
+  Internals        { 10 }
+    CRIT_1           { Bomb_10_Inferno - - }
+Right_Wing
+  Armor            { 30 }
+  Internals        { 10 }
+    CRIT_1           { Bomb_10_Cluster - - }
+Aft_Side
+  Armor            { 20 }
+  Internals        { 10 }
+    CRIT_1-2         { HeatSink - - }
+    CRIT_3           { Engine - - }
+    CRIT_4-10        { HeatSink - - }
+    CRIT_11          { Engine - - }
+    CRIT_12          { HeatSink - - }

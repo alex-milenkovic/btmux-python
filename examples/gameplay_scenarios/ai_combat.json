@@ -1,0 +1,518 @@
+{
+  "map": {
+    "size": [
+      20,
+      20
+    ]
+  },
+  "random": {
+    "seed": 3
+  },
+  "units": [
+    {
+      "name": "Commander",
+      "id": 10,
+      "contact_id": "CM",
+      "at": [
+        12,
+        14,
+        0
+      ],
+      "team": 1,
+      "tonnage": 50,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1010,
+        "location": 10,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    },
+    {
+      "name": "Sheep",
+      "id": 11,
+      "contact_id": "SH",
+      "at": [
+        3,
+        10,
+        0
+      ],
+      "team": 1,
+      "tonnage": 50,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1011,
+        "location": 11,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ],
+      "weapons": [
+        {
+          "name": "IS.AC/5",
+          "section": 0,
+          "critical": 4
+        },
+        {
+          "name": "IS.MediumLaser",
+          "section": 1,
+          "critical": 4
+        }
+      ],
+      "ammo": [
+        {
+          "weapon": "IS.AC/5",
+          "rounds": 40
+        }
+      ]
+    },
+    {
+      "name": "Target",
+      "id": 12,
+      "contact_id": "TA",
+      "at": [
+        3,
+        5,
+        0
+      ],
+      "team": 2,
+      "tonnage": 65,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1012,
+        "location": 12,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    },
+    {
+      "name": "Spare",
+      "id": 13,
+      "contact_id": "SP",
+      "at": [
+        5,
+        5,
+        0
+      ],
+      "team": 2,
+      "tonnage": 65,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1013,
+        "location": 13,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    }
+  ],
+  "autopilots": [
+    {
+      "name": "SheepAI",
+      "id": 200,
+      "unit": "Sheep"
+    }
+  ],
+  "actions": [
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SH target TA"
+    },
+    {
+      "op": "advance",
+      "seconds": 45
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SH shutdown"
+    },
+    {
+      "op": "advance",
+      "seconds": 8
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SH startup"
+    },
+    {
+      "op": "advance",
+      "seconds": 38
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SH target SP"
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SH target -"
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    }
+  ]
+}

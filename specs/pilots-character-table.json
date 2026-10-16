@@ -1,0 +1,954 @@
+[
+  {
+    "code": 0,
+    "name": "XP",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "XP"
+  },
+  {
+    "code": 1,
+    "name": "MaxXP",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "MaxXPP"
+  },
+  {
+    "code": 2,
+    "name": "Type",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Type"
+  },
+  {
+    "code": 3,
+    "name": "Level",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Level"
+  },
+  {
+    "code": 4,
+    "name": "Package",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Packa"
+  },
+  {
+    "code": 5,
+    "name": "Lives",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Lives"
+  },
+  {
+    "code": 6,
+    "name": "Bruise",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Bruis"
+  },
+  {
+    "code": 7,
+    "name": "Lethal",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Letha"
+  },
+  {
+    "code": 8,
+    "name": "Unused1",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Unuse"
+  },
+  {
+    "code": 9,
+    "name": "ShotsFired",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "ShoFir"
+  },
+  {
+    "code": 10,
+    "name": "ShotsMissed",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "ShoMis"
+  },
+  {
+    "code": 11,
+    "name": "ShotsHit",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "ShoHit"
+  },
+  {
+    "code": 12,
+    "name": "DamageTaken",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "DamTak"
+  },
+  {
+    "code": 13,
+    "name": "DamageGiven",
+    "type": "CHAR_VALUE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "DamGiv"
+  },
+  {
+    "code": 14,
+    "name": "Ambidextrous",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "Ambid"
+  },
+  {
+    "code": 15,
+    "name": "Bloodname",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "Blood"
+  },
+  {
+    "code": 16,
+    "name": "Combat_Sense",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "ComSen"
+  },
+  {
+    "code": 17,
+    "name": "Contact",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "Conta"
+  },
+  {
+    "code": 18,
+    "name": "Dropship",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "Drops"
+  },
+  {
+    "code": 19,
+    "name": "EI_Implant",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "EI_I_IImp"
+  },
+  {
+    "code": 20,
+    "name": "Exceptional_Attribute",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_EXCEPT",
+    "threshold": 0,
+    "short": "ExcAtt"
+  },
+  {
+    "code": 21,
+    "name": "Extra_Edge",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "ExtEdg"
+  },
+  {
+    "code": 22,
+    "name": "Land_Grant",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "LanGra"
+  },
+  {
+    "code": 23,
+    "name": "Reputation",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "Reput"
+  },
+  {
+    "code": 24,
+    "name": "Sixth_Sense",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "SixSen"
+  },
+  {
+    "code": 25,
+    "name": "Title",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "Title"
+  },
+  {
+    "code": 26,
+    "name": "Toughness",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "Tough"
+  },
+  {
+    "code": 27,
+    "name": "Wealth",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "Wealt"
+  },
+  {
+    "code": 28,
+    "name": "Well-Connected",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "WelCon"
+  },
+  {
+    "code": 29,
+    "name": "Well_Equipped",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_VALUE",
+    "threshold": 0,
+    "short": "WelEqu"
+  },
+  {
+    "code": 30,
+    "name": "Dodge_Maneuver",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "DodMan"
+  },
+  {
+    "code": 31,
+    "name": "Maneuvering_Ace",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "ManAce"
+  },
+  {
+    "code": 32,
+    "name": "Melee_Specialist",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "MelSpe"
+  },
+  {
+    "code": 33,
+    "name": "Pain_Resistance",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "PaiRes"
+  },
+  {
+    "code": 34,
+    "name": "Speed_Demon",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "SpeDem"
+  },
+  {
+    "code": 35,
+    "name": "Tech_Aptitude",
+    "type": "CHAR_ADVANTAGE",
+    "flags": "CHAR_ADV_BOOL",
+    "threshold": 0,
+    "short": "TecApt"
+  },
+  {
+    "code": 36,
+    "name": "Build",
+    "type": "CHAR_ATTRIBUTE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Build"
+  },
+  {
+    "code": 37,
+    "name": "Reflexes",
+    "type": "CHAR_ATTRIBUTE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Refle"
+  },
+  {
+    "code": 38,
+    "name": "Intuition",
+    "type": "CHAR_ATTRIBUTE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Intui"
+  },
+  {
+    "code": 39,
+    "name": "Learn",
+    "type": "CHAR_ATTRIBUTE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Learn"
+  },
+  {
+    "code": 40,
+    "name": "Charisma",
+    "type": "CHAR_ATTRIBUTE",
+    "flags": "0",
+    "threshold": 0,
+    "short": "Chari"
+  },
+  {
+    "code": 41,
+    "name": "Acrobatics",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "Acrob"
+  },
+  {
+    "code": 42,
+    "name": "Administration",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Admin"
+  },
+  {
+    "code": 43,
+    "name": "Alternate_Identity",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "AltIde"
+  },
+  {
+    "code": 44,
+    "name": "Appraisal",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Appra"
+  },
+  {
+    "code": 45,
+    "name": "Archery",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "Arche"
+  },
+  {
+    "code": 46,
+    "name": "Blade",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC | CAREER_MISC",
+    "threshold": 50,
+    "short": "Blade"
+  },
+  {
+    "code": 47,
+    "name": "Bureaucracy",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL | CAREER_MISC",
+    "threshold": 50,
+    "short": "Burea"
+  },
+  {
+    "code": 48,
+    "name": "Climbing",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "Climb"
+  },
+  {
+    "code": 49,
+    "name": "Comm-Conventional",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 150,
+    "short": "ComCon"
+  },
+  {
+    "code": 50,
+    "name": "Comm-Hyperpulse",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "ComHyp"
+  },
+  {
+    "code": 51,
+    "name": "Computer",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "Compu"
+  },
+  {
+    "code": 52,
+    "name": "Cryptography",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "Crypt"
+  },
+  {
+    "code": 53,
+    "name": "Demolitions",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Demol"
+  },
+  {
+    "code": 54,
+    "name": "Disguise",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "Disgu"
+  },
+  {
+    "code": 55,
+    "name": "Drive",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "Drive"
+  },
+  {
+    "code": 56,
+    "name": "Drive-Naval",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL",
+    "threshold": 3000,
+    "short": "DriNav"
+  },
+  {
+    "code": 57,
+    "name": "Engineering",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "Engin"
+  },
+  {
+    "code": 58,
+    "name": "Escape_Artist",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "EscArt"
+  },
+  {
+    "code": 59,
+    "name": "Forgery",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Forge"
+  },
+  {
+    "code": 60,
+    "name": "Gambling",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Gambl"
+  },
+  {
+    "code": 61,
+    "name": "Gunnery-Aerospace",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_AERO",
+    "threshold": 1000,
+    "short": "GunAer"
+  },
+  {
+    "code": 62,
+    "name": "Gunnery-Artillery",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_ARTILLERY",
+    "threshold": 500,
+    "short": "GunArt"
+  },
+  {
+    "code": 63,
+    "name": "Gunnery-Battlemech",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_BMECH",
+    "threshold": 3000,
+    "short": "GunBat"
+  },
+  {
+    "code": 64,
+    "name": "Gunnery-BSuit",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL",
+    "threshold": 500,
+    "short": "GunBSuSui"
+  },
+  {
+    "code": 65,
+    "name": "Gunnery-Conventional",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "GunCon"
+  },
+  {
+    "code": 66,
+    "name": "Gunnery-Spacecraft",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_DROPSHIP",
+    "threshold": 50,
+    "short": "GunSpa"
+  },
+  {
+    "code": 67,
+    "name": "Gunnery-Spotting",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_ARTILLERY",
+    "threshold": 50,
+    "short": "GunSpo"
+  },
+  {
+    "code": 68,
+    "name": "Gunnery-Ballistic",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL",
+    "threshold": 2500,
+    "short": "GunBal"
+  },
+  {
+    "code": 69,
+    "name": "Gunnery-Flamer",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL",
+    "threshold": 500,
+    "short": "GunFla"
+  },
+  {
+    "code": 70,
+    "name": "Gunnery-Laser",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL",
+    "threshold": 2500,
+    "short": "GunLas"
+  },
+  {
+    "code": 71,
+    "name": "Gunnery-Missile",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL",
+    "threshold": 2500,
+    "short": "GunMis"
+  },
+  {
+    "code": 72,
+    "name": "Impersonation",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 50,
+    "short": "Imper"
+  },
+  {
+    "code": 73,
+    "name": "Interrogation",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "Inter"
+  },
+  {
+    "code": 74,
+    "name": "Jump_Pack",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "JumPac"
+  },
+  {
+    "code": 75,
+    "name": "Leadership",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL | CAREER_ACADMISC",
+    "threshold": 50,
+    "short": "Leade"
+  },
+  {
+    "code": 76,
+    "name": "Medtech",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_MISC",
+    "threshold": 300,
+    "short": "Medte"
+  },
+  {
+    "code": 77,
+    "name": "Navigation",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 25,
+    "short": "Navig"
+  },
+  {
+    "code": 78,
+    "name": "Negotiation",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 25,
+    "short": "Negot"
+  },
+  {
+    "code": 79,
+    "name": "Perception",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_RECON",
+    "threshold": 150,
+    "short": "Perce"
+  },
+  {
+    "code": 80,
+    "name": "Piloting-Aerospace",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_AERO",
+    "threshold": 2500,
+    "short": "PilAer"
+  },
+  {
+    "code": 81,
+    "name": "Piloting-Battlemech",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_BMECH",
+    "threshold": 3000,
+    "short": "PilBat"
+  },
+  {
+    "code": 82,
+    "name": "Piloting-BSuit",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_ATHLETIC",
+    "threshold": 3000,
+    "short": "PilBSuSui"
+  },
+  {
+    "code": 83,
+    "name": "Piloting-Spacecraft",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_DROPSHIP",
+    "threshold": 50,
+    "short": "PilSpa"
+  },
+  {
+    "code": 84,
+    "name": "Piloting-Biped",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_BMECH",
+    "threshold": 3000,
+    "short": "PilBip"
+  },
+  {
+    "code": 85,
+    "name": "Piloting-Hover",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "PilHov"
+  },
+  {
+    "code": 86,
+    "name": "Piloting-Naval",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "PilNav"
+  },
+  {
+    "code": 87,
+    "name": "Piloting-Quad",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_BMECH",
+    "threshold": 3000,
+    "short": "PilQua"
+  },
+  {
+    "code": 88,
+    "name": "Piloting-Tracked",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "PilTra"
+  },
+  {
+    "code": 89,
+    "name": "Piloting-Wheeled",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_PHYSICAL | CAREER_CAVALRY",
+    "threshold": 3000,
+    "short": "PilWhe"
+  },
+  {
+    "code": 90,
+    "name": "Protocol",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 50,
+    "short": "Proto"
+  },
+  {
+    "code": 91,
+    "name": "Quickdraw",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL",
+    "threshold": 50,
+    "short": "Quick"
+  },
+  {
+    "code": 92,
+    "name": "Research",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 100,
+    "short": "Resea"
+  },
+  {
+    "code": 93,
+    "name": "Running",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_ATHLETIC",
+    "threshold": 100,
+    "short": "Runni"
+  },
+  {
+    "code": 94,
+    "name": "Riding",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "Ridin"
+  },
+  {
+    "code": 95,
+    "name": "Scrounge",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "Scrou"
+  },
+  {
+    "code": 96,
+    "name": "Security_Systems",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "SecSys"
+  },
+  {
+    "code": 97,
+    "name": "Seduction",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 50,
+    "short": "Seduc"
+  },
+  {
+    "code": 98,
+    "name": "Small_Arms",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_MISC",
+    "threshold": 50,
+    "short": "SmaArm"
+  },
+  {
+    "code": 99,
+    "name": "Stealth",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "Steal"
+  },
+  {
+    "code": 100,
+    "name": "Strategy",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_ACADMISC",
+    "threshold": 50,
+    "short": "Strat"
+  },
+  {
+    "code": 101,
+    "name": "Streetwise",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 50,
+    "short": "Stree"
+  },
+  {
+    "code": 102,
+    "name": "Support_Weapons",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL | CAREER_MISC",
+    "threshold": 50,
+    "short": "SupWea"
+  },
+  {
+    "code": 103,
+    "name": "Survival",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL",
+    "threshold": 50,
+    "short": "Survi"
+  },
+  {
+    "code": 104,
+    "name": "Swimming",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC",
+    "threshold": 50,
+    "short": "Swimm"
+  },
+  {
+    "code": 105,
+    "name": "Tactics",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_ACADMISC",
+    "threshold": 50,
+    "short": "Tacti"
+  },
+  {
+    "code": 106,
+    "name": "Technician-Aerospace",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL | CAREER_TECHVEH",
+    "threshold": 50,
+    "short": "TecAer"
+  },
+  {
+    "code": 107,
+    "name": "Technician-Battlemech",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL | CAREER_TECHMECH",
+    "threshold": 600,
+    "short": "TecBat"
+  },
+  {
+    "code": 108,
+    "name": "Technician-Battlesuit",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL",
+    "threshold": 300,
+    "short": "TecBat"
+  },
+  {
+    "code": 109,
+    "name": "Technician-Electronics",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "TecEle"
+  },
+  {
+    "code": 110,
+    "name": "Technician-Mechanic",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL | CAREER_TECHVEH",
+    "threshold": 400,
+    "short": "TecMec"
+  },
+  {
+    "code": 111,
+    "name": "Technician-Weapons",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL | CAREER_TECH",
+    "threshold": 300,
+    "short": "TecWea"
+  },
+  {
+    "code": 112,
+    "name": "Technician-Spacecraft",
+    "type": "CHAR_SKILL",
+    "flags": "SK_XP | CHAR_MENTAL",
+    "threshold": 300,
+    "short": "TecSpa"
+  },
+  {
+    "code": 113,
+    "name": "Throwing_Weapons",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL",
+    "threshold": 50,
+    "short": "ThrWea"
+  },
+  {
+    "code": 114,
+    "name": "Tinker",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_TECH",
+    "threshold": 50,
+    "short": "Tinke"
+  },
+  {
+    "code": 115,
+    "name": "Tracking",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_MENTAL | CAREER_RECON",
+    "threshold": 50,
+    "short": "Track"
+  },
+  {
+    "code": 116,
+    "name": "Training",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_SOCIAL",
+    "threshold": 50,
+    "short": "Train"
+  },
+  {
+    "code": 117,
+    "name": "Unarmed_Combat",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_ATHLETIC | CAREER_MISC",
+    "threshold": 50,
+    "short": "UnaCom"
+  },
+  {
+    "code": 118,
+    "name": "Zero-G_Operations",
+    "type": "CHAR_SKILL",
+    "flags": "CHAR_PHYSICAL",
+    "threshold": 50,
+    "short": "ZerG_OOpe"
+  }
+]

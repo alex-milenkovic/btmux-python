@@ -1,0 +1,79 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        9,
+        9
+      ],
+      "hexes": [
+        {
+          "at": [
+            1,
+            1
+          ],
+          "terrain": "LIGHT_FOREST",
+          "elevation": 0
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        1,
+        3,
+        0
+      ],
+      "facing": 0,
+      "weapons": [
+        "IS.Flamer"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "command",
+      "name": "lock",
+      "args": [
+        1,
+        1,
+        "I"
+      ]
+    },
+    {
+      "op": "command",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 300
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "seed": 5489
+  }
+}

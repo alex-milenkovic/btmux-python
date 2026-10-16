@@ -1,0 +1,347 @@
+{
+  "map": {
+    "size": [
+      40,
+      40
+    ]
+  },
+  "random": {
+    "seed": 5
+  },
+  "units": [
+    {
+      "name": "Gun",
+      "contact_id": "GG",
+      "at": [
+        3,
+        22,
+        0
+      ],
+      "team": 1,
+      "artillery": 0,
+      "class": "GROUND",
+      "weapons": [
+        {
+          "name": "IS.Sniper",
+          "section": "TURRET"
+        }
+      ],
+      "ammo": [
+        {
+          "weapon": "IS.Sniper",
+          "rounds": 10
+        }
+      ]
+    },
+    {
+      "name": "Spotter",
+      "contact_id": "SS",
+      "at": [
+        4,
+        5,
+        0
+      ],
+      "team": 1,
+      "spotting": 4
+    },
+    {
+      "name": "Target",
+      "contact_id": "TT",
+      "at": [
+        3,
+        3,
+        0
+      ],
+      "team": 2,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ]
+    },
+    {
+      "name": "Neighbor",
+      "contact_id": "NN",
+      "at": [
+        4,
+        3,
+        0
+      ],
+      "team": 2,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 10
+    },
+    {
+      "op": "command",
+      "unit": "Spotter",
+      "name": "spot",
+      "args": [
+        "SS"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Spotter",
+      "name": "lock",
+      "args": [
+        3,
+        3,
+        "H"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Gun",
+      "name": "lock",
+      "args": [
+        "-"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Gun",
+      "name": "spot",
+      "args": [
+        "SS"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Gun",
+      "name": "addtic",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Gun",
+      "name": "firetic",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "command",
+      "unit": "Neighbor",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Neighbor",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 50
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

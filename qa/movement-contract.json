@@ -1,0 +1,958 @@
+{
+  "cargo": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Cargo and enhanced speed 01 - cached speed enhancements",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "cached unboosted maximum speed 64.5 KPH and no cargo"
+          },
+          {
+            "keyword": "And",
+            "text": "enabled speed enhancements <enhancements>",
+            "parameters": [
+              "enhancements"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the effective maximum speed is requested"
+          },
+          {
+            "keyword": "Then",
+            "text": "effective maximum speed is <speed> KPH",
+            "parameters": [
+              "speed"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cargo and enhanced speed 02 - overweight and load",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "nominal mass 50 tons actual mass <actual> tons and effective carried mass <load> tons",
+            "parameters": [
+              "actual",
+              "load"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "unboosted maximum speed 64.5 KPH with weight overspeeding disabled"
+          },
+          {
+            "keyword": "When",
+            "text": "the effective maximum speed is requested"
+          },
+          {
+            "keyword": "Then",
+            "text": "effective maximum speed is <speed> KPH",
+            "parameters": [
+              "speed"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "controls": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Movement controls 01 - speed aliases and clamping",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "maximum speed 64.5 KPH and requested speed text <request>",
+            "parameters": [
+              "request"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot uses the speed command"
+          },
+          {
+            "keyword": "Then",
+            "text": "desired speed is <desired> KPH and actual speed remains 0 KPH",
+            "parameters": [
+              "desired"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement controls 02 - heading and lateral state",
+        "steps": [
+          {
+            "keyword": "When",
+            "text": "the pilot requests heading <heading> and lateral <lateral> then advances 6 seconds",
+            "parameters": [
+              "heading",
+              "lateral"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "desired facing is <desired> and lateral offset is <offset> with description <description>",
+            "parameters": [
+              "desired",
+              "offset",
+              "description"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement controls 03 - replace pending lateral",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "lateral offset 0 degrees and a pending fl request made at second 0"
+          },
+          {
+            "keyword": "When",
+            "text": "at second 2 the pilot requests lateral <request> and advances to second <tick>",
+            "parameters": [
+              "request",
+              "tick"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "lateral offset is <offset> and changing lateral is <pending>",
+            "parameters": [
+              "offset",
+              "pending"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement controls 04 - vertical envelope",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an airborne VTOL with maximum speed 53.75 KPH and desired horizontal speed 32.25 KPH"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests vertical speed <request> KPH",
+            "parameters": [
+              "request"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the command is <outcome> and vertical speed is <vertical> KPH",
+            "parameters": [
+              "outcome",
+              "vertical"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement controls 05 - ETA display",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a hex target 4 hex ranges away and actual speed <speed> KPH",
+            "parameters": [
+              "speed"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests ETA for the default hex target"
+          },
+          {
+            "keyword": "Then",
+            "text": "ETA display contains <eta>",
+            "parameters": [
+              "eta"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hulldown": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Hull down 01 - lowering eligibility",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "unit movement <movement> and actual speed <speed> KPH",
+            "parameters": [
+              "movement",
+              "speed"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests hulldown"
+          },
+          {
+            "keyword": "Then",
+            "text": "the command is <outcome> and a new transition is <scheduled>",
+            "parameters": [
+              "outcome",
+              "scheduled"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hull down 02 - completion and cancellation",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a quad with maximum speed 64.5 KPH"
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot performs hull down workflow <workflow> and advances <ticks> seconds",
+            "parameters": [
+              "workflow",
+              "ticks"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "hull down is <active> and changing hull down is <pending>",
+            "parameters": [
+              "active",
+              "pending"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ice": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Ice evolution 01 - growth threshold and neighbors",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "one WATER candidate with <neighbors> waterlike neighbors and all other hexes GRASSLAND",
+            "parameters": [
+              "neighbors"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "ice percentage <percent> percentage draw <draw> and neighbor die <die>",
+            "parameters": [
+              "percent",
+              "draw",
+              "die"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "ice growth runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "candidate terrain is <terrain> and changed hex count is <count>",
+            "parameters": [
+              "terrain",
+              "count"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice evolution 02 - melt threshold and neighbors",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "one ICE candidate with <neighbors> ICE neighbors and all other hexes GRASSLAND",
+            "parameters": [
+              "neighbors"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "ice percentage <percent> percentage draw <draw> and neighbor die <die>",
+            "parameters": [
+              "percent",
+              "draw",
+              "die"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "ice melting runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "candidate terrain is <terrain> and changed hex count is <count>",
+            "parameters": [
+              "terrain",
+              "count"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice evolution 03 - growth preserves depth and path integration",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a WATER hex at stored depth <depth> and no waterlike neighbors",
+            "parameters": [
+              "depth"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "ice growth at 100 percent runs and a mech path cost from adjacent GRASSLAND at height 0 is queried"
+          },
+          {
+            "keyword": "Then",
+            "text": "candidate terrain is ICE stored depth is <depth> and mech path cost is <cost>",
+            "parameters": [
+              "depth",
+              "cost"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice evolution 04 - new ice remains waterlike during growth",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "WATER at 3 3 and 3 4 and 4 3 on an otherwise empty GRASSLAND map"
+          },
+          {
+            "keyword": "And",
+            "text": "growth percentage 100 with percentage draws 1 and neighbor dice <first> then 2 then 2",
+            "parameters": [
+              "first"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "ice growth runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "terrain at 3 3 is <terrain> and at 3 4 and 4 3 is WATER with changed hex count <count>",
+            "parameters": [
+              "terrain",
+              "count"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice evolution 05 - melted neighbors affect later cells",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an empty square ICE map of side <side> with stored elevation 1",
+            "parameters": [
+              "side"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "melting at 100 percent runs with percentage draws 1"
+          },
+          {
+            "keyword": "Then",
+            "text": "WATER hex count is <count> and ICE hex count is 0",
+            "parameters": [
+              "count"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "maneuvers": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Prone and bootlegger maneuvers 01 - bootlegger success",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "tonnage <tons> speed <speed> MP facing <facing> and a successful piloting roll",
+            "parameters": [
+              "tons",
+              "speed",
+              "facing"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests bootlegger <direction>",
+            "parameters": [
+              "direction"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "piloting modifier is <modifier> facing and desired facing are <heading> and actual speed is <remaining> MP",
+            "parameters": [
+              "modifier",
+              "heading",
+              "remaining"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "participating legs recycle for 30 seconds"
+          }
+        ]
+      },
+      {
+        "name": "Prone and bootlegger maneuvers 02 - controlled drop",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "actual speed <speed> KPH and piloting result <roll>",
+            "parameters": [
+              "speed",
+              "roll"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests prone"
+          },
+          {
+            "keyword": "Then",
+            "text": "the unit is fallen with zero actual and desired speeds and fall levels applied are <levels>",
+            "parameters": [
+              "levels"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prone and bootlegger maneuvers 03 - thrash targeting",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a prone 50 ton mech and enemy battlesuit range <range> with state <state>",
+            "parameters": [
+              "range",
+              "state"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot thrashes on GRASSLAND with a successful piloting roll"
+          },
+          {
+            "keyword": "Then",
+            "text": "battlesuit damage total is <damage> and intact limbs recycle for 60 seconds",
+            "parameters": [
+              "damage"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "modes": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Movement modes 01 - delayed toggle",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "unit class <unit> with movement mode <initial>",
+            "parameters": [
+              "unit",
+              "initial"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests <mode>",
+            "parameters": [
+              "mode"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "the session advances <ticks> seconds",
+            "parameters": [
+              "ticks"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "movement mode is <active> and pending transition is <pending>",
+            "parameters": [
+              "active",
+              "pending"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement modes 02 - eligibility differences",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "movement condition <condition>",
+            "parameters": [
+              "condition"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the pilot requests <mode>",
+            "parameters": [
+              "mode"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "the command is <outcome> and a new transition is <scheduled>",
+            "parameters": [
+              "outcome",
+              "scheduled"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement modes 03 - completion and interruption",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a pending <mode> activation with completion condition <condition>",
+            "parameters": [
+              "mode",
+              "condition"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "its due event runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "movement mode is <active> and pending transition is NONE",
+            "parameters": [
+              "active"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Movement modes 04 - mode effects",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "active mode <mode> and actual speed <speed> KPH",
+            "parameters": [
+              "mode",
+              "speed"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "movement heat is evaluated"
+          },
+          {
+            "keyword": "Then",
+            "text": "movement heat contribution is <heat>",
+            "parameters": [
+              "heat"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "orbital": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Orbital drop 01 - descent and touchdown",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a ready 50 ton mech at height <height> over GRASSLAND with pilot roll 12",
+            "parameters": [
+              "height"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "orbital drop is initiated at its current coordinates and advances <ticks> seconds",
+            "parameters": [
+              "ticks"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "height is <z> cocoon is <cocoon> and orbital descent is <pending>",
+            "parameters": [
+              "z",
+              "cocoon",
+              "pending"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Orbital drop 02 - cocoon breach",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an orbital dropping mech at height 20 with cocoon 11 and jump capability <jump> MP",
+            "parameters": [
+              "jump"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "its cocoon takes <damage> damage",
+            "parameters": [
+              "damage"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "cocoon is <cocoon> orbital descent is <ood> and free fall is <fall>",
+            "parameters": [
+              "cocoon",
+              "ood",
+              "fall"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Orbital drop 03 - touchdown roll margin",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an orbital dropping MECH ready to touch down with piloting target 5 before terrain and cocoon modifiers"
+          },
+          {
+            "keyword": "And",
+            "text": "touchdown terrain <terrain> cocoon <cocoon> and pilot roll <roll>",
+            "parameters": [
+              "terrain",
+              "cocoon",
+              "roll"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the touchdown event runs"
+          },
+          {
+            "keyword": "Then",
+            "text": "required roll is <target> and fall levels applied are <levels>",
+            "parameters": [
+              "target",
+              "levels"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Orbital drop 04 - damage interception",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an orbital dropping mech with cocoon <initial> and intact torso armor 20",
+            "parameters": [
+              "initial"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "external torso damage 5 is resolved with interception roll <roll>",
+            "parameters": [
+              "roll"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "cocoon is <cocoon> and torso armor is <armor>",
+            "parameters": [
+              "cocoon",
+              "armor"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Orbital drop 05 - breached cocoon reaches free fall impact",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "an orbital dropping 50 ton mech at height 7 with no jump jets and cocoon 11"
+          },
+          {
+            "keyword": "When",
+            "text": "its cocoon takes 11 damage and the session advances <ticks> seconds",
+            "parameters": [
+              "ticks"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "height is <height> free fall is <pending> and impact fall levels are <levels>",
+            "parameters": [
+              "height",
+              "pending",
+              "levels"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "settling": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Falling flooding and settling 01 - fall damage and facing",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "tonnage <tons> terrain <terrain> gravity <gravity> percent and facing 350 degrees",
+            "parameters": [
+              "tons",
+              "terrain",
+              "gravity"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "a fall of <levels> levels uses direction die <direction> and a successful pilot injury roll",
+            "parameters": [
+              "levels",
+              "direction"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "total fall damage is <damage> and facing and desired facing are <facing>",
+            "parameters": [
+              "damage",
+              "facing"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Falling flooding and settling 02 - section flooding",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a MECH with movement <movement> posture <posture> in WATER at depth <depth>",
+            "parameters": [
+              "movement",
+              "posture",
+              "depth"
+            ]
+          },
+          {
+            "keyword": "And",
+            "text": "section <section> front armor <front> rear armor <rear> and original rear armor <original>",
+            "parameters": [
+              "section",
+              "front",
+              "rear",
+              "original"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "flooding is evaluated"
+          },
+          {
+            "keyword": "Then",
+            "text": "that section is flooded <flooded>",
+            "parameters": [
+              "flooded"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Falling flooding and settling 03 - jump and stand completion",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "movement workflow <workflow>",
+            "parameters": [
+              "workflow"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the workflow runs to completion using successful required pilot rolls"
+          },
+          {
+            "keyword": "Then",
+            "text": "observable state is <result>",
+            "parameters": [
+              "result"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "surfaces": {
+    "background": [
+      {
+        "keyword": "Given",
+        "text": "a fresh movement session with the standard ready unit and clear map"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Ice and bridge failure 01 - blast thresholds",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "target terrain <terrain> stored elevation <elevation> and bridge protection <protected>",
+            "parameters": [
+              "terrain",
+              "elevation",
+              "protected"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "a weapon of damage <damage> hits the hex with surface draw <draw>",
+            "parameters": [
+              "damage",
+              "draw"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "target terrain is <result> and stored elevation is <stored>",
+            "parameters": [
+              "result",
+              "stored"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice and bridge failure 02 - other occupants",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "ICE at stored depth 2 with another occupant of class <unit> movement <movement> height <z> waterproof <waterproof>",
+            "parameters": [
+              "unit",
+              "movement",
+              "z",
+              "waterproof"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the triggering unit breaks through from below"
+          },
+          {
+            "keyword": "Then",
+            "text": "the other occupant has cached terrain WATER fall levels <levels> and destroyed state <destroyed>",
+            "parameters": [
+              "levels",
+              "destroyed"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ice and bridge failure 03 - trigger chance exemptions",
+        "steps": [
+          {
+            "keyword": "Given",
+            "text": "a unit of class <unit> movement <movement> on depth 2 ICE",
+            "parameters": [
+              "unit",
+              "movement"
+            ]
+          },
+          {
+            "keyword": "When",
+            "text": "the drop through ice chance uses die <die>",
+            "parameters": [
+              "die"
+            ]
+          },
+          {
+            "keyword": "Then",
+            "text": "shared terrain is <terrain> and drop happened is <dropped>",
+            "parameters": [
+              "terrain",
+              "dropped"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

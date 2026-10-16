@@ -1,0 +1,85 @@
+{
+  "map": {
+    "size": [
+      20,
+      20
+    ]
+  },
+  "random": {
+    "seed": 2
+  },
+  "units": [
+    {
+      "name": "Arriving",
+      "contact_id": "AA",
+      "at": [
+        3,
+        6,
+        0
+      ],
+      "team": 1
+    },
+    {
+      "name": "Bravo",
+      "contact_id": "BB",
+      "at": [
+        3,
+        5,
+        0
+      ],
+      "team": 1
+    },
+    {
+      "name": "Charlie",
+      "contact_id": "CC",
+      "at": [
+        3,
+        5,
+        0
+      ],
+      "team": 1
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Arriving",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Arriving",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

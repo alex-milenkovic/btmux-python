@@ -1,0 +1,121 @@
+{
+  "map": {
+    "size": [
+      20,
+      20
+    ],
+    "hexes": [
+      {
+        "at": [
+          3,
+          4
+        ],
+        "terrain": "ICE",
+        "elevation": 2
+      }
+    ]
+  },
+  "random": {
+    "seed": 0
+  },
+  "units": [
+    {
+      "name": "Runner",
+      "contact_id": "RR",
+      "at": [
+        3,
+        5,
+        0
+      ],
+      "team": 1,
+      "weapons": [
+        {
+          "name": "IS.MediumLaser",
+          "section": "LA",
+          "critical": 4
+        }
+      ],
+      "sections": [
+        {
+          "index": "LA",
+          "armor": 0,
+          "internal": 8,
+          "internal_orig": 8
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "speed",
+      "args": [
+        21.5
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 25
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 5
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "stand",
+      "args": []
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "fire",
+      "args": [
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Runner",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

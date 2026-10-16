@@ -1,0 +1,97 @@
+{
+  "construction": {
+    "root": "tmp/construction-example/templates",
+    "files": {
+      "CUSTOM": "Name { Test Chassis }\nReference { CUSTOM }\nType { Mech }\nMove_Type { Biped }\nTons { 50 }\nMax_Speed { 64.50 }\nHeat_Sinks { 10 }\nLeft_Arm\nArmor { 30 }\nInternals { 8 }\nCRIT_1 { ShoulderOrHip - - 3 }\nCRIT_2 { UpperActuator - - 3 }\nCRIT_3 { LowerActuator - - 3 }\nCRIT_4 { HandOrFootActuator - - 3 }\nRight_Arm\nArmor { 30 }\nInternals { 8 }\nCRIT_1 { ShoulderOrHip - - 3 }\nCRIT_2 { UpperActuator - - 3 }\nCRIT_3 { LowerActuator - - 3 }\nCRIT_4 { HandOrFootActuator - - 3 }\nLeft_Torso\nArmor { 30 }\nInternals { 12 }\nCRIT_1-4 { IS.AC/5 - - 3 }\nRight_Torso\nArmor { 30 }\nInternals { 12 }\nCRIT_1 { Ammo_IS.AC/5 20 - - }\nCenter_Torso\nArmor { 30 }\nInternals { 16 }\nCRIT_1 { Engine - - 3 }\nCRIT_2 { Engine - - 3 }\nCRIT_3 { Engine - - 3 }\nCRIT_4 { Gyro - - 3 }\nCRIT_5 { Gyro - - 3 }\nCRIT_6 { Gyro - - 3 }\nCRIT_7 { Gyro - - 3 }\nCRIT_8 { Engine - - 3 }\nCRIT_9 { Engine - - 3 }\nCRIT_10 { Engine - - 3 }\nLeft_Leg\nArmor { 30 }\nInternals { 12 }\nCRIT_1 { ShoulderOrHip - - 3 }\nCRIT_2 { UpperActuator - - 3 }\nCRIT_3 { LowerActuator - - 3 }\nCRIT_4 { HandOrFootActuator - - 3 }\nRight_Leg\nArmor { 30 }\nInternals { 12 }\nCRIT_1 { ShoulderOrHip - - 3 }\nCRIT_2 { UpperActuator - - 3 }\nCRIT_3 { LowerActuator - - 3 }\nCRIT_4 { HandOrFootActuator - - 3 }\nHead\nArmor { 30 }\nInternals { 3 }\nCRIT_1 { LifeSupport - - 3 }\nCRIT_2 { Sensors - - 3 }\nCRIT_3 { Cockpit - - 3 }\nCRIT_5 { Sensors - - 3 }\nCRIT_6 { LifeSupport - - 3 }\n"
+    }
+  },
+  "file_root": "tmp/construction-example/maps",
+  "units": [
+    {
+      "name": "u",
+      "at": [3, 3, 0]
+    },
+    {
+      "name": "v",
+      "at": [3, 1, 0],
+      "team": 2
+    }
+  ],
+  "config": {
+    "periodic_updates": true,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {
+      "visibility_change": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "failure_generic_chance": [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000],
+      "attack_rolls": [12, 12, 12, 12],
+      "failure_weapon_chance": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "hit_location_rolls": [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
+      "damage_entry": [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
+      "tow_rolls": [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+      "missile_pre_roll": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      "missile_cluster": [12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+    }
+  },
+  "actions": [
+    {
+      "op": "template",
+      "kind": "load",
+      "reference": "CUSTOM",
+      "unit": "u"
+    },
+    {
+      "op": "construction_readout"
+    },
+    {
+      "op": "construction_pilot",
+      "unit": "u",
+      "actor": {
+        "gunnery": 4,
+        "piloting": 5,
+        "health": {
+          "build": 5,
+          "bruise": 0,
+          "lethal": 0
+        }
+      }
+    },
+    {
+      "op": "command",
+      "unit": "u",
+      "name": "startup",
+      "args": ""
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "u",
+      "name": "lock",
+      "args": "01"
+    },
+    {
+      "op": "advance",
+      "seconds": 1
+    },
+    {
+      "op": "command",
+      "unit": "u",
+      "name": "fire",
+      "args": "0 01"
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

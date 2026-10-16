@@ -1,0 +1,2090 @@
+BTMux original source notices
+=============================
+
+General: 037f611cd0c81e75d82c82d0bbe2b2622970990c (btech/src unless a full repository path is shown).
+Historical Aerospace: 96f2131705a7fe51c3c6f7da741930ff06a93644 (src/hcode unless a full repository path is shown).
+See CREDITS.md for lineage, the headerless-file attribution rule, and additional TinyMUX/MT19937 terms.
+Original comment blocks below are retained verbatim. Their dates and roles describe the upstream sources.
+
+General:btech/artillery.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+/* 
+   Artillery code for
+   - standard rounds (damage to target hex, damage/2 to neighbor hexes)
+   - smoke rounds (to be implemented)
+   - fascam rounds (to be implemented) 
+ */
+
+General:btech/autopilot_ai.c
+----------------------------
+/*
+ * $Id: ai.c,v 1.2 2005/08/03 21:40:53 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Thu Mar 12 18:36:33 1998 fingon
+ * Last modified: Thu Dec 10 21:46:30 1998 fingon
+ *
+ */
+
+/* Point of the excercise : move from point a,b to point c,d while
+   eliminating opponents and stuff, avoiding enemies in rear/side arc
+   and generally having fun */
+
+General:btech/autopilot_autogun.c
+---------------------------------
+/*
+ * $Id: autogun.c,v 1.5 2005/08/03 21:40:54 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Sun Nov 17 13:23:20 1996 fingon
+ * Last modified: Sun Jun 14 16:29:44 1998 fingon
+ *
+ */
+
+/*
+ * AI's sensor and targeting system
+ *
+ * Gives the AI the ability to choose what to shoot as well as
+ * what sensor to use when it has found a target
+ */
+
+/*! \todo { Add more code to the sensor system so the AI can be
+ * more aware of its terrain } */
+
+General:btech/autopilot_commands.c
+----------------------------------
+/*
+ * $Id: autopilot.c,v 1.2 2005/08/03 21:40:54 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Wed Oct 30 19:35:21 1996 fingon
+ * Last modified: Sun Jun 14 14:13:13 1998 fingon
+ *
+ */
+
+General:btech/autopilot_core.c
+------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+General:btech/autopilot_radio.c
+-------------------------------
+/*
+ * $Id: autopilot_command.c,v 1.4 2005/08/10 14:09:34 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Tue Sep 23 20:33:33 1997 fingon
+ * Last modified: Sat Jun  6 21:47:38 1998 fingon
+ *
+ */
+
+/* Most of the BattleSheep(tm) code is here.. */
+
+General:btech/bsuit.c
+---------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1999-2000 Marco Peter Hoogeveen
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ */
+
+General:btech/btechstats.c
+--------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ */
+
+General:btech/btpr/conf.c
+-------------------------
+No attribution header; see the upstream README rule in CREDITS.md.
+
+General:btech/btpr/event.c
+--------------------------
+/*
+ * $Id: event.c,v 1.3 2005/06/23 22:02:10 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Tue Aug 27 19:01:55 1996 fingon
+ * Last modified: Tue Nov 10 16:21:43 1998 fingon
+ *
+ */
+
+/* Interface for creating pretty damn nasty timed events, with
+   additional load balancing in the works.
+
+   Description of the interface:
+
+   void muxevent_add()
+
+   Adds a new event to occur <time> ticks from now on, which calls
+   function func with the present event as parameter, and with data as
+   the data (also optional type can be supplied ; just makes deletion
+   of stuff of particular type far faster, and allows nice statistics)
+
+   void muxevent_initialize()
+   Initializes the event system
+
+   void muxevent_run()
+   Runs one 'tick' of events (second, 1/10sec, whatever)
+
+   int muxevent_count_type(int type)
+   int muxevent_count_type_data(int type, void *data)
+   int muxevent_count_data(void *data)
+   Counts pending events (count_type is fast ; count_type_data relatively
+   slow and count_data a dog)
+   int muxevent_last_type()
+   Returns # of the last type that has been used
+   int muxevent_last_type_data(int type, void *data)
+   Finds the event furthest in the future and returns the difference
+   in seconds to present time (or actually in event ticks)
+
+   void muxevent_gothru_type_data(int type, void *data, void (*func)(MUXEVENT *))
+   Executes the function func for every object in tye first_in_type
+   queue matching type, and/or data.
+
+
+*/
+
+General:btech/btspath.c
+-----------------------
+/*
+ * $Id: btspath.c,v 1.1.1.1 2005/01/11 21:18:04 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Tue Sep 23 19:49:20 1997 fingon
+ * Last modified: Thu Mar  5 18:50:58 1998 fingon
+ *
+ */
+
+General:btech/crit.c
+--------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+General:btech/econ.c
+--------------------
+/*
+ * $Id: econ.c,v 1.1.1.1 2005/01/11 21:18:06 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Sat Oct  5 14:06:02 1996 fingon
+ * Last modified: Sat Apr 19 13:54:56 1997 fingon
+ *
+ */
+
+/* Idea:
+   Store the parts in an attribute on object
+
+   Format:
+   [id,brand,count]{,[id,brand,count],..}
+ */
+
+General:btech/econ_cmds.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ */
+
+/* This is the place for
+   - loadcargo
+   - unloadcargo
+   - manifest
+   - stores
+ */
+
+General:btech/eject.c
+---------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ */
+
+General:btech/failures.c
+------------------------
+/* This is the code that runs the parts failures.
+   Written by: Nim
+   9-28-96
+
+   Parts copyright (c) 2000-2002 Thomas Wouters
+
+ */
+
+/*
+ * $Id: failures.c,v 1.1.1.1 2005/01/11 21:18:07 kstevens Exp $
+ * Last modified: Sat Jun  6 21:43:52 1998 fingon
+ */
+
+General:btech/hudinfo.c
+-----------------------
+/*
+ * Copyright (c) 2002 Thomas Wouters <thomas@xs4all.net>
+ *
+ * HUDINFO support.
+ */
+
+General:btech/map.bits.c
+------------------------
+/*
+ * $Id: map.bits.c,v 1.1.1.1 2005/01/11 21:18:07 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Tue Oct 22 16:32:09 1996 fingon
+ * Last modified: Fri Jun 12 23:10:43 1998 fingon
+ *
+ */
+
+General:btech/map.c
+-------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ * Last modified: Fri Dec 11 00:59:48 1998 fingon
+ *
+ * Original authors:
+ *   4.8.93- rdm created
+ *   6.16.93- jb modified, added hex_struct
+ * Since that modified by:
+ *   '95 - '97: Markus Stenberg <fingon@iki.fi>
+ *   '98 - '02: Thomas Wouters <thomas@xs4all.net>
+ */
+
+General:btech/map.coding.c
+--------------------------
+/*
+ * $Id: map.coding.c,v 1.1.1.1 2005/01/11 21:18:07 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Tue Oct  8 16:46:12 1996 fingon
+ * Last modified: Sat Jun  6 21:44:08 1998 fingon
+ *
+ */
+
+/* Simple coding scheme to reduce space used by map hexes to 1 byte/hex */
+
+/* NOTE: if we _ever_ use more than 255 terrain/elevation combinations,
+   this code becomes a bomb. */
+
+General:btech/map.conditions.c
+------------------------------
+/*
+ * $Id: map.conditions.c,v 1.2 2005/01/15 16:57:14 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Wed Apr 23 15:18:01 1997 fingon
+ * Last modified: Thu Sep 10 07:35:26 1998 fingon
+ *
+ */
+
+General:btech/map.dynamic.c
+---------------------------
+/*
+ * $Id: map.dynamic.c,v 1.1.1.1 2005/01/11 21:18:08 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Sun Oct 13 19:38:31 1996 fingon
+ * Last modified: Sun Jun 14 14:54:11 1998 fingon
+ *
+ */
+
+General:btech/map.los.c
+-----------------------
+/*
+ * $Id: map.los.c,v 1.1.1.1 2005/01/11 21:18:08 kstevens Exp $
+ *
+ * Author: Thomas Wouters <thomas@xs4all.net>
+ *
+ * Copyright (c) 2002 Thomas Wouters
+ *     All rights reserved
+ *
+ */
+
+General:btech/map.obj.c
+-----------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+General:btech/map.weather.c
+---------------------------
+/*
+ * $Id: map.weather.c,v 1.1.1.1 2005/01/11 21:18:10 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@bs-interactive.com>
+ *
+ *  Copyright (c) 2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.advanced.c
+-----------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+General:btech/mech.ammodump.c
+-----------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.bth.c
+------------------------
+/*
+ * $Id: mech.bth.c,v 1.2 2005/06/23 15:27:04 av1-op Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.build.c
+--------------------------
+/*
+ * $Id: mech.build.c,v 1.1.1.1 2005/01/11 21:18:11 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Last modified: Wed Apr 29 21:04:14 1998 fingon
+ *
+ */
+
+General:btech/mech.c3.c
+-----------------------
+/*
+ * $Id: mech.c3.c,v 1.1.1.1 2005/01/11 21:18:11 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *
+ *  Copyright (c) 2001 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.c3.misc.c
+----------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.c3i.c
+------------------------
+/*
+ * $Id: mech.c3i.c,v 1.1.1.1 2005/01/11 21:18:12 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.combat.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997-2002 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.combat.misc.c
+--------------------------------
+/*
+* Author: Cord Awtry <kipsta@mediaone.net>
+*  Copyright (c) 2000-2002 Cord Awtry
+*       All rights reserved
+*
+* Based on work that was:
+*  Copyright (c) 1997 Markus Stenberg
+*  Copyright (c) 1998-2000 Thomas Wouters
+*/
+
+General:btech/mech.combat.missile.c
+-----------------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.consistency.c
+--------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *       All rights reserved
+ */
+
+General:btech/mech.contacts.c
+-----------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.damage.c
+---------------------------
+/*
+* Author: Cord Awtry <kipsta@mediaone.net>
+*  Copyright (c) 2000-2002 Cord Awtry
+*  Copyright (c) 1999-2005 Kevin Stevens
+*       All rights reserved
+*
+* Based on work that was:
+*  Copyright (c) 1997 Markus Stenberg
+*  Copyright (c) 1998-2000 Thomas Wouters
+*/
+
+General:btech/mech.ecm.c
+------------------------
+/*
+ * $Id: mech.ecm.c,v 1.2 2005/06/23 18:31:42 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Fri Mar 21 15:13:06 1997 fingon
+ * Last modified: Sat Oct 25 18:03:03 1997 fingon
+ *
+ */
+
+General:btech/mech.enhanced.criticals.c
+---------------------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/mech.events.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.fire.c
+-------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *
+ *  Copyright (c) 2001-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.hitloc.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.ice.c
+------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.lite.c
+-------------------------
+/*
+ * $Id: mech.lite.c,v 1.1.1.1 2005/01/11 21:18:17 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Wed Mar 18 22:33:16 1998 fingon
+ * Last modified: Thu Dec 10 21:47:06 1998 fingon
+ *
+ */
+
+General:btech/mech.los.c
+------------------------
+/*
+ * $Id: mech.los.c,v 1.1.1.1 2005/01/11 21:18:17 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Last modified: Sat Jul 18 13:47:27 1998 fingon
+ *
+ */
+
+General:btech/mech.maps.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.mechref_ident.c
+----------------------------------
+/*
+ * $Id: mech.mechref_ident.c,v 1.1.1.1 2005/01/11 21:18:18 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Tue Sep 17 18:08:13 1996 fingon
+ * Last modified: Sun Jan 12 13:30:10 1997 fingon
+ *
+ */
+
+General:btech/mech.move.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.notify.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.ood.c
+------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.partnames.c
+------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.physical.c
+-----------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *  Copyright (c) 2005-2006 Gregory Taylor
+ *       All rights reserved
+ */
+
+General:btech/mech.pickup.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 2002 Dr. Martin Brumm
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.scan.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.sensor.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.sensor.functions.c
+-------------------------------------
+/*
+ * $Id: mech.sensor.functions.c,v 1.1.1.1 2005/01/11 21:18:23 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Mon Sep  2 16:57:30 1996 fingon
+ * Last modified: Tue Oct  6 17:21:27 1998 fingon
+ *
+ */
+
+General:btech/mech.spot.c
+-------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2001-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2001 Thomas Wouters
+ */
+
+General:btech/mech.startup.c
+----------------------------
+/*
+ * $Id: mech.startup.c,v 1.2 2005/06/23 18:31:42 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Last modified: Thu Jul  9 06:59:34 1998 fingon
+ *
+ */
+
+General:btech/mech.stat.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Tue Aug 12 19:06:48 1997 fingon
+ * Last modified: Tue Aug 12 20:04:59 1997 fingon
+ */
+
+/* Make statistics 'bout what we do.. whatever it is we _do_ */
+
+General:btech/mech.status.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.tag.c
+------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *
+ *  Copyright (c) 2001 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.tech.c
+-------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.tech.commands.c
+----------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.tech.damages.c
+---------------------------------
+/*
+ * $Id: mech.tech.damages.c,v 1.1.1.1 2005/01/11 21:18:25 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Mon Dec  2 19:00:35 1996 fingon
+ * Last modified: Thu Sep 10 09:55:13 1998 fingon
+ *
+ */
+
+General:btech/mech.tech.do.c
+----------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+/* All the *_{succ|fail|econ} functions belong here */
+
+General:btech/mech.tech.events.c
+--------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+General:btech/mech.tech.repairs.c
+---------------------------------
+/*
+ * $Id: mech.tech.repairs.c,v 1.1.1.1 2005/01/11 21:18:26 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Sat Aug 23 19:12:32 1997 fingon
+ * Last modified: Sat Jun  6 20:45:48 1998 fingon
+ *
+ */
+
+General:btech/mech.tech.saverepair.c
+------------------------------------
+/*
+ * $Id: mech.tech.saverepair.c,v 1.1.1.1 2005/01/11 21:18:26 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Fri Mar 14 19:17:19 1997 fingon
+ * Last modified: Thu Oct 30 18:42:58 1997 fingon
+ *
+ */
+
+General:btech/mech.tic.c
+------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *       All rights reserved
+ */
+
+General:btech/mech.update.c
+---------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mech.utils.c
+--------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/mechrep.c
+-----------------------
+/*
+ * Last modified: Thu Aug 13 23:41:12 1998 fingon
+ * Copyright (c) 1999-2005 Kevin Stevens
+ *   All right reserved
+ */
+
+General:btech/mine.c
+--------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+/*
+   Different types of mines:
+
+   1 = Standard round (infinite explosions, same damage, to everyone in hex)
+   2 = Inferno        (single explosion, adds heat instead)
+   3 = Command-detonated (single explosion, goes off when hears transmission
+   on predefined freq - damages neighbor hexes 1/2)
+   4 = Vibra          (single explosion, triggered by weight (setting):
+   target<=tons<(target+10) = when stepped on
+   (target+10*n)<=tons      = when stepped on n hexes away
+   tons<target              = no explosion
+ */
+
+General:btech/pcombat.c
+-----------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *       All rights reserved
+ */
+
+General:btech/src/btech/autopilot.h
+-----------------------------------
+/*
+ * $Id: autopilot.h,v 1.4 2005/08/03 21:40:54 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Wed Oct 30 20:43:42 1996 fingon
+ * Last modified: Sat Jun  6 19:56:42 1998 fingon
+ *
+ */
+
+General:btech/src/btech/btechstats.h
+------------------------------------
+/*
+ * $Id: btechstats.h,v 1.1.1.1 2005/01/11 21:18:03 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Last modified: Mon Jul 13 11:10:38 1998 fingon
+ *
+ */
+
+/* Function declarations / skill list for btechstats.c */
+
+General:btech/src/btech/btmacros.h
+----------------------------------
+/*
+ * $Id: btmacros.h,v 1.8 2005/08/10 14:09:34 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Sat Jun  6 15:08:11 1998 fingon
+ * Last modified: Mon Jul 20 01:05:41 1998 fingon
+ *
+ */
+
+/* Descendant of the original macros.h that died of being too bloated :) */
+
+General:btech/src/btech/failures.h
+----------------------------------
+/* Brand level modifiers and failure resultant data here after included.
+   Failure.h
+   Created By: Nim
+   Dated:      9 - 21 - 96
+   
+   Parts copyright (c) 2002 Thomas Wouters
+
+   $Id: failures.h,v 1.1.1.1 2005/01/11 21:18:07 kstevens Exp $
+   Last modified: Sat Jun  6 20:27:26 1998 fingon
+ */
+
+General:btech/src/btech/map.h
+-----------------------------
+/*
+ * $Id: map.h,v 1.2 2005/06/22 15:08:04 av1-op Exp $
+ *
+ * Last modified: Sat Jun  6 20:30:40 1998 fingon
+ *
+ * Original authors: 
+ *   4.8.93- rdm created
+ *   6.16.93- jb modified, added hex_struct
+ * Since that modified by:
+ *   '95 - '97: Markus Stenberg <fingon@iki.fi>
+ *   '98 - '02: Thomas Woutes <thomas@xs4all.net>
+ */
+
+General:btech/src/btech/mech.combat.h
+-------------------------------------
+/*
+ * $Id: mech.combat.h,v 1.1.1.1 2005/01/11 21:18:13 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+General:btech/src/btech/mech.ecm.h
+----------------------------------
+/*
+ * $Id: mech.ecm.h,v 1.1.1.1 2005/01/11 21:18:15 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Fri Mar 21 16:19:41 1997 fingon
+ * Last modified: Fri Mar 21 16:19:53 1997 fingon
+ *
+ */
+
+General:btech/src/btech/mech.events.h
+-------------------------------------
+/*
+ * $Id: mech.events.h,v 1.2 2005/08/03 21:40:54 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Fri Aug 30 15:32:12 1996 fingon
+ * Last modified: Sat Jun  6 20:14:55 1998 fingon
+ *
+ */
+
+General:btech/src/btech/mech.h
+------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+General:btech/src/btech/mech.physical.h
+---------------------------------------
+/*
+ * $Id: mech.physical.h,v 1.1.1.1 2005/01/11 21:18:21 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *
+ *  Copyright (c) 2001 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Mon Apr 2 8:00:00 2001 spectre
+ */
+
+General:btech/src/btech/mech.sensor.h
+-------------------------------------
+/*
+ * $Id: mech.sensor.h,v 1.1.1.1 2005/01/11 21:18:23 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Mon Sep  2 14:48:12 1996 fingon
+ * Last modified: Tue Sep  2 15:32:05 1997 fingon
+ *
+ */
+
+General:btech/src/btech/mymath.h
+--------------------------------
+/*
+ * $Id: mymath.h,v 1.1.1.1 2005/01/11 21:18:29 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Wed Oct  9 10:49:02 1996 fingon
+ * Last modified: Wed Oct  9 10:49:13 1996 fingon
+ *
+ */
+
+General:btech/src/btech/p.mech.utils.h
+--------------------------------------
+No attribution header; see the upstream README rule in CREDITS.md.
+
+General:btech/src/btech/weapons.h
+---------------------------------
+/*
+ * $Id: weapons.h,v 1.1.1.1 2005/01/11 21:18:33 kstevens Exp $
+ *
+ * Last modified: $Date: 2005/01/11 21:18:33 $
+ *
+ * Header file for weapons, includes specific featured lists.
+ */
+
+General:btech/src/btech/weapons.vrt.h
+-------------------------------------
+/*
+ * Recycle times for 'standard' VRT
+ */
+
+General:btech/src/coolmenu.c
+----------------------------
+/*
+ * $Id: coolmenu.c,v 1.1 2005/06/13 20:50:49 murrayma Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Mon Sep 16 20:38:36 1996 fingon
+ * Last modified: Wed Jun 24 22:41:40 1998 fingon
+ *
+ */
+
+General:btech/src/glue.c
+------------------------
+/*
+ * $Id: glue.c,v 1.4 2005/08/08 09:43:09 murrayma Exp $
+ *
+ * Original author: unknown
+ *
+ * Copyright (c) 1996-2002 Markus Stenberg
+ * Copyright (c) 1998-2002 Thomas Wouters
+ * Copyright (c) 2000-2002 Cord Awtry
+ *
+ * Last modified: Thu Jul  9 02:40:16 1998 fingon
+ *
+ * This includes the basic code to allow objects to have hardcoded
+ * commands / properties.
+ *
+ */
+
+General:btech/src/glue.hcode.c
+------------------------------
+/*
+ * $Id: glue.hcode.c,v 1.1 2005/06/13 20:50:49 murrayma Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters 
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *       All rights reserved
+ *
+ * Created: Mon Oct 20 18:53:30 1997 fingon
+ * Last modified: Sat Jun  6 18:43:51 1998 fingon
+ *
+ */
+
+General:btech/src/glue.scode.c
+------------------------------
+/*
+ * $Id: glue.scode.c,v 1.5 2005/08/08 09:43:09 murrayma Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters 
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Wed Oct  9 19:13:52 1996 fingon
+ * Last modified: Tue Sep  8 10:00:29 1998 fingon
+ *
+ */
+
+General:btech/src/include/btconfig.h
+------------------------------------
+No attribution header; see the upstream README rule in CREDITS.md.
+
+General:btech/src/include/glue_types.h
+--------------------------------------
+/*
+ * $Id: glue_types.h,v 1.1 2005/06/13 20:50:52 murrayma Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Mon May 18 19:45:10 1998 fingon
+ * Last modified: Mon May 18 19:45:28 1998 fingon
+ *
+ * FIXME: The last modify timestamp is blatant lie.  One of these days, we need
+ * to settle on consistent boilerplate, and slap it on everything.
+ */
+
+General:btech/template.c
+------------------------
+/*
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *	All rights reserved
+ */
+
+/*
+   Code to read and write mech and vehicle templates
+   Created by Nim 9/16/96
+
+   $Id: template.c,v 1.9 2005/08/10 14:09:34 av1-op Exp $
+   Last modified: Fri Sep 18 13:02:31 1998 fingon
+ */
+
+/* 01/21/02 Added many commods <KM> */
+
+/* 09/16/96 Some touches by Markus Stenberg <fingon@iki.fi> */
+
+/* 09/16/96 Some?? ... ya right ;-) (nim)                  */
+
+/* 09/17/96 Ok, ton of touches then :-P (Mark) */
+
+General:events.c
+----------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters 
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *       All rights reserved
+ *
+ */
+
+General:mech.lostracer.c
+------------------------
+/*
+ *
+ * Original author: unknown
+ *
+ * Copyright (c) 1996-2002 Markus Stenberg
+ * Copyright (c) 1998-2002 Thomas Wouters 
+ * Copyright (c) 2000-2002 Cord Awtry 
+ *
+ */
+
+/*************************************************************
+****  LOS code  **********************************************
+**************************************************************
+
+What happens in the code now:
+(pretty close, anyway -- I haven't spent THAT much time studying it.
+
+Right now, the code just finds a line between the hexes and steps
+along it in units of 1 hex, checking each hex it enters.  This is,
+well, wrong.  It makes no allowance whatsoever that the LOS line might
+"clip" the edge of a hex, and will occasionally skip hexes:
+ __    __    __
+/# \__/  \__/# \
+\__/  \__/  \__/  is possible, when it SHOULD be:
+ __    __    __
+/# \__/  \__/# \  A 1 hex wide wall in the first case would be
+\__/  \__/  \__/  skipped entirely.
+   \__/  \__/   
+
+Now my, (correct, but tougher) algorithm:
+
+OK, first FASA rules: "The LOS is checked by laying a straightedge
+... from the center of the attackers's hex to the center of the
+target's hex.  Any hex that the straightedge crosses is in the LOS.
+If the straightedge passes directly between two hexes, the defender
+chooses which hex ist passes through." -- Compendium, p21
+
+It is fairly easy to convince yourself that the case of the line lying
+directly between two hexes is a well-defined special case: it happens
+only when the hexes lie exactly on a 30, 90, 150, 210, 270, or 330
+line.  This is easy to check for, so we'll put that check in as the
+first stage of the routine.  We'll assume from then on that the line
+is not a special case  (which is good -- the numbers explode to
+infinity for 90 degree lines).
+
+Now we iterate as the current muse code does.  We start at the hex at
+one end of the line, find the next one, and repeat until we get to the
+end.  Here is the algorithm for finding the "next" hex:
+
+First, we need only check the 6 adjacent hexes (obviously -- but the
+current code ignores this and sometimes returns "next" hexes that are
+not adjacent).
+
+In addition, an eligible hex muse be "on the line."  That is, the
+imaginary line drawn between the endpoints must pass through the hex.
+Figuring this out is the "meat" of this algorithm.  The best way to
+determine this (that I have discovered, anyway) is to find the
+(absolute, cartesian, floating point) distance between the center
+point of the hex in question and the line (i.e. the length of a line
+drawn from the center of hex, perpendicular to the LOS line). If this
+distance is less than the "effective radius" of the hex, then the line
+lies inside the hex.  By "effective radius" I mean the width of the
+hex along a line perpendicular to the LOS line.  This will vary
+(depending on the angle of the line) between 0.5 (if the hex is lying
+flat along the line -- i.e. a line pointing at 30, 90, 150, 210, 270,
+or 330 degrees) and (1/sqrt(3)) (if the line passes only through the
+point of the hex -- i.e. a line pointing at 0, 60, 120, 180, 240, or
+300)
+
+  _Effective_Radius_
+  _____        _____
+ /     \ |    /     \   /     (Hope this diagram makes sense!
+/       \|   /   *_  \ /       the *'s are the line representing
+\       /|   \     * //        the effective radius)
+ \_____/ |    \_____// 
+    *****|          /
+
+(1/sqrt(3))     0.5
+
+For other angles, the effective radius varies as a cosine.  Since the
+whole thing is periodic with intervals of 60 deg, we can "modulo" it
+by subtracting 60 deg until we get the angle to within a -30 < angle <
+30 degrees region and then taking the cosine.
+
+Hoof!  That's the worst of it.  Now, from among the adjacent, eligible
+hexes, the "next" one is the one that is closest "along the line" to
+the one we are in. (But is still closer to the endpoint than the
+current hex.  We have to check here to make sure we don't hop back
+into the hex we came from!)
+
+Now performance issues:
+
+The main calculations here are the distance-to-line determination, and
+the effective radius calculation.  Each of these must be performed 5
+times (6 adjacent hexes, but we don't have to check the one we came
+from).  Distance-to-line is best found by using a matrix to rotate the
+coordinates to a frame where the line is horizontal and taking the
+difference in y coords between the hex and any point on the line (one
+of the endpoints will do).  The angle to rotate is -(slope of the LOS
+line), which is -atan(y1-y2/x1-x2).  The atan function need only be
+called once, since the slope of the line is unchanging.  That leaves
+us with the matrix:   |cos(u) -sin(u)|
+                      |sin(u)  cos(u)|   where u=-atan(y1-y2/x1-x2)
+
+This contains four more trigonometric functions, but again each need
+only be called once (and there are really only two anyway, sin(u) and
+cos(u)).
+
+The effective radius involves a cos() function.  Again, though, since
+the slope of the line is unchanging, the effective radius of the hex
+is a constant throughout the iterations, and need only be calculated
+once.
+
+So now we have one time costs:
+
+*Calculate matrix coefficients:  1 atan(), 1 cos(), 1 sin()
+                                 2 fp subtractions, 1 fp divide.
+
+*Find effective radius:          1 cos(),
+                                <6 fp subtractions (to get -30<u<30)
+
+And per-hex-travelled costs:
+
+*Test 5 hexes if on line:       10 fp mults, 5 fp additions
+                                 5 fp compares
+
+*Test for closest forward hex:  <5 fp compares
+
+This is actually, I would think, not much more than the current LOS
+code, which makes many calls to RealCoordToMapCoord() (a costly
+function) and is generally messy, with lots of repeated mults by
+constants such as ZSCALE (which would optimize out, if we did, but we
+don't :)
+
+**********************************************************************
+
+OK, enough of this.  Let's get on to the code.  
+*/
+
+General:mt19937ar.c
+-------------------
+See notices/MT19937.txt for the complete original notice.
+
+General:src/conf.c
+------------------
+/*
+ * conf.c:      set up configuration information and static data
+ */
+
+General:src/timer.c
+-------------------
+/*
+ * timer.c -- Subroutines for (system-) timed events 
+ */
+
+General:tick.c
+--------------
+/*
+ *
+ * Copyright (c) 2005 Martin Murray
+ *
+ * This is much better than what we had.
+ *
+ * FIXME: BT/Penn doesn't use libevent.  We're using ugly #ifdef's to deal with
+ * this reality right now, but eventually we should either move off libevent in
+ * the BT code, write a wrapper, or kick all this code out into the BTPR layer.
+ */
+
+Historical Aerospace:btech/aero.bomb.c
+--------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Mon Jan  6 15:57:35 1997 fingon
+ * Last modified: Mon Jun  8 19:49:25 1998 fingon
+ *
+ */
+
+Historical Aerospace:btech/aero.move.c
+--------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/bsuit.c
+----------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1999-2000 Marco Peter Hoogeveen
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/crit.c
+---------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/ds.bay.c
+-----------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/ds.turret.c
+--------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/map.obj.c
+------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:btech/mech.bth.c
+-------------------------------------
+/*
+ * $Id: mech.bth.c,v 1.2 2005/06/23 15:27:04 av1-op Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+Historical Aerospace:btech/mech.build.c
+---------------------------------------
+/*
+ * $Id: mech.build.c,v 1.1.1.1 2005/01/11 21:18:11 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Last modified: Wed Apr 29 21:04:14 1998 fingon
+ *
+ */
+
+Historical Aerospace:btech/mech.combat.misc.c
+---------------------------------------------
+/*
+* Author: Cord Awtry <kipsta@mediaone.net>
+*  Copyright (c) 2000-2002 Cord Awtry
+*       All rights reserved
+*
+* Based on work that was:
+*  Copyright (c) 1997 Markus Stenberg
+*  Copyright (c) 1998-2000 Thomas Wouters
+*/
+
+Historical Aerospace:btech/mech.damage.c
+----------------------------------------
+/*
+* Author: Cord Awtry <kipsta@mediaone.net>
+*  Copyright (c) 2000-2002 Cord Awtry
+*  Copyright (c) 1999-2005 Kevin Stevens
+*       All rights reserved
+*
+* Based on work that was:
+*  Copyright (c) 1997 Markus Stenberg
+*  Copyright (c) 1998-2000 Thomas Wouters
+*/
+
+Historical Aerospace:btech/mech.hitloc.c
+----------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+Historical Aerospace:btech/mech.move.c
+--------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:btech/mech.restrict.c
+------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+Historical Aerospace:btech/mech.update.c
+----------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:btech/mech.utils.c
+---------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:btech/template.c
+-------------------------------------
+/*
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *	All rights reserved
+ */
+
+/* 
+   Code to read and write mech and vehicle templates
+   Created by Nim 9/16/96
+
+   $Id: template.c,v 1.9 2005/08/10 14:09:34 av1-op Exp $
+   Last modified: Fri Sep 18 13:02:31 1998 fingon
+ */
+
+/* 01/21/02 Added many commods <KM> */
+
+/* 09/16/96 Some touches by Markus Stenberg <fingon@iki.fi> */
+
+/* 09/16/96 Some?? ... ya right ;-) (nim)                  */
+
+/* 09/17/96 Ok, ton of touches then :-P (Mark) */
+
+Historical Aerospace:src/hcode/btech/autopilot_core.c
+-----------------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ */
+
+Historical Aerospace:src/hcode/btech/btmacros.h
+-----------------------------------------------
+/*
+ * $Id: btmacros.h,v 1.8 2005/08/10 14:09:34 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1998 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Sat Jun  6 15:08:11 1998 fingon
+ * Last modified: Mon Jul 20 01:05:41 1998 fingon
+ *
+ */
+
+/* Descendant of the original macros.h that died of being too bloated :) */
+
+Historical Aerospace:src/hcode/btech/map.conditions.c
+-----------------------------------------------------
+/*
+ * $Id: map.conditions.c,v 1.2 2005/01/15 16:57:14 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Wed Apr 23 15:18:01 1997 fingon
+ * Last modified: Thu Sep 10 07:35:26 1998 fingon
+ *
+ */
+
+Historical Aerospace:src/hcode/btech/map.h
+------------------------------------------
+/*
+ * $Id: map.h,v 1.2 2005/06/22 15:08:04 av1-op Exp $
+ *
+ * Last modified: Sat Jun  6 20:30:40 1998 fingon
+ *
+ * Original authors: 
+ *   4.8.93- rdm created
+ *   6.16.93- jb modified, added hex_struct
+ * Since that modified by:
+ *   '95 - '97: Markus Stenberg <fingon@iki.fi>
+ *   '98 - '02: Thomas Woutes <thomas@xs4all.net>
+ */
+
+Historical Aerospace:src/hcode/btech/mech.combat.c
+--------------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997-2002 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mech.combat.h
+--------------------------------------------------
+/*
+ * $Id: mech.combat.h,v 1.1.1.1 2005/01/11 21:18:13 kstevens Exp $
+ *
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2000 Thomas Wouters
+ */
+
+Historical Aerospace:src/hcode/btech/mech.ecm.h
+-----------------------------------------------
+/*
+ * $Id: mech.ecm.h,v 1.1.1.1 2005/01/11 21:18:15 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Created: Fri Mar 21 16:19:41 1997 fingon
+ * Last modified: Fri Mar 21 16:19:53 1997 fingon
+ *
+ */
+
+Historical Aerospace:src/hcode/btech/mech.events.c
+--------------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mech.h
+-------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mech.ood.c
+-----------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mech.sensor.c
+--------------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mech.spot.c
+------------------------------------------------
+/*
+ * Author: Cord Awtry <kipsta@mediaone.net>
+ *  Copyright (c) 2001-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Based on work that was:
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2001 Thomas Wouters
+ */
+
+Historical Aerospace:src/hcode/btech/mech.startup.c
+---------------------------------------------------
+/*
+ * $Id: mech.startup.c,v 1.2 2005/06/23 18:31:42 av1-op Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1997 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *       All rights reserved
+ *
+ * Last modified: Thu Jul  9 06:59:34 1998 fingon
+ *
+ */
+
+Historical Aerospace:src/hcode/btech/mech.status.c
+--------------------------------------------------
+/*
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters
+ *  Copyright (c) 2000-2002 Cord Awtry
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mechrep.c
+----------------------------------------------
+/*
+ * Last modified: Thu Aug 13 23:41:12 1998 fingon
+ * Copyright (c) 1999-2005 Kevin Stevens
+ *   All right reserved
+ */
+
+Historical Aerospace:src/hcode/btech/mymath.h
+---------------------------------------------
+/*
+ * $Id: mymath.h,v 1.1.1.1 2005/01/11 21:18:29 kstevens Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *       All rights reserved
+ *
+ * Created: Wed Oct  9 10:49:02 1996 fingon
+ * Last modified: Wed Oct  9 10:49:13 1996 fingon
+ *
+ */
+
+Historical Aerospace:src/hcode/btech/p.mech.utils.h
+---------------------------------------------------
+/*
+   p.mech.utils.h
+
+   Automatically created by protomaker (C) 1998 Markus Stenberg (fingon@iki.fi)
+   Protomaker is actually only a wrapper script for cproto, but well.. I like
+   fancy headers and stuff :)
+   */
+
+/* Generated at Fri Jan 15 15:33:03 CET 1999 from mech.utils.c */
+
+Historical Aerospace:src/hcode/btech/weapons.h
+----------------------------------------------
+/*
+ * $Id: weapons.h,v 1.1.1.1 2005/01/11 21:18:33 kstevens Exp $
+ *
+ * Last modified: $Date: 2005/01/11 21:18:33 $
+ *
+ * Header file for weapons, includes specific featured lists.
+ */
+
+Historical Aerospace:src/hcode/glue.c
+-------------------------------------
+/*
+ * $Id: glue.c,v 1.4 2005/08/08 09:43:09 murrayma Exp $
+ *
+ * Original author: unknown
+ *
+ * Copyright (c) 1996-2002 Markus Stenberg
+ * Copyright (c) 1998-2002 Thomas Wouters 
+ * Copyright (c) 2000-2002 Cord Awtry 
+ *
+ * Last modified: Thu Jul  9 02:40:16 1998 fingon
+ *
+ * This includes the basic code to allow objects to have hardcoded
+ * commands / properties.
+ *
+ */
+
+Historical Aerospace:src/hcode/glue.scode.c
+-------------------------------------------
+/*
+ * $Id: glue.scode.c,v 1.5 2005/08/08 09:43:09 murrayma Exp $
+ *
+ * Author: Markus Stenberg <fingon@iki.fi>
+ *
+ *  Copyright (c) 1996 Markus Stenberg
+ *  Copyright (c) 1998-2002 Thomas Wouters 
+ *  Copyright (c) 2000-2002 Cord Awtry 
+ *  Copyright (c) 1999-2005 Kevin Stevens
+ *       All rights reserved
+ *
+ * Created: Wed Oct  9 19:13:52 1996 fingon
+ * Last modified: Tue Sep  8 10:00:29 1998 fingon
+ *
+ */
+
+Historical Aerospace:src/hcode/include/btconfig.h
+-------------------------------------------------
+No attribution header; see the upstream README rule in CREDITS.md.

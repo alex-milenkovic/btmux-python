@@ -1,0 +1,94 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        5,
+        1
+      ],
+      "hexes": []
+    }
+  ],
+  "units": [],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "streams": {}
+  },
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "conditions": [
+          "precipitation"
+        ],
+        "temperature": 0
+      }
+    },
+    {
+      "op": "map_command",
+      "name": "layer.set",
+      "args": {
+        "x": 4,
+        "y": 0,
+        "layers": [
+          "mud"
+        ],
+        "data": 42
+      }
+    },
+    {
+      "op": "advance",
+      "seconds": 10
+    },
+    {
+      "op": "map_command",
+      "name": "weather.set",
+      "args": {
+        "conditions": [
+          "precipitation"
+        ]
+      }
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "map_command",
+      "name": "resize",
+      "args": "9 2"
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "map_command",
+      "name": "weather.disable",
+      "args": {}
+    },
+    {
+      "op": "advance",
+      "seconds": 10
+    },
+    {
+      "op": "map_command",
+      "name": "weather.enable",
+      "args": {}
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "map_command",
+      "name": "weather.reset",
+      "args": {}
+    },
+    {
+      "op": "inspect"
+    }
+  ]
+}

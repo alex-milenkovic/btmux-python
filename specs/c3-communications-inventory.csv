@@ -1,0 +1,74 @@
+c_file,c_line,function,status,python_matches,initial_assessment,current_owner,finding,feature_family
+btech/mech.c3.c,25,getC3MasterSize,ABSENT,,locally-complete,systems/criticals.py:count_working_c3_masters;count_total_c3_masters,Embedded class-dependent 5/1 rule.,hardware
+btech/mech.c3.c,33,isPartOfWorkingC3Master,ABSENT,,absent,none,No current production body implementing this source behavior was found.,hardware
+btech/mech.c3.c,71,countWorkingC3MastersOnMech,ABSENT,,locally-complete,systems/criticals.py:count_working_c3_masters,Source cumulative per-section working counter retained; integrate existing owner.,hardware
+btech/mech.c3.c,122,countTotalC3MastersOnMech,ABSENT,,locally-complete,systems/criticals.py:count_total_c3_masters,Complete per-section total grouping.,hardware
+btech/mech.c3.c,161,countMaxC3Units,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Embedded temporary capacity; optional joiner/formation branch absent.,membership
+btech/mech.c3.c,220,trimC3Network,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Embedded temporary masters-first trim; stored validation/replication absent.,membership
+btech/mech.c3.c,284,getFreeC3NetworkPos,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,304,replicateC3Network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,330,addMechToC3Network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,388,clearMechFromC3Network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,406,clearC3Network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,432,validateC3Network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,497,mech_c3_join_leave,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,579,mech_c3_message,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,599,mech_c3_targets,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.c,616,mech_c3_network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3.misc.c,26,getMechInTempNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Embedded iteration resolves actual peer objects; general prefix/sentinel index query absent.,ranges
+btech/mech.c3.misc.c,51,getOtherMechInNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Range peer filters exist; independent optional flags/storage semantics absent.,ranges
+btech/mech.c3.misc.c,115,buildTempNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Range-only temporary list; messaging and storage callers absent.,ranges
+btech/mech.c3.misc.c,174,sendNetworkMessage,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.c3.misc.c,202,showNetworkTargets,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.c3.misc.c,356,showNetworkData,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.c3.misc.c,404,mechSeenByNetwork,ABSENT,,absent,none,No current production body implementing this source behavior was found.,ranges
+btech/mech.c3.misc.c,449,findC3Range,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Live range selection exists; full C3i validation and authoritative network formation absent.,ranges
+btech/mech.c3.misc.c,476,findC3RangeWithNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Embedded actual unit/hex selection; independent supplied-prefix function absent; integrate instead of redoing.,ranges
+btech/mech.c3.misc.c,546,debugC3,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.c3i.c,26,getFreeC3iNetworkPos,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,46,replicateC3iNetwork,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,72,addMechToC3iNetwork,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,127,clearMechFromC3iNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range;systems/criticals.py:linked_equipment_critical,Disabled-owner cleanup removes peer entries; general slot clearing/revalidation absent.,membership
+btech/mech.c3i.c,145,clearC3iNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range;systems/criticals.py:linked_equipment_critical,Owner and some reciprocal clear behavior exists; full propagation flags and source lookup gates incomplete.,membership
+btech/mech.c3i.c,171,validateC3iNetwork,ABSENT,,partial,systems/combat_ranges.py:find_c3_range,Destroyed-owner validation branch exists; ordinary compaction and remaining owner-invalid branches absent.,membership
+btech/mech.c3i.c,218,mech_c3i_join_leave,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,294,mech_c3i_message,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,314,mech_c3i_targets,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.c3i.c,331,mech_c3i_network,ABSENT,,absent,none,No current production body implementing this source behavior was found.,membership
+btech/mech.notify.c,34,GetAmmoDesc_Model_Mode,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,86,GetWeaponAmmoModeLetter_Model_Mode,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,139,GetWeaponFireModeLetter_Model_Mode,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,162,GetWeaponAmmoModeLetter,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,171,GetWeaponFireModeLetter,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,180,GetMoveTypeID,PRESENT,systems/targeting.py:702,absent,none,Historical match only exposed raw move_type; no source display conversion.,displays
+btech/mech.notify.c,259,Mech_ShowFlags,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,473,GetArcID,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,494,GetMechToMechID_base,ABSENT,,partial,systems/combat_firing.py:announce_shot;systems/sensors.py:los_broadcast,Visibility naming fragments exist; C name plus ID/base flag formatting incomplete.,displays
+btech/mech.notify.c,514,GetMechToMechID,PRESENT,systems/targeting.py:265; systems/targeting.py:347,partial,systems/combat_firing.py:announce_shot;systems/sensors.py:los_broadcast,NB name masking exists; null/invalid and full identity/case delivery incomplete.,displays
+btech/mech.notify.c,544,GetMechID,ABSENT,,absent,none,No current production body implementing this source behavior was found.,displays
+btech/mech.notify.c,558,mech_set_channelfreq,ABSENT,,absent,none,No current production body implementing this source behavior was found.,channels
+btech/mech.notify.c,612,mech_set_channeltitle,ABSENT,,absent,none,No current production body implementing this source behavior was found.,channels
+btech/mech.notify.c,641,ccode,ABSENT,,absent,none,No current production body implementing this source behavior was found.,channels
+btech/mech.notify.c,668,mech_set_channelmode,ABSENT,,absent,none,No current production body implementing this source behavior was found.,channels
+btech/mech.notify.c,761,mech_list_freqs,ABSENT,,absent,none,No current production body implementing this source behavior was found.,channels
+btech/mech.notify.c,780,mech_sendchannel,ABSENT,,absent,none,No current production body implementing this source behavior was found.,transmission
+btech/mech.notify.c,842,do_scramble,ABSENT,,absent,none,No current production body implementing this source behavior was found.,transmission
+btech/mech.notify.c,867,ScrambleMessage,ABSENT,,absent,none,No current production body implementing this source behavior was found.,transmission
+btech/mech.notify.c,927,common_checks,ABSENT,,partial,systems/combat_commands.py:command_guard;systems/heat_control.py:common_checks,"Accepted subsets exist; full flags, consistency and invalid nonnegative map reset incomplete.",notifications
+btech/mech.notify.c,990,recursive_commlink,ABSENT,,absent,none,No current production body implementing this source behavior was found.,routing
+btech/mech.notify.c,1015,nonrecursive_commlink,ABSENT,,absent,none,No current production body implementing this source behavior was found.,routing
+btech/mech.notify.c,1071,findCommLink,ABSENT,,absent,none,No current production body implementing this source behavior was found.,routing
+btech/mech.notify.c,1118,sendchannelstuff,ABSENT,,absent,none,No current production body implementing this source behavior was found.,transmission
+btech/mech.notify.c,1329,mech_radio,ABSENT,,absent,none,No current production body implementing this source behavior was found.,transmission
+btech/mech.notify.c,1375,MapLimitedBroadcast2d,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.notify.c,1394,MapLimitedBroadcast3d,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.notify.c,1414,MechBroadcast,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.notify.c,1443,MechLOSBroadcast,PRESENT,systems/missile.py:127,partial,systems/sensors.py:los_broadcast,Actual observers/LOS/spacing exist; full identity and occupant audience incomplete.,notifications
+btech/mech.notify.c,1466,MechSeesHexF,ABSENT,,locally-complete,systems/targeting.py:find_mech_in_hex,Embedded source elevated-hex range/LOS; reusable entry absent but real consumer exists.,notifications
+btech/mech.notify.c,1476,MechSeesHex,PRESENT,systems/targeting.py:98; systems/targeting.py:117,locally-complete,systems/targeting.py:find_mech_in_hex,Embedded source hex conversion and elevation; accepted Combat correction retained.,notifications
+btech/mech.notify.c,1484,HexLOSBroadcast,PRESENT,systems/damage.py:171,partial,systems/artillery.py:hex_los_broadcast,Real elevated LOS/substitution exists; notification audience and null-map boundary incomplete.,notifications
+btech/mech.notify.c,1542,MechLOSBroadcasti,PRESENT,physics/collision.py:383; physics/collision.py:402,partial,systems/physical.py:_physical_broadcast;systems/swarm.py:_broadcast,"Two-unit physical observer subset exists; full identity, visibility updates and shared audience incomplete.",notifications
+btech/mech.notify.c,1578,MapBroadcast,ABSENT,,absent,none,No current production body implementing this source behavior was found.,notifications
+btech/mech.notify.c,1590,MechFireBroadcast,ABSENT,,partial,systems/combat_firing.py:announce_shot,Real fire observer/counter logic exists; C full identities and suppression/delivery incomplete.,notifications
+btech/mech.notify.c,1710,mech_notify,PRESENT,physics/movement.py:1025; systems/piloting.py:574; systems/targeting.py:15; systems/targeting.py:455,partial,systems/movement_commands.py:notify;systems/sensors.py:_notify,Unit logs/hooks exist; source audience/suppression and real per-person delivery incomplete.,notifications
+btech/mech.notify.c,1738,mech_printf,PRESENT,systems/targeting.py:346,partial,systems/movement_commands.py:notify;systems/targeting.py:_notify,Formatted caller strings exist; general formatted source notification contract incomplete.,notifications

@@ -1,0 +1,500 @@
+{
+  "map": {
+    "size": [
+      20,
+      20
+    ],
+    "hexes": [
+      {
+        "at": [
+          0,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          1,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          2,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          3,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          4,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          5,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      },
+      {
+        "at": [
+          6,
+          8
+        ],
+        "terrain": "MOUNTAINS",
+        "elevation": 4
+      }
+    ]
+  },
+  "random": {
+    "seed": 3
+  },
+  "units": [
+    {
+      "name": "Commander",
+      "id": 10,
+      "contact_id": "CM",
+      "at": [
+        12,
+        14,
+        0
+      ],
+      "team": 1,
+      "tonnage": 50,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1010,
+        "location": 10,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    },
+    {
+      "name": "Scout",
+      "id": 11,
+      "contact_id": "SC",
+      "at": [
+        3,
+        14,
+        0
+      ],
+      "team": 1,
+      "tonnage": 50,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1011,
+        "location": 11,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    },
+    {
+      "name": "Wing",
+      "id": 12,
+      "contact_id": "WI",
+      "at": [
+        6,
+        14,
+        0
+      ],
+      "team": 1,
+      "tonnage": 50,
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "actor": {
+        "id": 1012,
+        "location": 12,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      },
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "communications": {
+        "radio_type": 6,
+        "freq": [
+          12345
+        ]
+      },
+      "sections": [
+        {
+          "index": 0,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 1,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 2,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 3,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 4,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 5,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 6,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        },
+        {
+          "index": 7,
+          "armor": 20,
+          "armor_orig": 20,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 10,
+          "internal_orig": 10
+        }
+      ]
+    }
+  ],
+  "autopilots": [
+    {
+      "name": "ScoutAI",
+      "id": 200,
+      "unit": "Scout"
+    },
+    {
+      "name": "WingAI",
+      "id": 201,
+      "unit": "Wing"
+    }
+  ],
+  "actions": [
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=SC go 3 3"
+    },
+    {
+      "op": "advance",
+      "seconds": 2
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=all speed 90"
+    },
+    {
+      "op": "advance",
+      "seconds": 18
+    },
+    {
+      "op": "ai_save",
+      "file": "ai-nav.json"
+    },
+    {
+      "op": "ai_load",
+      "file": "ai-nav.json"
+    },
+    {
+      "op": "advance",
+      "seconds": 2
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=WI go 10 3"
+    },
+    {
+      "op": "advance",
+      "seconds": 18
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=WI follow CM"
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "heading",
+      "args": "0"
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "speed",
+      "args": "32.25"
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "speed",
+      "args": "0"
+    },
+    {
+      "op": "advance",
+      "seconds": 360
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=all stop"
+    },
+    {
+      "op": "advance",
+      "seconds": 3
+    },
+    {
+      "op": "command",
+      "unit": "Commander",
+      "name": "sendchannel",
+      "args": "a=all report"
+    },
+    {
+      "op": "advance",
+      "seconds": 3
+    }
+  ]
+}

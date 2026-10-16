@@ -1,0 +1,119 @@
+[
+  {
+    "feature": "features/pilots/awards.feature",
+    "sha256": "360f5d226208dfec25323e4f5e721f6e2cb576e999c1b9a1b2430fe0dfb40e31",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 8,
+    "examples": 60,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/boarding.feature",
+    "sha256": "988310c8f05882ff8efce97c1fa24ca24be49108e723472319b75a214eed2349",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 4,
+    "examples": 28,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/carriers.feature",
+    "sha256": "1e2c2a3e2b4e4449d3919ef8ff840112f921d64375a6ca9abba0eb542be6f8da",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 3,
+    "examples": 30,
+    "dry_advisories": 1
+  },
+  {
+    "feature": "features/pilots/character.feature",
+    "sha256": "22cf2619655f67224b984a23bd8ee0726e969bbe337456bd794b17509e14963e",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 7,
+    "examples": 52,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/ejection.feature",
+    "sha256": "2275442a10dab5540b71377b3c259e69331bf4aa08bce04e673409f68a56ab67",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 4,
+    "examples": 29,
+    "dry_advisories": 1
+  },
+  {
+    "feature": "features/pilots/experience.feature",
+    "sha256": "140eae642fab8a1b11ae435226751f60e46bb792023fa691abad17ac16325b0a",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 6,
+    "examples": 39,
+    "dry_advisories": 1
+  },
+  {
+    "feature": "features/pilots/health.feature",
+    "sha256": "2b326bf506636ec7fd925170fad28b2a8d38d623aa2dc3d7f8b8c4f5d7f5d508",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 4,
+    "examples": 30,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/hiding.feature",
+    "sha256": "1078b725a3e6003e8482a2adb51d4b5615f755edc609a3c0a4f8d03e5f7f8a0a",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 4,
+    "examples": 27,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/initialization.feature",
+    "sha256": "f644ca2e2a41815c9e1d472966a4b2a094969773a2499df19e961436f5d6089a",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 3,
+    "examples": 20,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/personal.feature",
+    "sha256": "64c9e1ec2f1123c8e0c77d4ca60d6a6b37f23fe4d8b020362ae95e851e535a6e",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 5,
+    "examples": 47,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/skills.feature",
+    "sha256": "f297c07f07b5f173164b5e51a7537d7e3a5a1f3365912dcfdbfd08b1ffdcd312",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 6,
+    "examples": 31,
+    "dry_advisories": 0
+  },
+  {
+    "feature": "features/pilots/swarm.feature",
+    "sha256": "90a3cfe77829431b395eb1aef0bee6d8f97fe5e750debc71e94501e04b30f45a",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 6,
+    "examples": 54,
+    "dry_advisories": 2
+  },
+  {
+    "feature": "features/pilots/workflows.feature",
+    "sha256": "ad3cd521504884a0a173254243f02883a6dab3a6ddaf82a8120091bfba33e82d",
+    "parse": "pass",
+    "generation": "pass",
+    "outlines": 1,
+    "examples": 14,
+    "dry_advisories": 0
+  }
+]

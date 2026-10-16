@@ -1,0 +1,73 @@
+{
+  "baseline_head": "0401098fd2",
+  "original_rows": 92,
+  "false_macro_rows": [
+    "PARTCHECK",
+    "TECHCOMMANDH",
+    "TFUNC_LOC",
+    "TFUNC_LOCPOS",
+    "TFUNC_LOCPOS_VAL",
+    "TFUNC_LOC_RESEAL",
+    "TFUNC_LOC_VAL"
+  ],
+  "omitted_macro_bodies": 49,
+  "normalized_bodies": 134,
+  "baseline_status_counts": {
+    "absent": 117,
+    "complete": 2,
+    "source-inert": 13,
+    "partial": 2
+  },
+  "source_files": [
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.c",
+      "sha256": "11346b913f72325ed3477b9389bc3ddb7ed3003d0f9dc55def8f1a23f64f4e8e",
+      "bodies": 12
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.commands.c",
+      "sha256": "bbb742e07a46ee576c5b4f6989f522f358dcc1fbc5107d3c0cb7719f9bdb1da6",
+      "bodies": 37
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.damages.c",
+      "sha256": "26ff7212c2507df3c38787be22ec5cccac5a47ff07d7491cf2ee49bdf5b01505",
+      "bodies": 9
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.do.c",
+      "sha256": "412c498b45ff3c2dbf0a608c0fb05fde990682256335d54b8447791d9a729efd",
+      "bodies": 33
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.events.c",
+      "sha256": "5eabb6989031694f2dfd9128be7fd048a5f3319b0ca50e9f763597d84008f718",
+      "bodies": 16
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.repairs.c",
+      "sha256": "c687e137ca0dc8981e0765751918c923b2af758c2342a28485f6c26dcbfeb6f2",
+      "bodies": 2
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.tech.saverepair.c",
+      "sha256": "f7eeb65a8d75271bc714d93bb2b35f8f5513a06f916a4aeb2673d16d5d794317",
+      "bodies": 3
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/econ.c",
+      "sha256": "02febcc02e0d969849df67d212259766a725536f3ab91ba652939f25999836bb",
+      "bodies": 6
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/econ_cmds.c",
+      "sha256": "3ea64aad44021b459db4b7088151b0ca7d7dab5d0559916fb1d67462b61c8ac9",
+      "bodies": 12
+    },
+    {
+      "path": "btmux/btmux/btech/src/btech/mech.pickup.c",
+      "sha256": "a7cffc3edebf1fce046902f3e0eca8499301695ddd8c7f203ab369f0ca69139a",
+      "bodies": 4
+    }
+  ]
+}

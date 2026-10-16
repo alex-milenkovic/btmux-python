@@ -1,0 +1,772 @@
+{
+  "maps": [
+    {
+      "name": "field",
+      "id": 1000,
+      "size": [
+        14,
+        14
+      ],
+      "winddir": 90,
+      "windspeed": 10,
+      "visibility": "30 2 90 10 200",
+      "hexes": [
+        {
+          "at": [
+            3,
+            5
+          ],
+          "terrain": "LIGHT_FOREST",
+          "elevation": 0
+        }
+      ]
+    }
+  ],
+  "random": {
+    "seed": 1
+  },
+  "units": [
+    {
+      "name": "Igniter",
+      "id": 10,
+      "contact_id": "IG",
+      "at": [
+        3,
+        7,
+        0
+      ],
+      "team": 1,
+      "class": "MECH",
+      "tonnage": 50,
+      "facing": 0,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "IS.Flamer",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 110,
+        "location": 10,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      }
+    },
+    {
+      "name": "Observer",
+      "id": 11,
+      "contact_id": "OB",
+      "at": [
+        4,
+        8,
+        0
+      ],
+      "team": 1,
+      "class": "MECH",
+      "tonnage": 50,
+      "facing": 0,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "IS.LargeLaser",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 111,
+        "location": 11,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      }
+    },
+    {
+      "name": "Target",
+      "id": 12,
+      "contact_id": "TA",
+      "at": [
+        4,
+        2,
+        0
+      ],
+      "team": 2,
+      "class": "MECH",
+      "tonnage": 50,
+      "facing": 180,
+      "sections": [
+        {
+          "index": 0,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 1,
+          "armor": 16,
+          "armor_orig": 16,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 8,
+          "internal_orig": 8
+        },
+        {
+          "index": 2,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 3,
+          "armor": 18,
+          "armor_orig": 18,
+          "rear": 6,
+          "rear_orig": 6,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 4,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 8,
+          "rear_orig": 8,
+          "internal": 16,
+          "internal_orig": 16
+        },
+        {
+          "index": 5,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 6,
+          "armor": 24,
+          "armor_orig": 24,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 12,
+          "internal_orig": 12
+        },
+        {
+          "index": 7,
+          "armor": 9,
+          "armor_orig": 9,
+          "rear": 0,
+          "rear_orig": 0,
+          "internal": 3,
+          "internal_orig": 3
+        }
+      ],
+      "gunnery": 2,
+      "piloting": 3,
+      "perception": 2,
+      "weapons": [
+        {
+          "name": "IS.MediumLaser",
+          "section": 0,
+          "critical": 4
+        }
+      ],
+      "core": {
+        "max_speed": 64.5,
+        "desired_speed": 0
+      },
+      "actor": {
+        "id": 112,
+        "location": 12,
+        "connected": true,
+        "gunnery": 2,
+        "piloting": 3,
+        "perception": 2
+      }
+    }
+  ],
+  "actions": [
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Igniter",
+      "name": "lock",
+      "args": [
+        3,
+        5,
+        "I"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Igniter",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "fire",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "lock",
+      "args": [
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "sight",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "fire",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sensor",
+      "args": [
+        "I",
+        "I"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "fire",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "lock",
+      "args": [
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "sight",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "fire",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 25
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 35
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "heading",
+      "args": [
+        90
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 25
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "heading",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "heading",
+      "args": [
+        180
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 200
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sensor",
+      "args": [
+        "V",
+        "V"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 15
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "lock",
+      "args": [
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "sight",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 8
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "fire",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "fire",
+      "args": [
+        0,
+        "OB"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "speed",
+      "args": [
+        10.75
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TA"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "contacts",
+      "args": []
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "lock",
+      "args": [
+        "OB"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Target",
+      "name": "sight",
+      "args": [
+        0,
+        "OB"
+      ]
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

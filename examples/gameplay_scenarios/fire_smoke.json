@@ -1,0 +1,173 @@
+{
+  "maps": [
+    {
+      "name": "field",
+      "id": 1000,
+      "size": [
+        14,
+        14
+      ],
+      "winddir": 90,
+      "windspeed": 10,
+      "visibility": "30 2 90 10 200",
+      "hexes": [
+        {
+          "at": [
+            3,
+            5
+          ],
+          "terrain": "LIGHT_FOREST",
+          "elevation": 0
+        }
+      ]
+    }
+  ],
+  "random": {
+    "seed": 1
+  },
+  "units": [
+    {
+      "name": "Igniter",
+      "contact_id": "II",
+      "at": [
+        3,
+        7,
+        0
+      ],
+      "team": 1,
+      "weapons": [
+        "IS.Flamer"
+      ]
+    },
+    {
+      "name": "Observer",
+      "contact_id": "OO",
+      "at": [
+        4,
+        8,
+        0
+      ],
+      "team": 1,
+      "weapons": [
+        "IS.LargeLaser"
+      ]
+    },
+    {
+      "name": "Target",
+      "contact_id": "TT",
+      "at": [
+        4,
+        2,
+        0
+      ],
+      "team": 2
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Igniter",
+      "name": "lock",
+      "args": [
+        3,
+        5,
+        "I"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Igniter",
+      "name": "fire",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 60
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 300
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "lock",
+      "args": [
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "sight",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "command",
+      "unit": "Observer",
+      "name": "fire",
+      "args": [
+        0,
+        "TT"
+      ]
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "map": {
+    "size": [
+      24,
+      24
+    ]
+  },
+  "random": {
+    "seed": 2
+  },
+  "units": [
+    {
+      "name": "Ship",
+      "contact_id": "SS",
+      "at": [
+        10,
+        10,
+        0
+      ],
+      "team": 1,
+      "tonnage": 2000,
+      "real_mass": 2000,
+      "class": "DS"
+    },
+    {
+      "name": "Arriving",
+      "contact_id": "AA",
+      "at": [
+        10,
+        12,
+        0
+      ],
+      "team": 1
+    }
+  ],
+  "actions": [
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "command",
+      "unit": "Arriving",
+      "name": "speed",
+      "args": [
+        32.25
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "inspect"
+    },
+    {
+      "op": "advance",
+      "seconds": 40
+    },
+    {
+      "op": "command",
+      "unit": "Arriving",
+      "name": "speed",
+      "args": [
+        0
+      ]
+    },
+    {
+      "op": "advance",
+      "seconds": 20
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "lock_tick": 0
+  }
+}

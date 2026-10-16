@@ -1,0 +1,64 @@
+{
+  "maps": [
+    {
+      "name": "outside",
+      "id": 10,
+      "size": [
+        9,
+        9
+      ]
+    }
+  ],
+  "units": [
+    {
+      "name": "u",
+      "id": 40,
+      "at": [
+        1,
+        3,
+        0
+      ],
+      "facing": 0,
+      "weapons": [
+        "IS.MediumLaser"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "op": "map_command",
+      "name": "addhex",
+      "args": "1 1 % 3"
+    },
+    {
+      "op": "map_command",
+      "name": "conditions",
+      "args": "75 -20"
+    },
+    {
+      "op": "map_command",
+      "name": "save",
+      "args": "terrain"
+    },
+    {
+      "op": "map_command",
+      "name": "addhex",
+      "args": "1 1 ~ 0"
+    },
+    {
+      "op": "map_command",
+      "name": "load",
+      "args": "terrain"
+    },
+    {
+      "op": "inspect"
+    }
+  ],
+  "config": {
+    "periodic_updates": false,
+    "lock_tick": 0
+  },
+  "random": {
+    "seed": 5489
+  }
+}
